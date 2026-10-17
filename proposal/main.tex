@@ -39,12 +39,11 @@ Simple Python Programming Tasks?}}
 \begin{document}
 \maketitle
 \vspace{-0.38in}
-\small
 
 \section*{Introduction}
-Modern code models usually contain billions of parameters, which makes it unclear how much programming ability can be learned by a much smaller model trained with a course-project budget. Our project asks a direct question: \emph{can a decoder-only Transformer with approximately 100 million parameters, pretrained from scratch on Python code, learn to solve simple programming tasks from natural-language specifications?}
+Large code models can solve complex programming problems, but their scale makes it difficult to determine how much ability can be learned with a course-project compute budget. This project asks whether a decoder-only Transformer with approximately 100 million parameters, pretrained from scratch on Python code, can generate correct solutions to beginner-level programming tasks. These tasks include basic string and collection manipulation, linear scans and simple algorithms, and introductory data-structure operations such as binary search tree queries.
 
-We define a simple task as one self-contained Python function requiring no external packages and no advanced topics such as dynamic programming, graph algorithms, or backtracking. The evaluation covers three increasingly structured groups: basic string/list/dictionary manipulation; linear scans, counting, and elementary sorting or search; and introductory data-structure operations, with binary search trees (BSTs) as the main structured case study. Deep learning is suitable because both specifications and valid programs are variable-length sequences and many semantically equivalent solutions exist, making fixed templates too brittle. Functional correctness is the primary outcome: a generated program passes only if it satisfies every hidden unit test. We will report pass@1 overall and by task group, with pass@5 as a secondary measure.
+Our main architectural improvement is a \emph{looped Transformer} that applies a shared group of layers more than once. This increases effective computational depth without proportionally increasing the number of parameters. We compare it with a standard Transformer trained on the same data and evaluate both models by running generated programs against hidden unit tests. Deep learning is appropriate because natural-language specifications and programs are variable-length sequences with many valid implementations, making fixed rules or templates too brittle. Our main question is whether iterative computation improves functional correctness, especially when a task combines several individually simple requirements.
 
 This is an individual project. I will implement and document the data pipeline, model architecture, training procedures, execution-based evaluation, and final analysis. Configuration files, fixed random seeds, and version-controlled scripts will be used to keep the experiments reproducible.
 
@@ -72,46 +71,41 @@ This is an individual project. I will implement and document the data pipeline, 
 \draw[arr] (pre) -- (bst);
 \draw[arr] (bst) -- (test);
 
-\node[model, below=8mm of pre, xshift=-22mm] (base) {Pretrained only\\no task instruction tuning};
-\node[model, right=of base] (loop) {Supervised fine-tuning\\answer-token loss};
-\node[model, right=of loop] (lora) {Optional extensions\\looping, LoRA, or GRPO};
+\node[model, below=8mm of pre, xshift=-12mm] (base) {Standard Transformer\\12 distinct blocks};
+\node[model, right=of base] (loop) {Looped Transformer\\shared core applied twice};
 
 \draw[arr] (pre.south) |- (base.north);
 \draw[arr] (pre.south) -- (loop.north);
-\draw[arr] (pre.south) |- (lora.north);
-\draw[arr] (base.east) -- node[above, font=\scriptsize]{adapt} (loop.west);
-\draw[arr] (loop.east) -- node[above, font=\scriptsize]{improve} (lora.west);
+\draw[arr] (base.east) -- node[above, font=\scriptsize]{compare} (loop.west);
 \draw[arr] (base.south) |- ++(0,-4mm) -| (test.south);
 \draw[arr] (loop.south) |- ++(0,-4mm) -| (test.south);
-\draw[arr] (lora.south) |- ++(0,-4mm) -| (test.south);
 \end{tikzpicture}}
 \vspace{-0.08in}
-\caption{Project pipeline. The main experiment measures how much simple programming ability is acquired through pretraining and supervised task adaptation; architectural and reinforcement-learning changes are secondary extensions.}
+\caption{Project pipeline. The standard and looped Transformers use the same tokenizer, training data, fine-tuning tasks, and execution-based evaluation.}
 \label{fig:pipeline}
 \vspace{-0.12in}
 \end{figure}
 
 \section*{Background \& Related Work}
-The Transformer established attention-only sequence modelling and is the basis of our decoder \citep{vaswani2017attention}; RoPE provides relative position information for its attention layers \citep{su2021roformer}. Codex and HumanEval popularized execution-based functional correctness for code generation \citep{chen2021evaluating}, while MBPP introduced a crowd-sourced benchmark of short Python problems that closely matches our intended difficulty \citep{austin2021program}. SmolLM-Corpus provides the educational Python source used for pretraining \citep{benallal2024smollm}. Universal Transformers show that repeatedly applying shared layers can improve algorithmic processing \citep{dehghani2019universal}, and LoRA provides a parameter-efficient way to specialize shared weights \citep{hu2022lora}. These last two methods are optional extensions; the project's main contribution is a controlled study of what a from-scratch 100M-parameter model can learn.
+The Transformer established attention-only sequence modelling and forms the basis of our decoder \citep{vaswani2017attention}; RoPE supplies position information to its attention layers \citep{su2021roformer}. Codex and HumanEval demonstrated the importance of evaluating generated code through execution rather than textual similarity \citep{chen2021evaluating}. MBPP provides short Python problems close to our intended difficulty \citep{austin2021program}, while SmolLM-Corpus provides the educational Python source used for pretraining \citep{benallal2024smollm}. Most closely related to our architectural experiment, Universal Transformers repeatedly apply shared layers and report benefits on algorithmic tasks \citep{dehghani2019universal}. We apply this general idea to small-scale code generation and compare it directly with a conventional Transformer.
 
 \section*{Data Processing}
-For pretraining, we use the Python-Edu subset of the public SmolLM-Corpus \citep{benallal2024smollm}, which contains Python files selected for educational quality. Our pipeline removes empty or extremely short files, generated/minified content, malformed or non-Python records, and exact duplicates; it also rejects samples that fail Python syntax parsing. Repositories, rather than individual files, are assigned to train/validation splits to reduce leakage. We train an 8,192-token byte-pair tokenizer and serialize token IDs into memory-mapped shards. The current processed corpus contains approximately 1.03M training documents (498M tokens) and 55M validation tokens. Scripts and configuration files record every filter, seed, split, and tokenizer setting.
+For pretraining, we use the Python-Edu subset of SmolLM-Corpus \citep{benallal2024smollm}. It contains Python files selected for educational quality. Our pipeline removes malformed, generated, extremely short, and duplicate files; checks that retained samples parse as Python; and separates repositories between training and validation to reduce leakage. We train an 8,192-token byte-pair tokenizer on the cleaned text and convert the corpus into memory-mapped token shards. The processed corpus contains approximately 498 million training tokens and 55 million validation tokens.
 
-For supervised fine-tuning, we will combine easy examples filtered from KodCode-Light-RL-10K \citep{kodcode2025light} with tasks generated by us. Automated filters require a single self-contained Python function, a reference solution of at most 30 logical lines, no external dependencies, and tests that finish within one second. We remove incomplete statements, answer leakage, syntax failures, and exact or normalized duplicates, then manually review category and difficulty. Our existing generated subset contains 552 training examples and covers 17 BST operation contracts, including search, insertion, predecessor/successor, range count, range sum, and path queries. We will add comparably simple string, collection, counting, sorting, and searching problems.
-
-Validation and evaluation tasks are split by normalized specification before prompt templates are rendered. We will use an easy, manually verified subset of MBPP plus held-out generated tasks, and remove statement or solution overlaps with the fine-tuning set. Every record contains a prompt, trusted reference implementation, and deterministic tests; all trusted solutions must pass before inclusion. Candidate programs run in time-limited, network-disabled subprocesses. This processing contributes more than simply downloading an existing benchmark and makes task difficulty and leakage checks reproducible.
+For supervised fine-tuning, we combine easy problems filtered from KodCode-Light-RL-10K \citep{kodcode2025light} with tasks generated by us. The task groups cover basic strings and collections, simple counting/searching/sorting algorithms, and introductory data structures. Our generated BST subset provides a controlled structured case study with prompts, reference solutions, and unit tests. We remove incomplete problems, invalid reference code, answer leakage, and duplicate statements or solutions. Training, validation, and evaluation sets are separated before prompt variants are produced. Evaluation uses a reviewed easy subset of MBPP and held-out generated tasks, with overlap removed from the fine-tuning data. Reference solutions must pass their tests before inclusion, and generated programs are executed in an isolated environment with time and resource limits.
 
 \section*{Architecture}
-The main model is a decoder-only Transformer with an 8,192-token vocabulary, context length 1,024, hidden width 768, 12 layers, 12 attention heads, RMSNorm, RoPE, and SwiGLU ($\approx97.5$M parameters). It is first trained with next-token prediction on Python-Edu and then with answer-token-only supervised loss on instruction--solution pairs. We will generate code autoregressively and stop at an end-of-answer marker. If the standard model establishes a useful baseline, we will test a parameter-matched looped variant whose eight middle blocks are executed twice, iteration-specific rank-32 LoRA updates on its query and value projections, and execution-reward GRPO. These extensions are ablations rather than requirements for answering the main question.
+The baseline is a decoder-only Transformer with an 8,192-token vocabulary, context length 1,024, hidden width 768, 12 layers, 12 attention heads, RMSNorm, RoPE, and SwiGLU, totalling approximately 97.5M parameters. It is pretrained with next-token prediction and then supervised on instruction--solution pairs.
+
+The looped model keeps two input blocks and two output blocks, while its eight middle blocks form a shared core that is executed twice. It therefore retains approximately the same number of distinct parameters as the baseline but has an effective depth of 20 layers. This provides a controlled test of whether a small model benefits more from iterative computation than from using each parameter only once. If time permits, we will test lightweight iteration-specific adapters and execution-based reinforcement learning as secondary extensions.
 
 \section*{Baseline Model}
-Our simplest baseline retrieves the solution attached to the most similar training prompt using TF--IDF cosine similarity; it requires no neural training and tests whether the benchmark can be solved by surface-level matching. A second baseline evaluates the pretrained 100M model before supervised fine-tuning. The main comparison uses the same model after supervised fine-tuning, with identical decoding and test execution. We will report pass@1 and pass@5 overall and for each task group, together with validation loss, parameter count, and training cost. We will regard the project as demonstrating useful learned ability if the fine-tuned model reaches at least 40\% pass@1 overall, attempts every category successfully, and exceeds both the retrieval and pretrained-only baselines by at least 10 percentage points. Qwen2.5-Coder-0.5B may be reported as a larger external reference, but not as the primary baseline.
+The standard 12-layer Transformer is the primary baseline. It uses the same tokenizer, pretraining corpus, fine-tuning data, optimizer, and decoding settings as the looped model, making the architecture the main experimental variable. Functional correctness is measured with pass@1: a task passes only when the generated program satisfies every hidden test. We will report overall results, results by task group, parameter count, and training and inference cost. A small public code model may also be included as an external reference, but the parameter-matched standard Transformer remains the main comparison.
 
 \section*{Ethical Considerations}
-Training on public code creates licensing, attribution, privacy, and memorization risks; dataset provenance is therefore documented, duplicates are removed, and model outputs will not be presented as original human work. Generated programs can be subtly incorrect or insecure, so our model is an educational prototype rather than a deployment-ready programming assistant. Untrusted completions are executed only in resource-limited subprocesses with timeouts and no network access. We will report failures and possible benchmark contamination, avoid claims beyond beginner-level Python tasks, and release model/data documentation that states these limitations.
+Public code can contain licensing, attribution, privacy, and memorization risks, so we document dataset provenance and remove duplicates where possible. Generated programs may be incorrect or insecure; this model is an educational prototype, not a deployment-ready programming assistant. Untrusted completions are executed only in an isolated environment without network access. We will report failures and possible benchmark contamination and avoid claims beyond the beginner-level tasks studied here.
 
 \newpage
-\normalsize
 \bibliographystyle{plainnat}
 \bibliography{references}
 
