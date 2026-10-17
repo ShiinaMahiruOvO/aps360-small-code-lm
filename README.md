@@ -1,4 +1,10 @@
-# Usage
+# A 100M-Parameter Model for Simple Python Programming
+
+This APS360 project studies whether a decoder-only Transformer with roughly 100 million parameters, pretrained from scratch on educational Python code, can learn beginner-level programming tasks. Functional correctness is measured by executing hidden unit tests. The currently bundled reproducible case study focuses on binary-search-tree operations; string, collection, counting, sorting, and searching tasks use the same training and evaluation interfaces.
+
+The primary system is a handwritten 12-layer Transformer. The repository also contains optional looped-Transformer, iteration-specific LoRA, vLLM inference, and GRPO components used for follow-up experiments.
+
+## Usage
 
 Run commands from the repository root. Use Python 3.12 or 3.13. Supply a trained checkpoint with `--checkpoint`; weights and the full Python pretraining corpus are not bundled.
 

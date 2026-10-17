@@ -26,13 +26,13 @@
 \definecolor{lightpurple}{HTML}{F0EAF8}
 \hypersetup{colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue}
 
-\title{\vspace{-0.35in}\textbf{Parameter-Efficient Iterative Transformers for\\
-Compositional Binary Search Tree Code Generation}}
+\title{\vspace{-0.35in}\textbf{Can a 100M-Parameter Transformer Learn\\
+Simple Python Programming Tasks?}}
 
 \author{
   George Yuan\\
   1012152224, \href{mailto:zhijie.yuan@mail.utoronto.ca}{zhijie.yuan@mail.utoronto.ca}\\
-  GitHub: \url{https://github.com/ShiinaMahiruOvO/aps360-bst-code-lm}
+  GitHub: \url{https://github.com/ShiinaMahiruOvO/aps360-small-code-lm}
 }
 \date{}
 
@@ -42,9 +42,9 @@ Compositional Binary Search Tree Code Generation}}
 \small
 
 \section*{Introduction}
-Small language models can produce familiar code patterns, yet often fail when a prompt combines several individually simple requirements. We study this problem in a controlled setting: generating correct Python implementations of binary-search-tree (BST) operations from natural-language specifications. Our central question is whether repeatedly applying a shared Transformer core, while allowing low-rank parameters to specialize each iteration, improves \emph{compositional generalization} without substantially increasing the parameter count.
+Modern code models usually contain billions of parameters, which makes it unclear how much programming ability can be learned by a much smaller model trained with a course-project budget. Our project asks a direct question: \emph{can a decoder-only Transformer with approximately 100 million parameters, pretrained from scratch on Python code, learn to solve simple programming tasks from natural-language specifications?}
 
-We will pretrain an approximately 100M-parameter decoder-only model on educational Python code, then fine-tune it on automatically generated and unit-tested BST tasks. We will compare a standard Transformer, a looped Transformer, and a looped Transformer with iteration-specific LoRA adapters. Deep learning is appropriate because the input and output are variable-length sequences and the desired mapping must capture both natural-language constraints and long-range program dependencies; fixed templates or rule-based systems would not cover the variation in valid programs. Success is measured by functional correctness: a completion passes only if it satisfies every hidden test. We will report results separately for atomic tasks, familiar combinations, and held-out combinations, rather than relying only on token-level loss.
+We define a simple task as one self-contained Python function requiring no external packages and no advanced topics such as dynamic programming, graph algorithms, or backtracking. The evaluation covers three increasingly structured groups: basic string/list/dictionary manipulation; linear scans, counting, and elementary sorting or search; and introductory data-structure operations, with binary search trees (BSTs) as the main structured case study. Deep learning is suitable because both specifications and valid programs are variable-length sequences and many semantically equivalent solutions exist, making fixed templates too brittle. Functional correctness is the primary outcome: a generated program passes only if it satisfies every hidden unit test. We will report pass@1 overall and by task group, with pass@5 as a secondary measure.
 
 This is an individual project. I will implement and document the data pipeline, model architecture, training procedures, execution-based evaluation, and final analysis. Configuration files, fixed random seeds, and version-controlled scripts will be used to keep the experiments reproducible.
 
@@ -65,48 +65,50 @@ This is an individual project. I will implement and document the data pipeline, 
 ]
 \node[data] (py) {Python-Edu corpus\\filter, deduplicate, tokenize};
 \node[model, right=of py] (pre) {Pretrain\\$\approx$100M parameters};
-\node[train, right=of pre] (bst) {Authored BST tasks\\specification + solution + tests};
+\node[train, right=of pre] (bst) {Curated simple tasks\\specification + solution + tests};
 \node[eval, right=of bst] (test) {Isolated execution\\pass only if all tests pass};
 
 \draw[arr] (py) -- (pre);
 \draw[arr] (pre) -- (bst);
 \draw[arr] (bst) -- (test);
 
-\node[model, below=8mm of pre, xshift=-22mm] (base) {Standard Transformer\\12 distinct blocks};
-\node[model, right=of base] (loop) {Looped Transformer\\shared core applied twice};
-\node[model, right=of loop] (lora) {Loop + iteration LoRA\\rank-32 adapters on Q,V};
+\node[model, below=8mm of pre, xshift=-22mm] (base) {Pretrained only\\no task instruction tuning};
+\node[model, right=of base] (loop) {Supervised fine-tuning\\answer-token loss};
+\node[model, right=of loop] (lora) {Optional extensions\\looping, LoRA, or GRPO};
 
 \draw[arr] (pre.south) |- (base.north);
 \draw[arr] (pre.south) -- (loop.north);
 \draw[arr] (pre.south) |- (lora.north);
-\draw[arr] (base.east) -- node[above, font=\scriptsize]{ablate} (loop.west);
-\draw[arr] (loop.east) -- node[above, font=\scriptsize]{ablate} (lora.west);
+\draw[arr] (base.east) -- node[above, font=\scriptsize]{adapt} (loop.west);
+\draw[arr] (loop.east) -- node[above, font=\scriptsize]{improve} (lora.west);
 \draw[arr] (base.south) |- ++(0,-4mm) -| (test.south);
 \draw[arr] (loop.south) |- ++(0,-4mm) -| (test.south);
 \draw[arr] (lora.south) |- ++(0,-4mm) -| (test.south);
 \end{tikzpicture}}
 \vspace{-0.08in}
-\caption{Project pipeline. The primary experiment changes the model's depth-sharing mechanism while holding the tokenizer, data, and evaluation protocol fixed.}
+\caption{Project pipeline. The main experiment measures how much simple programming ability is acquired through pretraining and supervised task adaptation; architectural and reinforcement-learning changes are secondary extensions.}
 \label{fig:pipeline}
 \vspace{-0.12in}
 \end{figure}
 
 \section*{Background \& Related Work}
-The Transformer established attention-only sequence modelling and is our standard baseline \citep{vaswani2017attention}. Universal Transformers introduced recurrent application of a shared block, motivating our looped core and suggesting potential benefits on algorithmic tasks \citep{dehghani2019universal}. RoPE injects relative position information by rotating query and key features and is used in all variants \citep{su2021roformer}. LoRA showed that trainable low-rank updates can specialize a frozen or shared weight matrix with few additional parameters \citep{hu2022lora}; we instead use separate low-rank updates to distinguish successive applications of the same core. Codex and HumanEval established execution-based functional correctness as a more meaningful code-generation metric than textual similarity \citep{chen2021evaluating}. Finally, GRPO replaces a learned value model with within-group reward normalization \citep{shao2024deepseekmath}. We treat execution-reward training as a secondary extension after establishing the supervised architecture comparison.
+The Transformer established attention-only sequence modelling and is the basis of our decoder \citep{vaswani2017attention}; RoPE provides relative position information for its attention layers \citep{su2021roformer}. Codex and HumanEval popularized execution-based functional correctness for code generation \citep{chen2021evaluating}, while MBPP introduced a crowd-sourced benchmark of short Python problems that closely matches our intended difficulty \citep{austin2021program}. SmolLM-Corpus provides the educational Python source used for pretraining \citep{benallal2024smollm}. Universal Transformers show that repeatedly applying shared layers can improve algorithmic processing \citep{dehghani2019universal}, and LoRA provides a parameter-efficient way to specialize shared weights \citep{hu2022lora}. These last two methods are optional extensions; the project's main contribution is a controlled study of what a from-scratch 100M-parameter model can learn.
 
 \section*{Data Processing}
 For pretraining, we use the Python-Edu subset of the public SmolLM-Corpus \citep{benallal2024smollm}, which contains Python files selected for educational quality. Our pipeline removes empty or extremely short files, generated/minified content, malformed or non-Python records, and exact duplicates; it also rejects samples that fail Python syntax parsing. Repositories, rather than individual files, are assigned to train/validation splits to reduce leakage. We train an 8,192-token byte-pair tokenizer and serialize token IDs into memory-mapped shards. The current processed corpus contains approximately 1.03M training documents (498M tokens) and 55M validation tokens. Scripts and configuration files record every filter, seed, split, and tokenizer setting.
 
-Domain fine-tuning data is generated by us rather than copied directly from a benchmark. A task generator combines 17 BST operation contracts---including search, insertion, predecessor/successor, range count, range sum, and path queries---with explicit edge-case and return-format conditions. Each record contains a prompt, a reference implementation, and deterministic unit tests. We currently have 552 training examples, 87 validation examples, and an 87-task evaluation set (56 atomic/basic and 31 multi-condition tasks). A separate 27-task compositional holdout contains unseen three- or four-condition combinations. We prevent exact prompt and solution overlap, split by specification before rendering templates, and retain the holdout only for final evaluation. Reference solutions must pass all generated tests inside a time-limited subprocess.
+For supervised fine-tuning, we will combine easy examples filtered from KodCode-Light-RL-10K \citep{kodcode2025light} with tasks generated by us. Automated filters require a single self-contained Python function, a reference solution of at most 30 logical lines, no external dependencies, and tests that finish within one second. We remove incomplete statements, answer leakage, syntax failures, and exact or normalized duplicates, then manually review category and difficulty. Our existing generated subset contains 552 training examples and covers 17 BST operation contracts, including search, insertion, predecessor/successor, range count, range sum, and path queries. We will add comparably simple string, collection, counting, sorting, and searching problems.
+
+Validation and evaluation tasks are split by normalized specification before prompt templates are rendered. We will use an easy, manually verified subset of MBPP plus held-out generated tasks, and remove statement or solution overlaps with the fine-tuning set. Every record contains a prompt, trusted reference implementation, and deterministic tests; all trusted solutions must pass before inclusion. Candidate programs run in time-limited, network-disabled subprocesses. This processing contributes more than simply downloading an existing benchmark and makes task difficulty and leakage checks reproducible.
 
 \section*{Architecture}
-All models are decoder-only Transformers with an 8,192-token vocabulary, context length 1,024, hidden width 768, 12 attention heads, RMSNorm, RoPE, and SwiGLU. The standard baseline has 12 distinct blocks ($\approx97.5$M parameters). The looped model uses two prelude blocks, an eight-block shared core executed twice, and two coda blocks: it has the same 12 distinct blocks but an effective depth of 20. Our final model adds rank-32 iteration-specific LoRA updates to the query and value projections in the shared core ($\approx99.1$M parameters). This tests whether the two passes can learn different transformations while retaining most parameter sharing. All variants use the same pretraining and answer-only supervised fine-tuning pipeline. If time permits, we will apply execution-reward GRPO only to the best supervised model.
+The main model is a decoder-only Transformer with an 8,192-token vocabulary, context length 1,024, hidden width 768, 12 layers, 12 attention heads, RMSNorm, RoPE, and SwiGLU ($\approx97.5$M parameters). It is first trained with next-token prediction on Python-Edu and then with answer-token-only supervised loss on instruction--solution pairs. We will generate code autoregressively and stop at an end-of-answer marker. If the standard model establishes a useful baseline, we will test a parameter-matched looped variant whose eight middle blocks are executed twice, iteration-specific rank-32 LoRA updates on its query and value projections, and execution-reward GRPO. These extensions are ablations rather than requirements for answering the main question.
 
 \section*{Baseline Model}
-The primary baseline is the standard 12-layer Transformer trained with the same corpus, tokenizer, optimizer family, fine-tuning examples, and decoding budget. This gives a reproducible, approximately parameter-matched comparison; the looped model and loop+LoRA model form two controlled ablations. We will report total and subset pass rates, parameter count, and training/inference cost. The primary success criterion is at least a 10 percentage-point improvement over the standard model on multi-condition tasks without a drop greater than five points on atomic/basic tasks. The untouched 27-task holdout is reported separately to test whether gains transfer to unseen combinations. A public 0.5B code model may be included as a scale-mismatched sanity check, but it is not the main baseline.
+Our simplest baseline retrieves the solution attached to the most similar training prompt using TF--IDF cosine similarity; it requires no neural training and tests whether the benchmark can be solved by surface-level matching. A second baseline evaluates the pretrained 100M model before supervised fine-tuning. The main comparison uses the same model after supervised fine-tuning, with identical decoding and test execution. We will report pass@1 and pass@5 overall and for each task group, together with validation loss, parameter count, and training cost. We will regard the project as demonstrating useful learned ability if the fine-tuned model reaches at least 40\% pass@1 overall, attempts every category successfully, and exceeds both the retrieval and pretrained-only baselines by at least 10 percentage points. Qwen2.5-Coder-0.5B may be reported as a larger external reference, but not as the primary baseline.
 
 \section*{Ethical Considerations}
-Training on public code creates licensing, attribution, privacy, and memorization risks; dataset provenance is therefore documented, duplicates are removed, and model outputs will not be presented as original human work. Generated programs can be subtly incorrect or insecure, so our model is an educational prototype rather than a deployment-ready programming assistant. Untrusted completions are executed only in resource-limited subprocesses with timeouts and no network access. We will report failures and possible benchmark contamination, avoid claims beyond the narrow BST domain, and release model/data documentation that states these limitations.
+Training on public code creates licensing, attribution, privacy, and memorization risks; dataset provenance is therefore documented, duplicates are removed, and model outputs will not be presented as original human work. Generated programs can be subtly incorrect or insecure, so our model is an educational prototype rather than a deployment-ready programming assistant. Untrusted completions are executed only in resource-limited subprocesses with timeouts and no network access. We will report failures and possible benchmark contamination, avoid claims beyond beginner-level Python tasks, and release model/data documentation that states these limitations.
 
 \newpage
 \normalsize
