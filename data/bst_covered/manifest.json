@@ -1,0 +1,44 @@
+{
+  "seed": 360921,
+  "counts": {
+    "train": 552,
+    "validation": 87,
+    "rl": 87,
+    "test_known": 56,
+    "test_combinations": 31
+  },
+  "train_per_contract": {
+    "maximum": 32,
+    "minimum": 32,
+    "successor": 32,
+    "predecessor": 32,
+    "range_values": 32,
+    "level": 32,
+    "absent": 32,
+    "path": 32,
+    "depth": 32,
+    "floor": 32,
+    "contains": 32,
+    "insert_many": 32,
+    "range_count": 32,
+    "ceiling": 32,
+    "range_sum": 40,
+    "path_without_target": 32,
+    "insert": 32
+  },
+  "unique_train_prompts": 272,
+  "known_specs": 87,
+  "version": "covered-v2",
+  "test_spec_coverage": 1.0,
+  "minimum_examples_per_spec": 2,
+  "deduplication": "Weighted quotas: 32 per original operation, increased to 40 for range_sum to teach every spec twice.",
+  "split_policy": "All 87 test specifications are taught in SFT; function names and random test seeds are split-specific. These are development evaluations, not unseen-combination generalization.",
+  "artifact_sha256": {
+    "test_combinations.jsonl": "b24776b032de322edb71dcecf77c3a33626360f58cffd58b998d58ea10c7e526",
+    "train.jsonl": "204f5767a95cae66d82416aecb2002e15e7c7df33bca45d49c76fc18a8facdae",
+    "suites.json": "e1a8c16e2e6f654af84daa6502e5cb413ec31751f4af0671eea5624434cdd267",
+    "test_known.jsonl": "32f9cd9b5ab5fe8ba4c1e3c7ee8781e0833d4a8a94fac387e3ac542b2e393392",
+    "rl.jsonl": "0473ea9ed36282292b42f8efab2b577301b68d62c3ff8210d4199bdf8fd56351",
+    "validation.jsonl": "5d9b21fc9cdf6c4ac7616fa766004372007900bc6627234c7ce77bff4218810d"
+  }
+}

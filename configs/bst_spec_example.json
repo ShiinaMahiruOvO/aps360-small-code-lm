@@ -1,0 +1,9 @@
+{
+  "spec": {
+    "family": "range_count",
+    "lower_closed": true,
+    "upper_closed": true,
+    "parity": "any"
+  },
+  "entry_point": "solve"
+}

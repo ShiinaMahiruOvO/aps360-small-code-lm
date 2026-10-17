@@ -1,0 +1,191 @@
+{
+  "version": "compositional-holdout-v1",
+  "seed": 360923,
+  "tasks": 27,
+  "by_family": {
+    "range_count": 2,
+    "range_values": 9,
+    "range_sum": 16
+  },
+  "selection": "Every untaught combination in the existing finite range specification grammar.",
+  "limitations": "Three range operations only; held-out tasks combine 3\u20134 changes and are harder than taught tasks. Templates and atomic conditions are shared. No claim of unknown pretraining provenance.",
+  "policy": "No training, checkpoint selection, prompt tuning, or budget changes based on these results.",
+  "source_sha256": {
+    "rl.jsonl": "0473ea9ed36282292b42f8efab2b577301b68d62c3ff8210d4199bdf8fd56351",
+    "test_combinations.jsonl": "b24776b032de322edb71dcecf77c3a33626360f58cffd58b998d58ea10c7e526",
+    "test_known.jsonl": "32f9cd9b5ab5fe8ba4c1e3c7ee8781e0833d4a8a94fac387e3ac542b2e393392",
+    "train.jsonl": "204f5767a95cae66d82416aecb2002e15e7c7df33bca45d49c76fc18a8facdae",
+    "validation.jsonl": "5d9b21fc9cdf6c4ac7616fa766004372007900bc6627234c7ce77bff4218810d"
+  },
+  "training_reference_count": 174,
+  "exact_solution_overlap": 0,
+  "specification_overlap": 0,
+  "audit": [
+    {
+      "id": "holdout-range_count-d00b8d63c36ccbcd",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_count-a1185a7f24ed8bc7",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-6b5fa1b7d34a318e",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-4493c561d639b588",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-0fa2b907ba060207",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-927ea809698e28c3",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-7c67b58df0f49502",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-0027af77d7343a05",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-9e47ed789782e264",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-220517eb0cdc045d",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_values-45773acf18bde0e7",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-d1b31575ba78c631",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-1e82932303204ef4",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-21ee404af33688ec",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-5b18827378a721e9",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-f1cdcff82e280446",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-5b4ed05472698f44",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-3847e25966489617",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-6e06fa1eeef21fc9",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-5b00d1531c5ff551",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-6f6365c7b58ee48d",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-9171fd6d17f2a487",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-a38754b73fb1b7de",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-ffa0e2c0a91776ae",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-e1dff15d18faa38a",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-7d16b960be4c6e67",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    },
+    {
+      "id": "holdout-range_sum-d577c61975e2577d",
+      "old_references_rejected": 174,
+      "execution_cases": 164,
+      "reference_strategies_verified": 2
+    }
+  ],
+  "artifact_sha256": {
+    "test.jsonl": "ddebf46065e5378ae19e84d27164ef4b804e09fc822f25d9b0c01f265f9d8bba",
+    "suites.json": "c9327164d56e636dd808ae11e747dff86dde1fb5907bd88eadc0bce0b312639b"
+  }
+}

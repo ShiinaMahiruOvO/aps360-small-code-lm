@@ -1,0 +1,192 @@
+{
+  "base_sft-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  },
+  "base_sft-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  },
+  "loop_sft-strict": {
+    "tasks": 27,
+    "correct": 1,
+    "pass_rate": 0.037037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 1,
+        "tasks": 16
+      }
+    }
+  },
+  "loop_sft-normalized": {
+    "tasks": 27,
+    "correct": 1,
+    "pass_rate": 0.037037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 1,
+        "tasks": 16
+      }
+    }
+  },
+  "loop_lora_sft-strict": {
+    "tasks": 27,
+    "correct": 10,
+    "pass_rate": 0.37037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 3,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 7,
+        "tasks": 16
+      }
+    }
+  },
+  "loop_lora_sft-normalized": {
+    "tasks": 27,
+    "correct": 10,
+    "pass_rate": 0.37037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 3,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 7,
+        "tasks": 16
+      }
+    }
+  },
+  "qwen_base-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  },
+  "qwen_base-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  },
+  "qwen_instruct-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  },
+  "qwen_instruct-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    }
+  }
+}

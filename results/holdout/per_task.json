@@ -1,0 +1,2102 @@
+{
+  "base_sft-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "0e900a67dee9ea776b52071a00f8bb43bc7c1eec503cb19d87f23bfa0534b01b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "3123e5fbf7306c34232e5a643f371b68c43f10ae6b7f1219fdfaeb81b177130e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "e1a76db07915313ef7da2c16e108f7c6199e96ab6d0d807f49db170d3e748684",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "524503d47def28b3b6b4a0563682cdcead30fd974bb50b77a2649e08ed7a65ec",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "d276981880ca0c55e9b06536aaaab9b5c29b8e5dbedcbc9fc8f7987432de1589",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8c4a8f0518b3b08f3095cda6d5bec6b3de1ee1ffb374a121b5867bdbdacec9ed",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1f5ab8c3d033caeb4add1d40c322d913b19c1913c408200ee94467e9313c8cb8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "79c47e8bdb82f20958b61b8fdc468b11434e043b0f7e5ed5ee5c3d6efbc05d30",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "a5c1148d0e5de3ae629b9c0a69748b864c9c76064e516dfcdf101d86ab1dc8c2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "55f16c107d3910665698e57bfee563d0624e972fb6e679651bf71e366ae867c0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "26d9f896ddb552f1454bc4e38ba5af09dd79b37614daa757c5b7460147b7aadb",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "dc2dd5d62fec18a8e8d711be33986a25fc49553d7d0624a27254f408fc77e6bf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4cf909b19fc063778a7c78798432f313ef7bc88b9309ad34f7edb4ab61f8b4b5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "f149b2c6b0c59a3fc7e620cecae1f9deeea5bf945db60045b8f3530630aee7e4",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "948a50525d9609c6f0f74a6a82a981da6513bf8baafda19f060f6fa99e2b3edf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "df8a9e989fae1876d5bed53cd488e7bccbb44af8f37089b9daad6c169bffdfc8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fa555ee590ca39a5cc46baa15118927bb5d61071e83975f731bedb125b476013",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "719d725ca8a7a850f8b5b3b18b52f33b48d544b80be9825135252ed5f8a01d8d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "3d42194f11fc3c5535310234196fb38ce083796c066b83f71dcfafee781efbb1",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "f7343c6c99ee64118dbdca93cada7c788e08ad326dab1668f9b710b4d366be24",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "42122037dfff1acc154deb983f92b78eeead19a677c717129a2c7e30e8729f4e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "12f49d9c146186d9d503149b5537437b5d02ab7d2e69883eca222c422fe3069c",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "cae615fc953d93d6c744fc186c579ea26e4441e8e0bd9c6c112be4f45def837c",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "323ab72929055ceaa64742cc1818ea8276bbaa3fa36bc2cd4d1241f3d775d2d8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "12430e920a4dff55eb6dac30c15a826965f79fd139d8d850f32be240cd11e8d9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d7a2a91bea786f12f73cb30b6dc8409662c7d09132b30423b1893989079f40ff",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "3bca875646fa0d91bd383a9cfa0bd4f19ba5358d836b1ec3c666ec569078659b",
+        "correct": false
+      }
+    ]
+  },
+  "base_sft-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "0e900a67dee9ea776b52071a00f8bb43bc7c1eec503cb19d87f23bfa0534b01b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "3123e5fbf7306c34232e5a643f371b68c43f10ae6b7f1219fdfaeb81b177130e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "e1a76db07915313ef7da2c16e108f7c6199e96ab6d0d807f49db170d3e748684",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "524503d47def28b3b6b4a0563682cdcead30fd974bb50b77a2649e08ed7a65ec",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "d276981880ca0c55e9b06536aaaab9b5c29b8e5dbedcbc9fc8f7987432de1589",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8c4a8f0518b3b08f3095cda6d5bec6b3de1ee1ffb374a121b5867bdbdacec9ed",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1f5ab8c3d033caeb4add1d40c322d913b19c1913c408200ee94467e9313c8cb8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "79c47e8bdb82f20958b61b8fdc468b11434e043b0f7e5ed5ee5c3d6efbc05d30",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "a5c1148d0e5de3ae629b9c0a69748b864c9c76064e516dfcdf101d86ab1dc8c2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "55f16c107d3910665698e57bfee563d0624e972fb6e679651bf71e366ae867c0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "26d9f896ddb552f1454bc4e38ba5af09dd79b37614daa757c5b7460147b7aadb",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "db807b6c4a522eda212100b97234320d7d0966be2e2e40b61362990f1770bfd5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "51f1da20e4f80d7bc4223fa5b8b0a9aea8285d6f6eb265fd04f4abc82a0a7839",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "acb4c976db19de37229d9a12ca4858a8f43259876631e093abac41324be27fc6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "cd8a3315f447393f265b10b03cb5e144f98bc8a2b90a06cfbcf34d8efd5703a7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2f4b1321caab9bd27d53ecffbc0104c20fb5a5d8e7b57b6d3e8224ab22394d73",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "080e7fce0628ff48fd8d3475b256be3306cde16680444fde0ca448797c64581c",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e8e729cbd54b601fbb0f8637a17629b0a31c8de056fb2b8edd9793ae502c0cbc",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "21f2ba3d020da598e084d4bc67219f3e3295ef60205eed704d56dc06421dd8f3",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b29bfdfe0dfc847aa0eefc7f12682842540b5c282e0fefd408290d7076ff058b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5560804b2de432e54f1647c82cfb4487752ba9d59b1e00769e34cdbc24e6b5bd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d50a8c95bb0e08341d89be97bd6a85945510bf93329d66dc3d9a2e92386195db",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7d51d5426f1bddbd04f2628e68726a0d999e1c59e2e712cecc21d86e9065cbdf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "68c2118ac1d460450b31daf4b4815e395f5edd57c14ada729a2c814771ce6263",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7ab4623c984b2d6cafec392a908539c3f6adfb8f4bec84afdd896ab40d2643c5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "c528b56dfb36c8d32d45cea8aaa38301a9d9344818996a15a9116e1cf8aaa089",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7e7fa34051793592fd9a5c39009ee077fe9cc6122da15dd09e38740887709a41",
+        "correct": false
+      }
+    ]
+  },
+  "loop_sft-strict": {
+    "tasks": 27,
+    "correct": 1,
+    "pass_rate": 0.037037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 1,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "00e5ddad6546f90fecd1c3877211ea99de709658d177cbac189f89bbe2ca39d6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "69b650a9755e6639b821fba774cb4569900144f287d3eb692b8a606284db97e8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7cb8cc77da07ef43a9f8c8d032f6e126c5bf0cbd831a1360bd346ff88af5da5b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "622e27340364319296347a1ac2f4b5d0ad0830cf766f0a1fc8592b239c2b8339",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "3ad7a78e67180876c346013732416ae11623ea5dc8e6b776a456ae75d3efa264",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "10f6cdcdfd91f5514b093a2102caedea82117ff7559980194ff9736a4784a9ba",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7c73e76aa36af438a5de8ba3354144594d474d08d7678d1b04a1e8db9d9eea51",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "6fb3c85bf3c0eed45124168e7f8fd75e533ae78e7fefaf85de379062a6676483",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "10265d45f460914cf63d7c17647faa299027bee5087a54d0a5fbd9921bde75ee",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "60bdbb3e0ea6b92529e83cde28f494ee6205ea55899fe1ed11700efd819dbe7f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "1f6dfe90a33da680c8374835d2e4b9703611af76b7f1bc946b2b3e9ceeb866ce",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4e1bea65cf16847f6abf949108c39137a52340b8d9c1af155d886b97dd317326",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "27da79ddb9561e44f4aa4372042b4f97587a901314e491446aefcbc81863e9b3",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5a71444d98a83507c5385cfb92789804e50d20f1de187bddf938154f5aae7e3c",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b6b2f37ac370db9da6456e489a99fbd9a5af2b89f86ebd224ce3bd4bd2bef0cd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "a6a4ef59a273e4bee93347e8a828b18484e21531578aea03865009fbf56393c9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4eef23f1ebf544b12fd3c89eeeae2f3a657d01112530576f2dd44f9800ae5ee6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0507ce33a4307775ab7c26a0ddc6351906237f15485ef2ad3f3db4cb95d3c389",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "abdd0c9a0c89c3ad7355ee114e78bfed86e3424516384ec68f16bdc9762d98e0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "230387661225040f400f5fc59961b7357b95df32ca5975724af50cda234c4dcf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d3325799e07f8b5bba591749e98850aa41a97fdabee665457323b0e550f33649",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bc5a4124b5e4656ee8c7b47b252cd37237280b59802f698fae3baa68025b365d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "65964b8f0d01ab9d34b78300eecc22051037a174c2d054d95837546fdec103a0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "330e805f17b8f94333f95f34f14e903b89b723bdfe94ee9b3f90b49e8f2c8026",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "10c1d4644a3f086b87ed79dd4d10332604e37342a642ec09a6ae9fc4d6de97b9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "3d6024e05476d107a6e978c3cb798750edad023fc261a71cc416b3f8b826290c",
+        "correct": false
+      }
+    ]
+  },
+  "loop_sft-normalized": {
+    "tasks": 27,
+    "correct": 1,
+    "pass_rate": 0.037037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 1,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "00e5ddad6546f90fecd1c3877211ea99de709658d177cbac189f89bbe2ca39d6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "69b650a9755e6639b821fba774cb4569900144f287d3eb692b8a606284db97e8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7cb8cc77da07ef43a9f8c8d032f6e126c5bf0cbd831a1360bd346ff88af5da5b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "622e27340364319296347a1ac2f4b5d0ad0830cf766f0a1fc8592b239c2b8339",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "3ad7a78e67180876c346013732416ae11623ea5dc8e6b776a456ae75d3efa264",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "10f6cdcdfd91f5514b093a2102caedea82117ff7559980194ff9736a4784a9ba",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7c73e76aa36af438a5de8ba3354144594d474d08d7678d1b04a1e8db9d9eea51",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "6fb3c85bf3c0eed45124168e7f8fd75e533ae78e7fefaf85de379062a6676483",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "10265d45f460914cf63d7c17647faa299027bee5087a54d0a5fbd9921bde75ee",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "60bdbb3e0ea6b92529e83cde28f494ee6205ea55899fe1ed11700efd819dbe7f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "98a19a3292290df41fed1ca24803b40561d643db3d128c0ecc61d9824026139a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "f3420d246959d4e95582995ac9a6774b0e33ac1e0c7a2642c0bf48eddd958a15",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7dc254d6aade6a3b8b53acb624ccfa20c0b7e4ab2636c65c17db7de35bd779df",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4e18a3a0940799506c0135dd1bb62b09adc39dec0608962438c1fbcc45e24bdd",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "f59eb24284ecf00a92c5df935b52e260399528e5bdd30b0d78d689fdd533e635",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "89fdcb5bd05a34a18cde95a7a40cfd993c80624d5a1540641690b2f6063c589e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "6a27e9d9e37bde321a8060d3aa6299101979ee5136d4e9e68a40111a775a1953",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5d499dde38a20b6236ca0399e82f0e508e173cf5354aefe53af45e0aab56e7c7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "324748c758d0962af85441295d46035e93db502c8c68e764354a22d394b29ae3",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "63a050b8abb99c8691adae748c9c4d0f1a0f4f46b55b4c8864024d65d6340d96",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b9628798e22c32516f59fe9834f21be916e4bf67c495daec87b6cfb7d299d96b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d4ee06d072250d023b363a64fc2e7e3630716e3a1ed8d3ebb6a98de56e694af6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4917fbbb0384fb08cb5facb3aedcbe3ab2b1712b7c0628144ae52e8d10934851",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "6f34f7633a85ea339f0cb54f8287a44fa08f0af29f0163c61165f36cedc494ea",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "368a3aa1d2e0659de2288968174cdd3a39ec1d716608dcfd7eb5e5815f965a11",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "c1211e9835b9ccec172f5eb9eb5c94c0fb00ea498739be6dab5e12bfe6dd09f8",
+        "correct": false
+      }
+    ]
+  },
+  "loop_lora_sft-strict": {
+    "tasks": 27,
+    "correct": 10,
+    "pass_rate": 0.37037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 3,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 7,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "622e27340364319296347a1ac2f4b5d0ad0830cf766f0a1fc8592b239c2b8339",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "1f6dfe90a33da680c8374835d2e4b9703611af76b7f1bc946b2b3e9ceeb866ce",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "40683991a5da75565de43b70a8a8f9f8d6bd34800877cc9e4cdf0688db5caa89",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "af3d62367e3554fb6a3ed5f02a05d992cd7cb52f64a4d3c6dd6942c52a4121d1",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5a71444d98a83507c5385cfb92789804e50d20f1de187bddf938154f5aae7e3c",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bc3dc875d043a6351705bddbcb103682fe0beb672c8d977d4954976366932649",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "6380ae6038147bccc8f9a390bc98908ece4bd41b31eed3a91cb54cb29d3c5f9d",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "72e14041b589415941395ace20557b9ae1d218ac7666a1584c63d7c0891dd312",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "aae0c2d284092a813d4c25ae86122d8ee8deae1e00f27b8162fcc425e07258f6",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "abdd0c9a0c89c3ad7355ee114e78bfed86e3424516384ec68f16bdc9762d98e0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "230387661225040f400f5fc59961b7357b95df32ca5975724af50cda234c4dcf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "04248dc46d5b443e76df79417466ae2ad267a4f7b7ee6a176533ac0d9e05531e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bf0c7acc1351fefc353dce9da43b581dca4cd162e0a74aa368fda041e4215ee9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0ac76359f225efe9a28d9af99095fbd1069c370f4083aa9de696be82ab1bc3be",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "856f6016797cb03d4c29c3ad9cc1edd2ce7b78ab4afaf725f9173ecb4473b540",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2bc25e1886c8d73b0a1e6d8b08fe348d796f7957bd2e1ebd79a5ad75f131b6dd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "67a4b1d1e13ff1a3f689721ebef3cab5b1374b4a7191d94f343907851cdf4c63",
+        "correct": false
+      }
+    ]
+  },
+  "loop_lora_sft-normalized": {
+    "tasks": 27,
+    "correct": 10,
+    "pass_rate": 0.37037037037037035,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 3,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 7,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "622e27340364319296347a1ac2f4b5d0ad0830cf766f0a1fc8592b239c2b8339",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "98a19a3292290df41fed1ca24803b40561d643db3d128c0ecc61d9824026139a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "884a979258a0f3314127ca042761620acdc8c3aad6242569a667a606160b4a04",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2da5055e8a56b59555f995ec560b689ba2b16982b89a2746dbba4146075ecc4c",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4e18a3a0940799506c0135dd1bb62b09adc39dec0608962438c1fbcc45e24bdd",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fc49c13452efd17ddbe2240e7f373d75fd35ac916262d36191c9a567461db3f4",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "751b9641fb5f264c504999fde8bfaa382473623f070765e4baaa7083f5d3be5c",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "892e4f17dc4987c4168843a7880deb290586ccc6cb97e1df1ee7f4cb685f5e9c",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "23be3c1c34eb47136cd5e098938b113675b15ec3e49a31d67917d2c3213ff45e",
+        "correct": true
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "324748c758d0962af85441295d46035e93db502c8c68e764354a22d394b29ae3",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "63a050b8abb99c8691adae748c9c4d0f1a0f4f46b55b4c8864024d65d6340d96",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b7bf8bcf7d1da7319e97debfdda941691f162f856ab51eef518aab5e31b48ed5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e431fd171e2e1c214a32771c8793a62f88032cdcf4d5b10d2bb3d6aa994e162a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5f9ae5c21334f5e22bcdcd2b8a9bd71572a2de5ef3d5f418450511508e7283e0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "30a69593182a916f3f5fcc199197ddb13f3ea0ea61701c691f751b8a80c279f5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "41dd73fcab8d69adb92364c7942f8d57417ea1fdaa7408ab4ef7a9499f468dfd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "402185143de9ce4b6d9e041c09b6c306d55d6408c95d64a026e1ffc1955a673b",
+        "correct": false
+      }
+    ]
+  },
+  "qwen_base-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a573004315e50bf463264ca40e332f92c33a57f19a7db6660b59b5e90f82128f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "8e3dedaa32007da86c465dc7aac42b4daacae9c4b949cdc37dc4c5e225015935",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "3bd8249c85d071bf727d39147fd2441b8a8ca381d558972af2a47f23b4b71731",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "6448a99e2ea9f9ef5847d4748936e357c26e78de656e5decc85988ee2a3448ea",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "4009b8efa1eb6d1d6d69b7beb9f97c28013b74ead369981e7e5eebd73540d822",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "996a8a3e80cb012b65e654499858cc9f5ca710ea74ac78b68f17eed514242155",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "fd7313fecf3ec7746a126fcbd4871a18c8c86b9cc50d589169a9f4e2b4286059",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0153ccdb2ee2b0ae056dea8c34c418b153efca303b1a803fefcc8b6a2ec41a9e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8ff165d250c56ce6701b5ad2c076059767aae920b7868e3979809faafdef3b3a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "b72fcdde947c957dc4ece77c655b8ae698bce5596e688033840c8ea19dcd0a95",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "28ea73371fb48e283851ff163ccbeac0b5e0bbd5bbe8d72eed54b78ddba446f2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "ad181f4f59a66f17e82e42687e2023730951f738f5727f96f7ee9272d2de9d94",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "71fa7fcd115bb9f72e4cdfa3c62c395d2bd36eebbfb66680134dab5c481fc68a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "3e6e41fa1d9b5252c28f770b09e34bd778b2fc2ceb5a13c109ea4a13b081aefd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0b1dd2c70defe85964fb114b90b8607ccae377cdeeb1e0bc4f9bdcbb7664db7b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "88368e61285a01fff69cec7ba150215a17460616e8e38ec29bc224566382c51b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fe0591bc562424d0434d7ee849a105a4f9c26658ea9d7c198adff547b2010f82",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b33431ca2906bb54bf57f492611183fe68a940b6ed81100bdd2cd5afca89bfd5",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "ca242d5eaed2559b8613802be20173abafae14d4a2f0943cad464e220774f83b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "91848dcdfe51408e51b2cafadc046a0ff84a4eeab146271e7dcef7aeadffe784",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "570a11a80dad0d5c0224a7b4adcc42581cc13dde0018fc0a507af2e188248c95",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "10a04974c59016d38870dcc2a8789b25b7d527f4e10d6eaa278ea5e07fba0ab7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7ebc84e03534e8ad7f60ef7e733bdaa2d2f53c0d68d75c7690d738dfb3c3a7e8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "63d2e1b41ebab8e1a971d6852befbb1abcf1b3862ca29ddf0a3c88ccdd8ef2cd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "da28694cf1f5281549b2b8175c3b829b040f9d4f172eea16ee99ef895906d15e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7f69c1f943d615301cd557cbd6f83ee60a2d4007c7e9ceab341350c5f6b196bb",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e1a8c97c9b283bedc8b251cc6118a75c400ba3c1de0b69ef99b8c0c6c9b19c00",
+        "correct": false
+      }
+    ]
+  },
+  "qwen_base-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a573004315e50bf463264ca40e332f92c33a57f19a7db6660b59b5e90f82128f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "8e3dedaa32007da86c465dc7aac42b4daacae9c4b949cdc37dc4c5e225015935",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "9baaae3e4bf394e973e598383c4666f2850370f98d7b086d010966bbffa03b50",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "ccd9a33cf87aa44dc3f0d1cd1d2002c350f1bd5ecbba993bf97aa4aeb6eb6076",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "e80567a933bb989ac036e2901b0923d18674953686c03e7296389fae2dc04bb8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "54ee32e4b3e1300becec6e75fb0414f461fdb95e46747b66c59a5ca84c4adcae",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "fd7313fecf3ec7746a126fcbd4871a18c8c86b9cc50d589169a9f4e2b4286059",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "51df1a6f5c232c34e656f39fb9f1ce236c5cc9f84e9da0ac9a9a53ba50296e11",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8f13a216d3aa27d178c57c78880661428c04ec67279efcd65778b714c279b2ef",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "b72fcdde947c957dc4ece77c655b8ae698bce5596e688033840c8ea19dcd0a95",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "28ea73371fb48e283851ff163ccbeac0b5e0bbd5bbe8d72eed54b78ddba446f2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "44ad04818c48deda2d62633b5b4c0d3745d7c25a10d5c0e73c5e0c5743d7fd39",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "71fa7fcd115bb9f72e4cdfa3c62c395d2bd36eebbfb66680134dab5c481fc68a",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "c9cd3727641f63a53831c6ff447a833fc6696e0eaa369a46d42ff1beda9d87e7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0b1dd2c70defe85964fb114b90b8607ccae377cdeeb1e0bc4f9bdcbb7664db7b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b3519dc58ff6c61a5c28aaacc04b1e0ab14672098580f58833d8d14584b403ad",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fe0591bc562424d0434d7ee849a105a4f9c26658ea9d7c198adff547b2010f82",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d7f1c4c03bec5e07cfd56b1366ddc7587456dbb3557599a15fe050a7dfd6e47e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "ca242d5eaed2559b8613802be20173abafae14d4a2f0943cad464e220774f83b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2a49b59756f746c0ca24908ab38f2b6393a524ed69274af8b79dcdbc20cda0e6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "570a11a80dad0d5c0224a7b4adcc42581cc13dde0018fc0a507af2e188248c95",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "10a04974c59016d38870dcc2a8789b25b7d527f4e10d6eaa278ea5e07fba0ab7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "51b68616fbdc68888ddf2c1296f95d7987719d95dd4aa52433efdb95c72e1c9c",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "63d2e1b41ebab8e1a971d6852befbb1abcf1b3862ca29ddf0a3c88ccdd8ef2cd",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "da28694cf1f5281549b2b8175c3b829b040f9d4f172eea16ee99ef895906d15e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "6ea588a19bd6a6a18ecc9ab840cbb5444af6e2f08e7815624b32b565dcd38ba4",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e1a8c97c9b283bedc8b251cc6118a75c400ba3c1de0b69ef99b8c0c6c9b19c00",
+        "correct": false
+      }
+    ]
+  },
+  "qwen_instruct-strict": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "72e3c0a38a91ceb7fd38285171b55c017e8fac43111566a165a0e1e6e51476c7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "4e1c9e856ee6d9ae39e7ca1d21a0f1e31dcf4fd3cf8f5f576731ef16b752e40f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8f95552ca6a5eac0ca8e8cadb92d903583b53f8140557ae46c88c2a1e16b1da2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "27546394fdcba1b2c8dbdce18c0ae1428109ee5e178bd2f6f971e2fb6745f9da",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "4db22170d503d36ac6856f3e142dd2a7dc37ee0e1dffa12fa7d218578714e0e6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "357894f750942281e463aba33ebbd69a1b59a3aae072d01aea7863433fe990bf",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "9d8b64c6ff2dfd337aa78fcbc624b82533758f92a89abc437f35a4c6d16d3cec",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "758f55cc0751f0193d8544c202825b796b13b0d7997d35f40274300f38336a02",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "ac907fc79ad0659d8a50e7952eaf3deb0ce0fceeb188f1a61f1ab5dca4ea78af",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "6cb7c28a9de53cdc5801838a49591f38cc89a8fc5e7c77d63b75a5538af4c7a0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8ae14b099ed1eefe28c7f88f42c98fa14b4d78228582c6da5df8b028260b8d36",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "6f5fc40bd613667cb4f4800b47142bdb6af8f455c86434cb281642a4c24531b0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "deefc84cae6853e5a56e1ece4f87abde556e62ad34ff919fc9b5396b833e056e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "44aef38f559910e2da0a4641624ace593ae76283dbc615f10cc803ca2cb703e2",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5c2df4173cda8dede7b17c22b9c381e0e03ae37d996377933cd24501e6269ece",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "4df2e180148bf1a19fdccaa137bb7fa059619ac37e3c1b6bab3ac35b2ed53cb6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "00e0e9b3b688d6499c3ff0fdc22c580035795196b5c890ea1d29a335c9ec7cc7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b934102af8f304a606f841648a0c533cb5c8a73cd5d5af4d7d05e19eca959acc",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "f7620a84ed7d7d264d2bf33418d797bbf8579866843ef5b59dcf7eac3508c5da",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5994774cae6c9e2155f20cd5018576c268010633b2edfe5d8a352b8cf2f3c2c6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "ce25387c4dfe196d7faeaae571c14ad4923b14754898314a883a1b53755dbeb1",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "05802865fbb32929f3df6866a2c1e45f6992f50c1f648a9247b4e67d5495fed9",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "246bce59488fc4ff5c8e3c164a0fdcf81eb94e7759b7b065babc37cf93afc020",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b12fe0a1783b4f4271bfcfc7b594fec803e7366385141959b283118ee5f2ba79",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "37556ac5a841b3c22bb99f0d17c941889cdc86808434d21a570662872c7897d8",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "c1f684df4394374f48cb2a7a19208cd1cc05e1b2b6c304de438308480500444b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "a744751eaf01378843ccf3329e6a5f769a91fb4436ea1ea381e6ebd6d70de32c",
+        "correct": false
+      }
+    ]
+  },
+  "qwen_instruct-normalized": {
+    "tasks": 27,
+    "correct": 0,
+    "pass_rate": 0.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 0,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 0,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 0,
+        "tasks": 16
+      }
+    },
+    "outcomes": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "886db8d610fb1df17d738a37f970de9049219a1f4e8a473a4d4b4eb499df2439",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "067a782d8c534125a8d4725b30ce51f2068189db0c3e61a5beb296c9bcb4ed3e",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "30d64c6579627e0fe7cb7590d38966aafca65ac01f5224cbe920a1c29fd15dc6",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "90053e36b48ccf19c6d4ccb5251c302f455478a8acaa31fc1284241292983447",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "a9b7c87a58149dcaca88e4a5efdeab25d3c505eb217bd633904a4b9e1d2df6b4",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "4d8ce2bfb8fd15bce2ecaf6f94af2f316ab1e3aa9c04ad63fcd1deb6c7be710d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "cb9311741b6456b97866027194494a2b854b63df53b0fa0ffe31c9b062500e8d",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "868f344df427884d21018670b504625a8a3e46b2527c98b4a68af88575d546b0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "75d75f98e3478621751e428ae133e7b14ae49c974304ba0214dd534b26464db1",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "7fad0383d55d818ab4e3d99bd34f70ffd52633bf3bbeb3968cdadd6a4cdc96d0",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "bf4d6b0a0b8cad4f7908c689b2be8a9326d0d97c1d9798f0eb2cfed886d7f6f7",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "902a9699d10f3be310138f7ac5f05f1358b2f63ebd34d76943c18f91c5246226",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "3904a8815f15a8d3d4d4c9154d81129574bc021ac04970eb156d1164a4d2e8be",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b8c0feeba32cff3e481f9a2b59b0df0347584e61b323ee361d6a917b9b8b4de1",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "31b860fb2ee9351b6f673f7750c9aa71dc7cb5ecce1cd6e818fa85e6944127d3",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "684dafe52eb26a159a1f1ea33df97af7365762d0081a1fc0b25db0b57fe24ba1",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "c7023f0da98cecfe85b8e61551eae30e46f4ee87fc85dce3eb059f1044c0d787",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "06c9a6ec0e5363f15a721ab7156d29bef6b5b61d374470073b97d91951063b13",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "d04d3d36c0fa22b512f9783dd86ae3125bc8ec082f33f4ce65af6884828cfa15",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "70dbb39360d8d8cb9ac7d3ed2f028c6915f271aa8f48ec81a07889ebbf832a29",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "466b7ba2faeb61869b3c81ef3d8709f8a40e21b6e0350ff24b45b402b723258c",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e0a5b77e2c58f7100bf1c2166d13341af688ce53f5ed767d9b4d3d6f3f1dbe93",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "7a984cc2f36e2a5564f67009c49cb042c999684916128332bc846c696640922f",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "47a45554bc2dfd4f2a10894658ca4d3995dfb6f72cd7db153f4feb67d1b0fe7b",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2646a3ae11f4c8587eeaf12f49064348901d12445637f01670058071b1fa5e65",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "99895b831f3804596964bc47f59a6d3c33935beb7bf87a89df05ad720f86aabc",
+        "correct": false
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "de18a5280c52cb8d66e22c0007d5daca871d7d49c24686439c9c22aa7a27591f",
+        "correct": false
+      }
+    ]
+  }
+}

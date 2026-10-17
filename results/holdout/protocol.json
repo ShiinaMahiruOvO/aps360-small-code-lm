@@ -1,0 +1,265 @@
+{
+  "data_manifest": {
+    "version": "compositional-holdout-v1",
+    "seed": 360923,
+    "tasks": 27,
+    "by_family": {
+      "range_count": 2,
+      "range_values": 9,
+      "range_sum": 16
+    },
+    "selection": "Every untaught combination in the existing finite range specification grammar.",
+    "limitations": "Three range operations only; held-out tasks combine 3\u20134 changes and are harder than taught tasks. Templates and atomic conditions are shared. No claim of unknown pretraining provenance.",
+    "policy": "No training, checkpoint selection, prompt tuning, or budget changes based on these results.",
+    "source_sha256": {
+      "rl.jsonl": "0473ea9ed36282292b42f8efab2b577301b68d62c3ff8210d4199bdf8fd56351",
+      "test_combinations.jsonl": "b24776b032de322edb71dcecf77c3a33626360f58cffd58b998d58ea10c7e526",
+      "test_known.jsonl": "32f9cd9b5ab5fe8ba4c1e3c7ee8781e0833d4a8a94fac387e3ac542b2e393392",
+      "train.jsonl": "204f5767a95cae66d82416aecb2002e15e7c7df33bca45d49c76fc18a8facdae",
+      "validation.jsonl": "5d9b21fc9cdf6c4ac7616fa766004372007900bc6627234c7ce77bff4218810d"
+    },
+    "training_reference_count": 174,
+    "exact_solution_overlap": 0,
+    "specification_overlap": 0,
+    "audit": [
+      {
+        "id": "holdout-range_count-d00b8d63c36ccbcd",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_count-a1185a7f24ed8bc7",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-6b5fa1b7d34a318e",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-4493c561d639b588",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-0fa2b907ba060207",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-927ea809698e28c3",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-7c67b58df0f49502",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-0027af77d7343a05",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-9e47ed789782e264",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-220517eb0cdc045d",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_values-45773acf18bde0e7",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-d1b31575ba78c631",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-1e82932303204ef4",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-21ee404af33688ec",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-5b18827378a721e9",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-f1cdcff82e280446",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-5b4ed05472698f44",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-3847e25966489617",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-6e06fa1eeef21fc9",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-5b00d1531c5ff551",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-6f6365c7b58ee48d",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-9171fd6d17f2a487",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-a38754b73fb1b7de",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-ffa0e2c0a91776ae",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-e1dff15d18faa38a",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-7d16b960be4c6e67",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      },
+      {
+        "id": "holdout-range_sum-d577c61975e2577d",
+        "old_references_rejected": 174,
+        "execution_cases": 164,
+        "reference_strategies_verified": 2
+      }
+    ],
+    "artifact_sha256": {
+      "test.jsonl": "ddebf46065e5378ae19e84d27164ef4b804e09fc822f25d9b0c01f265f9d8bba",
+      "suites.json": "c9327164d56e636dd808ae11e747dff86dde1fb5907bd88eadc0bce0b312639b"
+    }
+  },
+  "checkpoint_sha256": {
+    "base_sft": "b5115fc3e1b3785a8f28dd11f88500ccce0b439cfe06a4fe58464dd8f8b0405f",
+    "loop_sft": "00df2f4c66284d5f298259ae17a83de2326a5b8d163a4bc18faf5d433e2fd314",
+    "loop_lora_sft": "edf3f93a3f84bdddff15177fa3d264a3d7208ccf4145f83e3167417e30a71f25"
+  },
+  "checkpoints": {
+    "base_sft": "runs/covered-v2-20260920T030904Z/baseline/best.pt",
+    "loop_sft": "runs/loop-lora-v1-20260920T174516Z/fixed/best.pt",
+    "loop_lora_sft": "runs/loop-lora-v1-20260920T174516Z/fixed-lora/best.pt"
+  },
+  "qwen_models": {
+    "instruct": [
+      "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+      "ea3f2471cf1b1f0db85067f1ef93848e38e88c25"
+    ],
+    "base": [
+      "Qwen/Qwen2.5-Coder-0.5B",
+      "8123ea2e9354afb7ffcc6c8641d1b2f5ecf18301"
+    ]
+  },
+  "system_prompt": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant. Implement the requested standalone Python function. Return code only, without explanations or example calls. TreeNode is already provided. Follow all stated return conventions.",
+  "sampling": {
+    "temperature": 0,
+    "n": 1,
+    "seed": 42,
+    "own_max_tokens": 256,
+    "qwen_max_tokens": 2048
+  },
+  "scoring": "Report strict and fixed interface-normalized scores for every model; no test-based candidate selection.",
+  "selection": "Existing final SFT checkpoints, frozen before holdout generation. No training on holdout.",
+  "reference_validation": {
+    "tasks": 27,
+    "correct": 27,
+    "pass_rate": 1.0,
+    "by_contract": {
+      "range_count": {
+        "correct": 2,
+        "tasks": 2
+      },
+      "range_values": {
+        "correct": 9,
+        "tasks": 9
+      },
+      "range_sum": {
+        "correct": 16,
+        "tasks": 16
+      }
+    }
+  },
+  "finish_reasons": {
+    "Qwen/Qwen2.5-Coder-0.5B": {
+      "length": 3,
+      "stop": 24
+    },
+    "Qwen/Qwen2.5-Coder-0.5B-Instruct": {
+      "stop": 27
+    },
+    "base_sft": {
+      "stop": 27
+    },
+    "loop_lora_sft": {
+      "stop": 27
+    },
+    "loop_sft": {
+      "stop": 27
+    }
+  },
+  "result_sha256": {
+    "comparison.json": "e492c582608906109a117f806698066805158ff254a661aa70ea108b89cbe116",
+    "per_task.json": "5c822a4bdda34a3da3d2884e7c53eacf4e9c064693c8f6bd9971096f1d4fd624",
+    "generations.jsonl": "a960f10196c83f342c36b4ae3522c07e4f0049e0d0ab0ae6aa40705e0cfb973b"
+  }
+}

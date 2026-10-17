@@ -1,0 +1,37 @@
+{
+  "pretraining": {
+    "dataset": "HuggingFaceTB/smollm-corpus",
+    "subset": "python-edu",
+    "url": "https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus#python-edu",
+    "revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+    "seed": 42,
+    "candidate_documents": 1300000,
+    "train_documents": 1027740,
+    "validation_documents": 112021,
+    "train_tokens": 497903478,
+    "validation_tokens": 55108434,
+    "restored_downloader_scope": "Bounded 50\u2013200000-row fresh download/cleaning. The historical full token corpus is not bundled; a fresh download is not an exact replay of that corpus."
+  },
+  "tokenizer": {
+    "vocab_size": 8192,
+    "eos_id": 256,
+    "sha256": {
+      "merges.txt": "fccf5ce95320586a91c2014c6ed4eb82335902a756bff5f4cc25a059e11e101b",
+      "vocab.json": "13c3e50a07f722c9e0260de0e2c73e1bf53fdd7db7b98ce320fb520e94405d6f"
+    },
+    "origin": "Reused Python-Edu BPE; hashes match historical pretraining manifest. Original tokenizer fit sample list is not recovered."
+  },
+  "covered_bst": {
+    "origin": "Project-owned programmatic BST specifications and reference implementations",
+    "local_directory": "data/bst_covered",
+    "source_run": "covered-v2-20260920T030904Z",
+    "train_examples": 552,
+    "validation_examples": 87,
+    "test_known": 56,
+    "test_combinations": 31,
+    "contracts": 17,
+    "language": "English instructions and structured English specification fields; Python solutions and tests",
+    "scope": "All evaluation specifications are taught during SFT; development evaluation.",
+    "entry_point": "prepare.py bst --regenerate --output <new-directory>"
+  }
+}

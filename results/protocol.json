@@ -1,0 +1,219 @@
+{
+  "model": {
+    "local_path": "checkpoints/bst.pt",
+    "sha256": "e171234175d0399f6f76e6d78bd3d40d052c3443d96849c190e7bd1f3bc3b914",
+    "training_parameters": 99109632,
+    "stage": "SFT",
+    "architecture": "fixed two-iteration Loop with per-iteration rank-32 Q/V adapters",
+    "serving_format": "Expanded layers with per-iteration adapters merged into Q/V weights",
+    "data": "data/bst_covered",
+    "data_run": "covered-v2-20260920T030904Z",
+    "run_id": "loop-lora-v1-20260920T174516Z",
+    "source_checkpoint": "runs/loop-lora-v1-20260920T174516Z/fixed-lora/best.pt"
+  },
+  "primary_results": {
+    "standard_sft": {
+      "source_run": "covered-v2-20260920T030904Z",
+      "stage": "SFT"
+    },
+    "fixed_loop_sft": {
+      "recipe": {
+        "checkpoint": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/loop-v1-20260919T203827Z/pretrain/model.pt",
+        "tokenizer_dir": "/workspace/data/tokenizer",
+        "train_data": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/covered-v2-20260920T030904Z/data/train.jsonl",
+        "val_data": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/covered-v2-20260920T030904Z/data/validation.jsonl",
+        "output_dir": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/loop-lora-v1-20260920T174516Z/fixed",
+        "epochs": 6,
+        "batch_size": 4,
+        "grad_accum_steps": 4,
+        "learning_rate": 2e-05,
+        "min_learning_rate": 2e-06,
+        "warmup_ratio": 0.03,
+        "weight_decay": 0.1,
+        "max_grad_norm": 1.0,
+        "device": "cuda",
+        "precision": "bf16",
+        "seed": 42,
+        "eval_every": 35,
+        "log_every": 10,
+        "loop_max_count": 2,
+        "loop_lora_rank": 0,
+        "loop_lora_alpha": 8.0,
+        "loop_depth_probs": "",
+        "loop_lora_learning_rate": null
+      }
+    },
+    "loop_lora_rank32_sft": {
+      "recipe": {
+        "checkpoint": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/loop-v1-20260919T203827Z/pretrain/model.pt",
+        "tokenizer_dir": "/workspace/data/tokenizer",
+        "train_data": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/covered-v2-20260920T030904Z/data/train.jsonl",
+        "val_data": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/covered-v2-20260920T030904Z/data/validation.jsonl",
+        "output_dir": "/__modal/volumes/vo-INNvfMR6siF3n3Vkz0ZSfw/runs/loop-lora-v1-20260920T174516Z/fixed-lora",
+        "epochs": 6,
+        "batch_size": 4,
+        "grad_accum_steps": 4,
+        "learning_rate": 2e-05,
+        "min_learning_rate": 2e-06,
+        "warmup_ratio": 0.03,
+        "weight_decay": 0.1,
+        "max_grad_norm": 1.0,
+        "device": "cuda",
+        "precision": "bf16",
+        "seed": 42,
+        "eval_every": 35,
+        "log_every": 10,
+        "loop_max_count": 2,
+        "loop_lora_rank": 32,
+        "loop_lora_alpha": 32.0,
+        "loop_depth_probs": "",
+        "loop_lora_learning_rate": 0.0001
+      }
+    },
+    "qwen_base": {
+      "input": "base-completion",
+      "scoring": "normalized"
+    },
+    "qwen_instruct": {
+      "input": "instruct-natural",
+      "scoring": "normalized"
+    }
+  },
+  "original_qwen_protocol": {
+    "data_run": "covered-v2-20260920T030904Z",
+    "own_run": "loop-lora-v1-20260920T174516Z",
+    "models": {
+      "instruct": [
+        "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+        "ea3f2471cf1b1f0db85067f1ef93848e38e88c25"
+      ],
+      "base": [
+        "Qwen/Qwen2.5-Coder-0.5B",
+        "8123ea2e9354afb7ffcc6c8641d1b2f5ecf18301"
+      ]
+    },
+    "tasks": 87,
+    "splits": {
+      "test_known": 56,
+      "test_combinations": 31
+    },
+    "primary_qwen_protocol": "instruct-natural",
+    "temperature": 0.0,
+    "samples_per_task": 1,
+    "qwen_max_new_tokens": 2048,
+    "own_max_new_tokens": 256,
+    "own_answers_all_eos": true,
+    "system_prompt": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant. Implement the requested standalone Python function. Return code only, without explanations or example calls. TreeNode is already provided. Follow all stated return conventions.",
+    "normalization": "deterministic interface-only; no execution or test-driven candidate selection",
+    "limitations": "Specialist BST SFT vs off-the-shelf Qwen; not matched training, parameters, tokenizer or compute. Existing development tasks.",
+    "data_hashes": {
+      "test_known.jsonl": "32f9cd9b5ab5fe8ba4c1e3c7ee8781e0833d4a8a94fac387e3ac542b2e393392",
+      "test_combinations.jsonl": "b24776b032de322edb71dcecf77c3a33626360f58cffd58b998d58ea10c7e526",
+      "suites.json": "e1a8c16e2e6f654af84daa6502e5cb413ec31751f4af0671eea5624434cdd267"
+    },
+    "own_generations_sha256": "8b6f973fa30073d923bf16b7186357bde31b9f5200cb638492c04b00c9918716",
+    "script_sha256": "0539e5f60ccaf46654939c21e6a9328394dd7b98a237dbb47dcefffeaa1facc7"
+  },
+  "interface_control_results": {
+    "instruct-structured-strict": {
+      "correct": 3,
+      "tasks": 87,
+      "pass_rate": 0.034482758620689655,
+      "test_known": {
+        "correct": 3,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 0,
+        "tasks": 31
+      }
+    },
+    "instruct-structured-normalized": {
+      "correct": 3,
+      "tasks": 87,
+      "pass_rate": 0.034482758620689655,
+      "test_known": {
+        "correct": 3,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 0,
+        "tasks": 31
+      }
+    },
+    "instruct-natural-strict": {
+      "correct": 4,
+      "tasks": 87,
+      "pass_rate": 0.04597701149425287,
+      "test_known": {
+        "correct": 4,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 0,
+        "tasks": 31
+      }
+    },
+    "base-completion-strict": {
+      "correct": 4,
+      "tasks": 87,
+      "pass_rate": 0.04597701149425287,
+      "test_known": {
+        "correct": 4,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 0,
+        "tasks": 31
+      }
+    },
+    "own-structured-strict": {
+      "correct": 74,
+      "tasks": 87,
+      "pass_rate": 0.8505747126436781,
+      "test_known": {
+        "correct": 48,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    },
+    "own-structured-normalized": {
+      "correct": 74,
+      "tasks": 87,
+      "pass_rate": 0.8505747126436781,
+      "test_known": {
+        "correct": 48,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    }
+  },
+  "bundled_data_sha256": {
+    "test_combinations.jsonl": "b24776b032de322edb71dcecf77c3a33626360f58cffd58b998d58ea10c7e526",
+    "train.jsonl": "204f5767a95cae66d82416aecb2002e15e7c7df33bca45d49c76fc18a8facdae",
+    "suites.json": "e1a8c16e2e6f654af84daa6502e5cb413ec31751f4af0671eea5624434cdd267",
+    "test_known.jsonl": "32f9cd9b5ab5fe8ba4c1e3c7ee8781e0833d4a8a94fac387e3ac542b2e393392",
+    "rl.jsonl": "0473ea9ed36282292b42f8efab2b577301b68d62c3ff8210d4199bdf8fd56351",
+    "validation.jsonl": "5d9b21fc9cdf6c4ac7616fa766004372007900bc6627234c7ce77bff4218810d",
+    "manifest.json": "884e1946ce087d92c9d7e8dad278431cc5d2145b7a55aaee582912bb888b6b77"
+  },
+  "scoring_source_sha256": {
+    "code_lm/evaluation/grader.py": "de3100101e7c86c01db9122a73ac9b6128c24672221f714b4c68dac82d6b6063",
+    "code_lm/evaluation/__init__.py": "1b059000a64eda7f85c545c10e0098e4a5df5e660125ecbb269a792f2184c11f",
+    "code_lm/evaluation/sandbox.py": "afe8c712ee946562aef5bcf163cede57b0bc9966129011e49662a1676f26e0d4",
+    "code_lm/evaluation/qwen.py": "353a70184b7b1de12be070320c6a6c901f66bcdaaeafcb23937a4227283ff65f"
+  },
+  "data_note": "Original protocol hashes describe the experiment snapshot. Bundled suite file excludes unused experimental suites; retained task rows and their individual suite hashes are unchanged.",
+  "result_note": "Qwen raw records retain all three input protocols. Primary scores use normalized Base completion and Instruct natural-language answers. No new model generation or execution evaluation was performed during consolidation.",
+  "answer_files_sha256": {
+    "generations.jsonl": "8b6f973fa30073d923bf16b7186357bde31b9f5200cb638492c04b00c9918716",
+    "qwen_generations.jsonl": "46a2718c9cb27e0c0e6d8ffdd39435e6575f81533de67839ed633b4569159b1a"
+  },
+  "evaluation_scope": "Taught-solution development evaluation: all 87 reference answers exactly match SFT answers after renaming the entry point. Not unseen-problem generalization."
+}

@@ -1,0 +1,457 @@
+{
+  "taught_tasks": {
+    "sft": {
+      "tasks": 87,
+      "correct": 74,
+      "pass_rate": 0.8505747126436781,
+      "by_contract": {
+        "floor": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 0,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 19,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 8,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 3,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "test_known": {
+        "correct": 48,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    },
+    "rl": {
+      "tasks": 87,
+      "correct": 74,
+      "pass_rate": 0.8505747126436781,
+      "by_contract": {
+        "floor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 0,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 18,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 9,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "test_known": {
+        "correct": 48,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    }
+  },
+  "holdout": {
+    "sft": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 3,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      }
+    },
+    "rl": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 6,
+          "tasks": 16
+        }
+      }
+    }
+  },
+  "selection": "final fixed-budget checkpoint",
+  "holdout_normalized": {
+    "sft": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 3,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      }
+    },
+    "rl": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 6,
+          "tasks": 16
+        }
+      }
+    }
+  },
+  "validation_selected_round80": {
+    "taught-strict": {
+      "tasks": 87,
+      "correct": 76,
+      "pass_rate": 0.8735632183908046,
+      "by_contract": {
+        "floor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 0,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 19,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 9,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "test_known": {
+        "correct": 50,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    },
+    "taught-normalized": {
+      "tasks": 87,
+      "correct": 76,
+      "pass_rate": 0.8735632183908046,
+      "by_contract": {
+        "floor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 0,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 19,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 9,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "test_known": {
+        "correct": 50,
+        "tasks": 56
+      },
+      "test_combinations": {
+        "correct": 26,
+        "tasks": 31
+      }
+    },
+    "holdout-strict": {
+      "tasks": 27,
+      "correct": 11,
+      "pass_rate": 0.4074074074074074,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      }
+    },
+    "holdout-normalized": {
+      "tasks": 27,
+      "correct": 11,
+      "pass_rate": 0.4074074074074074,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      }
+    }
+  }
+}

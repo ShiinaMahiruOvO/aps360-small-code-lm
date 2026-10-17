@@ -1,0 +1,27 @@
+[project]
+name = "aps360-code-lm"
+version = "0.1.0"
+description = "A handwritten Python language model with portable PyTorch training"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "einops>=0.8",      # tensor operations
+    "numpy>=2.0,<3",
+    "regex>=2026.3.32", # more powerful regex than the builtin `re` module
+    "torch>=2.10,<2.12",
+]
+
+[project.entry-points."vllm.general_plugins"]
+code_lm = "code_lm.inference:register"
+
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "code_lm"
+module-root = ""
+
+[tool.uv]
+package = true
+python-preference = "managed"

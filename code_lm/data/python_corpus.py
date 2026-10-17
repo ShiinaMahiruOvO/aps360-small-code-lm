@@ -1,0 +1,364 @@
+"""Download and clean a bounded Python-Edu corpus. Never executes downloaded code."""
+from __future__ import annotations
+
+import argparse
+import ast
+from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor
+import gzip
+import hashlib
+import io
+import json
+from pathlib import Path
+import random
+import re
+import sys
+import tokenize
+import urllib.parse
+import urllib.request
+import urllib.error
+import time
+import warnings
+
+DATASET = "HuggingFaceTB/smollm-corpus"
+ROOT = Path(__file__).resolve().parents[2]
+SOURCES = {
+    "humaneval": "https://raw.githubusercontent.com/openai/human-eval/master/data/HumanEval.jsonl.gz",
+    "mbpp": "https://raw.githubusercontent.com/google-research/google-research/master/mbpp/mbpp.jsonl",
+}
+
+
+def fetch(url: str) -> bytes:
+    request = urllib.request.Request(url, headers={"User-Agent": "APS360-data-audit/1.0"})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 2:
+                raise
+        time.sleep(2 ** attempt)
+    raise RuntimeError("Request failed")
+
+
+def json_url(url: str):
+    return json.loads(fetch(url))
+
+
+def digest(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def code_tokens(text: str) -> list[str]:
+    """Ignore comments/layout for matching only; retained training text is untouched."""
+    ignored = {tokenize.COMMENT, tokenize.NL, tokenize.NEWLINE, tokenize.INDENT,
+               tokenize.DEDENT, tokenize.ENDMARKER, tokenize.ENCODING}
+    try:
+        return [t.string for t in tokenize.generate_tokens(io.StringIO(text).readline) if t.type not in ignored]
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return re.findall(r"\w+|[^\w\s]", text)
+
+
+def shingles(tokens: list[str], width: int = 5) -> set[tuple[str, ...]]:
+    return {tuple(tokens[i:i + width]) for i in range(len(tokens) - width + 1)}
+
+
+def simhash(features: set[tuple[str, ...]]) -> int:
+    votes = [0] * 64
+    for feature in features:
+        value = int.from_bytes(hashlib.blake2b(repr(feature).encode(), digest_size=8).digest(), "big")
+        for bit in range(64):
+            votes[bit] += 1 if value & (1 << bit) else -1
+    return sum(1 << bit for bit, vote in enumerate(votes) if vote >= 0)
+
+
+class DuplicateIndex:
+    def __init__(self):
+        self.exact = {}
+        self.ast = {}
+        self.bands = defaultdict(set)
+        self.features = {}
+
+    def add(self, row: dict, tree: ast.AST | None) -> tuple[str, str] | None:
+        text, identifier = row["text"], row["blob_id"]
+        exact = digest(text)
+        if exact in self.exact:
+            return "exact_duplicate", self.exact[exact]
+        structural = digest(ast.dump(tree, include_attributes=False)) if tree else None
+        if structural and structural in self.ast:
+            return "ast_duplicate", self.ast[structural]
+        tokens = code_tokens(text)
+        features = shingles(tokens)
+        signature = simhash(features) if len(tokens) >= 50 else None
+        if signature is not None:
+            candidates = set()
+            for band in range(4):
+                candidates.update(self.bands[(band, (signature >> (band * 16)) & 65535)])
+            for other in sorted(candidates):
+                previous = self.features[other]
+                similarity = len(features & previous) / len(features | previous)
+                if similarity >= 0.9:
+                    return "near_duplicate", other
+        self.exact[exact] = identifier
+        if structural:
+            self.ast[structural] = identifier
+        if signature is not None:
+            self.features[identifier] = features
+            for band in range(4):
+                self.bands[(band, (signature >> (band * 16)) & 65535)].add(identifier)
+        return None
+
+
+def filter_reason(row: dict) -> str | None:
+    text = row.get("text", "")
+    if row.get("download_error"):
+        return row.get("error_stage", "download_failed")
+    if not text.strip():
+        return "empty"
+    size = len(text.encode("utf-8"))
+    if size < 64:
+        return "too_short"
+    if size > 32768:
+        return "too_long"
+    if any(ord(c) < 32 and c not in "\n\r\t\f" for c in text) or "\ufffd" in text:
+        return "invalid_control_or_replacement"
+    if "<|endoftext|>" in text:
+        return "reserved_delimiter"
+    if not row.get("repo_name"):
+        return "missing_repository"
+    if row.get("int_score", 0) < 4:
+        return "low_education_score"
+    header = "\n".join(text.splitlines()[:20]).lower()
+    if re.search(r"(?:automatically generated|auto-generated|autogenerated|generated by).{0,100}(?:do not edit|protoc)", header):
+        return "generated_file"
+    if row.get("path", "").endswith("_pb2.py"):
+        return "generated_file"
+    if re.search(r"human[-_]?eval|\bmbpp\b|evalplus", row.get("repo_name", "") + "/" + row.get("path", ""), re.I):
+        return "benchmark_path"
+    return None
+
+
+def benchmark_index(cache: Path):
+    index = defaultdict(set)
+    metadata = {}
+    for name, url in SOURCES.items():
+        path = cache / f"{name}.source"
+        if not path.exists():
+            path.write_bytes(fetch(url))
+        raw = path.read_bytes()
+        content = gzip.decompress(raw) if name == "humaneval" else raw
+        records = [json.loads(line) for line in content.decode().splitlines() if line.strip()]
+        metadata[name] = {"url": url, "sha256": hashlib.sha256(raw).hexdigest(), "tasks": len(records)}
+        for row in records:
+            solution = row.get("canonical_solution", row.get("code", ""))
+            tokens = code_tokens(solution)
+            # Ignore tiny common snippets; long literal matches are quarantined for review.
+            for feature in shingles(tokens, 30):
+                index[feature].add(f"{name}/{row.get('task_id')}")
+    return index, metadata
+
+
+def clean(rows: list[dict], eval_index: dict, *, require_python3: bool = True):
+    index = DuplicateIndex()
+    kept, rejected = [], []
+    parse_status = Counter()
+    for row in rows:
+        row = dict(row)
+        reason = filter_reason(row)
+        tree = None
+        if not reason:
+            try:
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore", SyntaxWarning)
+                    tree = ast.parse(row["text"])
+                    # Compilation catches e.g. return/break outside a function/loop.
+                    # It builds a code object only: downloaded code is never executed.
+                    compile(tree, "<dataset>", "exec")
+                row["syntax_status"] = "valid_python3"
+            except (SyntaxError, ValueError, RecursionError) as exc:
+                row["syntax_status"] = "parse_failed"
+                row["syntax_error"] = getattr(exc, "msg", str(exc))
+                if require_python3:
+                    reason = "python3_syntax_error"
+            parse_status[row["syntax_status"]] += 1
+            if not reason and tree is not None and not any(isinstance(node, ast.stmt) and not (
+                isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant)
+            ) for node in ast.walk(tree)):
+                reason = "no_executable_statements"
+        if not reason:
+            matches = set()
+            for feature in shingles(code_tokens(row["text"]), 30):
+                matches.update(eval_index.get(feature, ()))
+            if matches:
+                reason = "benchmark_overlap_suspect"
+                row["benchmark_matches"] = sorted(matches)
+        if not reason:
+            duplicate = index.add(row, tree)
+            if duplicate:
+                reason, row["duplicate_of"] = duplicate
+        if reason:
+            row["rejection_reason"] = reason
+            rejected.append(row)
+        else:
+            row["sha256"] = digest(row["text"])
+            # Persist the canonical AST digest so a later merge can remove
+            # structural duplicates across independently processed shards
+            # without reparsing every source file.
+            row["ast_sha256"] = digest(ast.dump(tree, include_attributes=False)) if tree else None
+            kept.append(row)
+    return kept, rejected, dict(parse_status)
+
+
+def split_rows(rows: list[dict], seed: int = 42, fraction: float = 0.1):
+    train, val = [], []
+    for row in rows:
+        # Whole repositories stay together, including when the pilot expands.
+        key = f"{seed}:{row['repo_name'].casefold()}"
+        is_val = int(digest(key)[:16], 16) / 2**64 < fraction
+        (val if is_val else train).append(row)
+    assert not ({r["repo_name"].casefold() for r in train} & {r["repo_name"].casefold() for r in val})
+    return train, val
+
+
+def write_jsonl(path: Path, rows: list[dict]):
+    with path.open("w", encoding="utf-8") as stream:
+        for row in rows:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def download_row(row: dict, cache: Path):
+    row = dict(row)
+    blob = row["blob_id"]
+    try:
+        path = cache / f"{blob}.gz"
+        if not path.exists():
+            path.write_bytes(fetch(f"https://softwareheritage.s3.amazonaws.com/content/{blob}"))
+        with gzip.open(path, "rb") as stream:
+            raw = stream.read(1024 * 1024 + 1)
+        if len(raw) > 1024 * 1024:
+            raise ValueError("Decoded content exceeds 1 MiB pilot limit")
+        # This dataset's S3 content keys are raw-content SHA-1 identifiers.
+        sha1 = hashlib.sha1(raw).hexdigest()
+        if sha1 != blob:
+            raise ValueError("Content hash mismatch")
+        row["content_fetched"] = True
+        encoding, _ = tokenize.detect_encoding(io.BytesIO(raw).readline)
+        row["text"] = raw.decode(encoding, errors="strict")
+        row["encoding"] = encoding
+    except Exception as exc:
+        row["download_error"] = f"{type(exc).__name__}: {exc}"
+        row["error_stage"] = "encoding_error" if row.get("content_fetched") else "download_failed"
+    return row
+
+
+def describe(rows: list[dict]):
+    lengths = sorted(len(r["text"].encode()) for r in rows)
+    return {"documents": len(rows), "repositories": len({r["repo_name"] for r in rows}),
+            "utf8_bytes": sum(lengths),
+            "byte_percentiles": {str(p): lengths[round((len(lengths) - 1) * p / 100)] if lengths else None
+                                 for p in (0, 50, 90, 99, 100)},
+            "scores": dict(Counter(str(r["int_score"]) for r in rows)),
+            "syntax": dict(Counter(r.get("syntax_status", "unexamined") for r in rows))}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "data/python-edu")
+    parser.add_argument("--sample-size", type=int, default=1000)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--cache-dir", type=Path)
+    parser.add_argument("--metadata-workers", type=int, default=4)
+    parser.add_argument("--download-workers", type=int, default=8)
+    parser.add_argument("--allow-parse-failures", action="store_true",
+                        help="Reproduce the initial permissive audit; default requires Python 3 compilation")
+    args = parser.parse_args(argv)
+    if not 50 <= args.sample_size <= 200000 or args.sample_size % 50:
+        raise ValueError("Sample size must be a multiple of 50, between 50 and 200000")
+    if not 1 <= args.metadata_workers <= 32 or not 1 <= args.download_workers <= 128:
+        raise ValueError("metadata-workers must be 1..32 and download-workers must be 1..128")
+    out = args.output_dir
+    out.mkdir(parents=True, exist_ok=True)
+    cache = args.cache_dir or out / "cache"
+    cache.mkdir(parents=True, exist_ok=True)
+    manifest_path = out / "manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text())
+        if (manifest["sample_size"], manifest["seed"]) != (args.sample_size, args.seed):
+            raise ValueError("Use a new output directory for different sampling settings")
+    else:
+        info = json_url(f"https://huggingface.co/api/datasets/{DATASET}")
+        query = {"dataset": DATASET, "config": "python-edu", "split": "train", "offset": 0, "length": 1}
+        base = "https://datasets-server.huggingface.co/rows?"
+        total = json_url(base + urllib.parse.urlencode(query))["num_rows_total"]
+        offsets = sorted(random.Random(args.seed).sample(range(total // 50), args.sample_size // 50))
+        def fetch_block(block):
+            block_query = {**query, "offset": block * 50, "length": 50}
+            page = json_url(base + urllib.parse.urlencode(block_query))
+            if any(r.get("truncated_cells") for r in page["rows"]):
+                raise ValueError("Viewer returned truncated metadata")
+            if len(page["rows"]) != 50:
+                raise ValueError("Viewer returned an incomplete block")
+            return [dict(r["row"], row_index=r["row_idx"]) for r in page["rows"]]
+
+        print(f"Fetching {len(offsets)} metadata blocks", flush=True)
+        with ThreadPoolExecutor(max_workers=args.metadata_workers) as pool:
+            rows = [row for block in pool.map(fetch_block, offsets) for row in block]
+        after = json_url(f"https://huggingface.co/api/datasets/{DATASET}")
+        if info["sha"] != after["sha"]:
+            raise RuntimeError("Dataset revision changed while sampling")
+        manifest = {"dataset": DATASET, "revision_observed": info["sha"], "config": "python-edu",
+                    "total_rows": total, "sample_size": args.sample_size, "seed": args.seed,
+                    "sampling": "Uniformly sampled nonoverlapping 50-row blocks; clustered pilot, not IID rows",
+                    "offsets": [n * 50 for n in offsets], "rows": rows}
+        manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+    print(f"Downloading {len(manifest['rows'])} candidate files with {args.download_workers} threads", flush=True)
+    with ThreadPoolExecutor(max_workers=args.download_workers) as pool:
+        raw = []
+        for row in pool.map(lambda row: download_row(row, cache), manifest["rows"]):
+            raw.append(row)
+            if len(raw) % 500 == 0:
+                print(f"Fetched {len(raw)}/{len(manifest['rows'])}", flush=True)
+    write_jsonl(out / "raw.jsonl", raw)
+    eval_index, eval_metadata = benchmark_index(cache)
+    print("Filtering, checking benchmarks and deduplicating...", flush=True)
+    kept, rejected, syntax = clean(raw, eval_index, require_python3=not args.allow_parse_failures)
+    train, val = split_rows(kept, args.seed)
+    for name, rows in (("train", train), ("val", val), ("rejected", rejected)):
+        write_jsonl(out / f"{name}.jsonl", rows)
+    for name, rows in (("train", train), ("val", val)):
+        with (out / f"{name}.txt").open("w", encoding="utf-8", newline="") as stream:
+            for row in rows:
+                stream.write(row["text"] + "\n<|endoftext|>\n")
+    counts = dict(Counter(r["rejection_reason"] for r in rejected))
+    for reason in ("exact_duplicate", "ast_duplicate", "near_duplicate"):
+        counts.setdefault(reason, 0)
+    report = {"candidate_documents": len(raw), "downloaded_documents": sum(r.get("content_fetched", False) for r in raw),
+              "decoded_documents": sum("text" in r for r in raw),
+              "rejected": counts, "kept": describe(kept), "train": describe(train), "validation": describe(val),
+              "syntax_before_dedup": syntax, "evaluation_sources": eval_metadata,
+              "retained_parse_errors": dict(Counter(r["syntax_error"] for r in kept if "syntax_error" in r)),
+              "quarantined_parse_errors": dict(Counter(r["syntax_error"] for r in rejected if "syntax_error" in r)),
+              "require_python3": not args.allow_parse_failures,
+              "python_version": sys.version,
+              "rules": {"min_utf8_bytes": 64, "max_utf8_bytes": 32768,
+                        "min_integer_education_score": 4, "near_duplicate_jaccard": 0.9,
+                        "benchmark_match_tokens": 30, "validation_repository_fraction": 0.1},
+              "repository_overlap": 0,
+              "limitations": [f"{len(raw)}-row pilot; block sampling can cluster repositories",
+                              "Near dedup: AST equality plus SimHash candidates verified by token-5gram Jaccard >= 0.90; incomplete recall",
+                              "Benchmark quarantine: 30-token reference-solution matches and path names; not comprehensive decontamination",
+                              "Python 3 compilation required; not execution or correctness verification" if not args.allow_parse_failures
+                              else "Python 3 parse failures retained; not execution or correctness verification",
+                              "Original comments, indentation, string contents retained; non-UTF8 Python encoding decoded strictly",
+                              "Upstream metadata has no per-file license column; retain repository/blob attribution and consult upstream terms"]}
+    (out / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps({"kept": len(kept), "train": len(train), "val": len(val), "rejected": counts}, indent=2))
+    if not train or not val:
+        raise RuntimeError("Pilot has an empty split; inspect report.json before training")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,67 @@
+{
+  "standard_sft": {
+    "correct": 31,
+    "tasks": 87,
+    "pass_rate": 0.3563218390804598,
+    "test_known": {
+      "correct": 28,
+      "tasks": 56
+    },
+    "test_combinations": {
+      "correct": 3,
+      "tasks": 31
+    }
+  },
+  "fixed_loop_sft": {
+    "correct": 64,
+    "tasks": 87,
+    "pass_rate": 0.735632183908046,
+    "test_known": {
+      "correct": 48,
+      "tasks": 56
+    },
+    "test_combinations": {
+      "correct": 16,
+      "tasks": 31
+    }
+  },
+  "loop_lora_rank32_sft": {
+    "correct": 74,
+    "tasks": 87,
+    "pass_rate": 0.8505747126436781,
+    "test_known": {
+      "correct": 48,
+      "tasks": 56
+    },
+    "test_combinations": {
+      "correct": 26,
+      "tasks": 31
+    }
+  },
+  "qwen_base": {
+    "correct": 6,
+    "tasks": 87,
+    "pass_rate": 0.06896551724137931,
+    "test_known": {
+      "correct": 6,
+      "tasks": 56
+    },
+    "test_combinations": {
+      "correct": 0,
+      "tasks": 31
+    }
+  },
+  "qwen_instruct": {
+    "correct": 5,
+    "tasks": 87,
+    "pass_rate": 0.05747126436781609,
+    "test_known": {
+      "correct": 5,
+      "tasks": 56
+    },
+    "test_combinations": {
+      "correct": 0,
+      "tasks": 31
+    }
+  }
+}

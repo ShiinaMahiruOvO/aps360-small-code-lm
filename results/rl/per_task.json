@@ -1,0 +1,3442 @@
+{
+  "taught_tasks": {
+    "sft": [
+      {
+        "id": "balanced-test_known-floor-45ab679fce69bc72-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "9a544e4b651b441c4bab9686b7d76e74373e854d024bfedf0edd1b6d01200885",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-af98a758f6e5720e-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "b7cdd410561924eff64642828763d20b817c8756df4597dde9aa6557bb7ae666",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-b4ddbb9af578c83d-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "4f96e87701c39f0744964f9ef71fa6c2604bb3a45d53721c1e7a6376342b69a6",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-successor-386842f046e3af41-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "e162b5650072d3ad3d4a2df71e7f7e81998e9554b7e646d7f64ec2b82d294668",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path_without_target-acad3fce9a8d18a5-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "5862719cb5a62e225a51831d41ec9a2e4657f3cb597f06251b759bd74a59d87e",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-maximum-eeb718295edff9e0-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "2e15b2db0d17518efc1c26ec8894e17f6723efa8501d15802a370b052c0b4821",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-maximum-3fa31b58d6cf7f8c-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "70eb6564aa15f93335696a1c55fd53cf884ea8e7aebbcb70f5f690814012c8cf",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-level-240bca767efb49bd-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "7a7d904c366d1d8b4ae53e1fd17f107b4903cafbdec61c45c537e4eb8194f4e0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-absent-8183ec0abd555553-run_bst-0-0",
+        "family": "search",
+        "contract": "absent",
+        "job_id": "601425b06f9f6e545e623275374e698b459104b4b0eda4c8da5f7bf953f2ea77",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-00b19d5e4e1af8c4-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "69808758927d5171879fc97847dbbd98b1fa0560b947cd4e1a23c86a9f32d366",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-8bc103f880eb871f-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "97afc24c19d7c11b37738adc8980d6f34afe9ed8ff9370574687b99f7ce48079",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path_without_target-74a485898e481d93-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "76814f3bba45d9458775acb17138ddb847e3b5aa758148feb47bb338dda8c73e",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-path_without_target-4885a23a7d2ea1f7-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "d84c91ca6fd211d061cd665ea052a73bdbd9f863c572fcbcf6f913bc341e909b",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_sum-65d21362e00c0607-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "77594bd4fa48ed1b9b26710b52735eaf472b683dafa23ab2278bbd72da3d8444",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-9ff04e0dea2d2759-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "26c416f79f4616a0487ef423b891455b7c0ddaf8a0859b1ef5045d49f6ff443b",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-minimum-b46d6b0523a094ab-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "753a1898752b4fff884032bfcc5993dd7794e06a7dcdabb578e29dd2cd01334a",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-85d4373aabef1057-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "d5c1c7c7d09ad3632b693b1e472b0cb38578a45da6436687fc0dea9bafb051a9",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_sum-bee7fb4b8ea92fc9-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b9cd3d0a005b6e0d74ed236bb1a4a15bf22cfdd71ac2f6663a0ac9dc63bc17ac",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-5b1dc497bc3791a7-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "c391a2c61d0b75e77dd5c7a0b3796e166ff4018a5e77039ccc78abb45efeed80",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-57d87d74479daf6d-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "b6815b0190bb36883a63f1d42f49590918d388f01482b8b9c6ee585c1c1fa57d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-8dcc3f2b8b7777d2-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0cb6027463e8408fe151c04b5a4e6149dd9ed0b619bae6a0641a5a21437d3e94",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-floor-faa5a5ecc36f890e-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "f477d43b9c394ee2096b23ea2129ec0112d719147827843e0fce742aacf3ff61",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_sum-d69927b9d823f935-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fb6b7f315c9cf4149c97523c90b38aaaa0a40f36e58b1ae2602353c23ed8b8b2",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-1fc36be269e023f3-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a3d9461f26762912ef85a15c7afb0aa3b05901a6ab2fdc3289aba1916c660050",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-037d0a371aa09f47-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "79c267e985831e0676a15e2743d40f32258bdb70d59c4c38e1307b1f67bc87f8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-level-ce42a5f8765e70bc-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "6b6cdb57ea315dd782c6f4153868158dd0ce2a6b4c47c2cf80a6e593b0a3c2c9",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-a5797f432ba58d07-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "839e5e83c9009f4c2371cd007350e11820125f50de328b316f64515b5d0e6426",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-154e41c2488f66a7-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8671fb87668643292425801060e71ce5f0288996c730b337130f1ffdd9bd98a8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-33e3b13cb1872798-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "eac55fa61ba125b38b6c1cd6f08d3290689215ec53c9001186582731694ec6ec",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-floor-3107fade096c3016-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "b45772776f927c892d54e33b5d22334a3bf3d32b0b5337b3126b7a2c886aefa7",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_values-7f900e127af91422-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "c6f2cc256abcfdd50e928c145d605544abc237894daffb304b3c2593ff324c7e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-7ac5cd8171b432c5-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "9c03e3a62bdecf6c00f7ef72e2e7892a2044a8189ebc1bdfcc9d2b057b43b40d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-a51c06ee6880d7b3-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "73721813a05f5049814d3bfb7f163d5916f0c1fbe9505fe66c4c01c41955c1c0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-817de1814c7981b1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "a95ecad9f33a7ea27e4dc5702f673013af66f5befb72fbf98a9213e9c2a15580",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-67c70e7efaa11b25-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "5bc8b0a5bdcba81933808c7610c445e1e57d2bdd77fdf54046100800cd3d7bbc",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path-bbb25c9fb9302f80-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "357d889b5011507f5b98f5fc2f08c084d3f104c0751de96887d95c71845f17d8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-3a4e4b5ea218d0ce-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "c09e64aba6c77367e96ac7606de010efd892bfca83f699c28d6a0b1d2b627aa9",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path-64aa93b3f82dc29e-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "7e100030802bb8e82095a78ce9e3012bbd3940e5c145abd85bcae28fa4e235c6",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_count-54ee149d1ff5ba4c-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "da4e22288ade6743b485b8a53bfcd2e8d8fa5d98d0cb8c85478299b61793f83d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-98cfb5b90b53aca6-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "97997a6da97b8685246b3d4d179518ce8dc8d6845bb90d17524478e00ea1bb76",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-contains-b0828657e8b90ee5-run_bst-0-0",
+        "family": "search",
+        "contract": "contains",
+        "job_id": "1a4e1788d23805bb949e799f8466c178d501e5362d47cc60b9821b113e9638f0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert-66652a184736e953-run_bst-0-0",
+        "family": "insert",
+        "contract": "insert",
+        "job_id": "4e9c7b6d44a0fc55c2ec66d4dc58fa40176799356f23439a5b2af15ada5721ce",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-5e9ec6ff20df01d5-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "bf6aaec0209ca64f6dbfd04deddb23e4d7852954891611dfc6747c0f5e7de5c4",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-level-5ffb711ed4568964-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "92d0df1c0cc29ca3c4a366600196b5a0f32e8d09e587946a35b834783fd1f239",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-successor-bc2197b449a658d1-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "8c899578ca64596475cd07d74ee125ccf288d93180ebd0dac1d0f52be69e014c",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-7aae5fe3aa83f6d2-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "47f510d48af6ccb0024773e1921c5ae7b78c33268f1f7ff8502b19789c5a6aea",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-92da42b1776f6c0f-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "7e872ee85e48ee66f64088de0205216146243852d01e6f07573ac536c26453d5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-minimum-f3f838514eaa3b13-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "c5c8b22dee744f850cfe66867cdde3833f5865eca65d153cb1e335e768154e17",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-4ce372e15ef906ea-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e1db62eb0ac1cd3b542b7055d11e4d8124e7dd79c41f8e572f16d3a0d11c983b",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-maximum-d7a585e92650f257-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "8bb117a96842b93f78c72122c7ae3aa1b11c1c3e69ffaecb7797db0453345d0c",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-successor-235cf0f76028c819-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "65ceeca3c6c7154de30d3162d38ecb9b232866a65b812d7f18f8fde198cd44c7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert-0aad0477e7d5b69a-run_bst-0-0",
+        "family": "insert",
+        "contract": "insert",
+        "job_id": "7271a5dfa09529d96ac537dd3cfb241ddcc6130713bc3291342e912dcfb10811",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-700b241640942879-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "900ce77485aececf6293e2af2c6869cee65efb23e17083e778cd4bb5996ba048",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-minimum-2a8436ddfff7812a-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "2792ae38e17f5e44fe4f1d1376de5e173829132a66c70fd720729a83e0972d64",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-b134757f2617da59-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b9a10bb16168c0c721d54ea62c53ed89523024b810a60056256ab983cda940a8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path-d32e0f434cffeecd-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "f131b3759bb19e7ebcb961327dc94ec2b38d7f384e89726885d6818d151e021f",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-526c8f23375f2ba4-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "86005e2b183e692beac4d6cdead3f29fcfa7a2b35bbe9a1d8485849e3169242e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-77aeb7065eca2ad2-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bd995fbd8f77b3ca7119ad722e9b40e6a252d9618e57680bc7c9fc059f3bd9a7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-d0e3878ebc043bd6-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bc74d31b6912f10da7b1a5d9638f46499f318759d3d8ece21de2bb81e13403aa",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-2812e8835eff6284-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0d3759cc6294bc7ee17f74395a4a05be1cf347233a118569545e6a8f857b62d4",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-5bcc8bb8d8f813e8-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "a201188c1aba5764a48a6a0cd7c08bc1b517dc53eb7199de9078d6cf2d701837",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-a27a8cdf9bb890c1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0eb407355e68a9dce2e1ec3cd05aa7133bb52d86212619944e75ab80fa90c477",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-758b9383fd47e799-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "38715477368a938a09c19c8d252c6c1a979b7c8178490bea79f6e0c1ec37b0f5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-7dbe3bbcb64a3607-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "3be279e0933ab8db1cb57f81af41932cb3ef8be2610e74f9d4f966a8030dd29e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-d7c3ad0e24d3c0b0-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0255598e29037e20ae6fff4890c1f3c7a9f0c71ba1dd0d74cf54e02d42252409",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-8f5d43bd0792c08f-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "904345e4ed1e99a4bf5431002caabcf02d068a7986942b2e0da4da4eeb4a55fc",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-insert_many-f02344187a1a3a65-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "3309ba4071427870059f7b5aeb5534a9b47d40ee2f9772ff3336688de3bf9d89",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-d16dd12f8829db54-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "765fdc6fbef421df0de38d3197fd6cef1b5988742194de22c5ce89c6235d5d8f",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-36e6ce0eb5910651-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "f616f2d790b1df955c3b40fcc357030df2d162ca7c919807d8e44470c988c0fe",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-78e49e7ed8dbbbcf-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "8483424878fd113836cd6ce85ac5f99d92326cdcb40454416406c299cf650d52",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-aa866d1e29a03fa3-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "197287f57b746a32f30f1e62e53e826e68948b50132c9b60f35aff91533606f5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-bd419c00f996411e-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "695bd2d6b2585e4443f3ab01cdb8ae3c0363456f3286c9b13935edc4d78e8cae",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-151e5bdd2909d28d-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "4c3b92a992e0f85aaf283e455c1f72dddab4c274c9659e2903e6f5829c1fed74",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-path-032946da5a7c41d6-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "1dc9adad79ce6b2e1705af565ba87b39b763730e6c37937641fec19e8eb68abe",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-path_without_target-409de467edbec16b-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "d59e35aad899e296f81cfe1b5a3eb00593244e17c6f8467adb47c8502326e4e4",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-1caabccaf49d14c1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2e096f22d4f98be8f47f6db32f2c3acba42e8651e51172ec62195bcf198939ca",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-3b1f32cbd032d986-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "10122c52dd763ac3a6aa81b86acf8ff4d00e019fda9b1f6606231506b7d84c34",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-8b13afd64dcca6be-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e2f58137f281de8a04472e09eaa8f6e757c5aba3fea6ba7b7b963b12c93422d4",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-726d36c785882f34-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "05d1c18eeb03c07faafc6010bf005a430ac9e0567075ba6df16937dd89f3eb4d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-33f4983c069335d2-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "9472a0a148ea26d769e1681dccea44efdcdbf0bf7ee7e454f79f7ebd8e66fa99",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-insert_many-db17649472175fd7-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "4c38fb38b206771dedfad305aea9cc4f9becee0a206e133a95d76eeb866b2f59",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-56db4dff6499f8a6-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "f3a66a2c257630a0eb4513f623da82f8bb3eaca573fd4ae95dad534bd400be68",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-744f9fc15a5c54e3-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a92ecadac232a02f5b8ade68ea734a41bb0c69da7b76cf45d6a3ada0e2f836fb",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-dc34db9215f8132b-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "9302b52295ae21e03bc0cc8f3acf7c75634ca35c7e1a691066a4447a21053b7c",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-5c025a8f0ad6eede-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e61c2006f08fc7ccb2ca99ca5dc1ef13309ff3c0d20ac3bb41aea8974a9949a2",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-218a9d465dea9935-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "aee770d570fa3a9a9dd9b2d00db20744fe0bba42d2796f214ba580e723e27012",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-ece4e3de65373c40-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "eaec24c8c8dc897c70fe985b65b191b51e43eac30352a908d3a7bcabf98a0a54",
+        "correct": true
+      }
+    ],
+    "rl": [
+      {
+        "id": "balanced-test_known-floor-45ab679fce69bc72-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "9a544e4b651b441c4bab9686b7d76e74373e854d024bfedf0edd1b6d01200885",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-af98a758f6e5720e-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "a4aaa331a0bd80e549279813f3fbecfacbbfca2f6481ce9f1594a19e4d2c89dd",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-b4ddbb9af578c83d-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "f284832ecaedab01d52332f6a5d528a1694d60c0e60529b0ead430330e167b48",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-successor-386842f046e3af41-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "e162b5650072d3ad3d4a2df71e7f7e81998e9554b7e646d7f64ec2b82d294668",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path_without_target-acad3fce9a8d18a5-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "5862719cb5a62e225a51831d41ec9a2e4657f3cb597f06251b759bd74a59d87e",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-maximum-eeb718295edff9e0-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "4e56a4e7d18a909b3a5d01bb557a053f457aee30a3d7b40bd9a1a9bc8a9d45e5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-maximum-3fa31b58d6cf7f8c-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "f948df5c58ae439f88f9640b052a96d6dd53cd6b9a573d2d8db7aefb4b1997f7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-level-240bca767efb49bd-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "7a7d904c366d1d8b4ae53e1fd17f107b4903cafbdec61c45c537e4eb8194f4e0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-absent-8183ec0abd555553-run_bst-0-0",
+        "family": "search",
+        "contract": "absent",
+        "job_id": "601425b06f9f6e545e623275374e698b459104b4b0eda4c8da5f7bf953f2ea77",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-00b19d5e4e1af8c4-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "69808758927d5171879fc97847dbbd98b1fa0560b947cd4e1a23c86a9f32d366",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-8bc103f880eb871f-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "97afc24c19d7c11b37738adc8980d6f34afe9ed8ff9370574687b99f7ce48079",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path_without_target-74a485898e481d93-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "76814f3bba45d9458775acb17138ddb847e3b5aa758148feb47bb338dda8c73e",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-path_without_target-4885a23a7d2ea1f7-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "d83cd80c64fef9fe452c18c6122dd1a530eb07b7154545d106601d784f3b17a6",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-65d21362e00c0607-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "77594bd4fa48ed1b9b26710b52735eaf472b683dafa23ab2278bbd72da3d8444",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-9ff04e0dea2d2759-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "26c416f79f4616a0487ef423b891455b7c0ddaf8a0859b1ef5045d49f6ff443b",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-minimum-b46d6b0523a094ab-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "d153be9e378a6d4ebe06c8ab2066901109a42979b1b47eb94601f253607f74f5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-85d4373aabef1057-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "d5c1c7c7d09ad3632b693b1e472b0cb38578a45da6436687fc0dea9bafb051a9",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_sum-bee7fb4b8ea92fc9-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b9cd3d0a005b6e0d74ed236bb1a4a15bf22cfdd71ac2f6663a0ac9dc63bc17ac",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-5b1dc497bc3791a7-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "c391a2c61d0b75e77dd5c7a0b3796e166ff4018a5e77039ccc78abb45efeed80",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-57d87d74479daf6d-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "b6815b0190bb36883a63f1d42f49590918d388f01482b8b9c6ee585c1c1fa57d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-8dcc3f2b8b7777d2-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0cb6027463e8408fe151c04b5a4e6149dd9ed0b619bae6a0641a5a21437d3e94",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-floor-faa5a5ecc36f890e-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "9f5467a8f8e657372dfc0fabe344b38129f587cd29da18c69d5e2022b5f4086a",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-d69927b9d823f935-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "fb6b7f315c9cf4149c97523c90b38aaaa0a40f36e58b1ae2602353c23ed8b8b2",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-1fc36be269e023f3-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a3d9461f26762912ef85a15c7afb0aa3b05901a6ab2fdc3289aba1916c660050",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-037d0a371aa09f47-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "79c267e985831e0676a15e2743d40f32258bdb70d59c4c38e1307b1f67bc87f8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-level-ce42a5f8765e70bc-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "6b6cdb57ea315dd782c6f4153868158dd0ce2a6b4c47c2cf80a6e593b0a3c2c9",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_count-a5797f432ba58d07-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "839e5e83c9009f4c2371cd007350e11820125f50de328b316f64515b5d0e6426",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-154e41c2488f66a7-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "8671fb87668643292425801060e71ce5f0288996c730b337130f1ffdd9bd98a8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-33e3b13cb1872798-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "eac55fa61ba125b38b6c1cd6f08d3290689215ec53c9001186582731694ec6ec",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-floor-3107fade096c3016-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "floor",
+        "job_id": "32c46de42a5b920b084322d48326118270b220b9cb0bfaa2186730d010a29ec0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-7f900e127af91422-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "c6f2cc256abcfdd50e928c145d605544abc237894daffb304b3c2593ff324c7e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-7ac5cd8171b432c5-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "9340910cd8f792cc8f432ddc500f5467a3e65ad98de49a6067903d1f38f86818",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_values-a51c06ee6880d7b3-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "73721813a05f5049814d3bfb7f163d5916f0c1fbe9505fe66c4c01c41955c1c0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-817de1814c7981b1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "a95ecad9f33a7ea27e4dc5702f673013af66f5befb72fbf98a9213e9c2a15580",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-67c70e7efaa11b25-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "72321c56226da483435be08309f5943731a4b23ae1d363ebc791254132f2e370",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-path-bbb25c9fb9302f80-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "357d889b5011507f5b98f5fc2f08c084d3f104c0751de96887d95c71845f17d8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-3a4e4b5ea218d0ce-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "ddde3c50aaa018553d92d636ddbfbe681a94b2a7492412b5fc60a6fba3f0f20f",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path-64aa93b3f82dc29e-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "7e100030802bb8e82095a78ce9e3012bbd3940e5c145abd85bcae28fa4e235c6",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-range_count-54ee149d1ff5ba4c-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "da4e22288ade6743b485b8a53bfcd2e8d8fa5d98d0cb8c85478299b61793f83d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-98cfb5b90b53aca6-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "97997a6da97b8685246b3d4d179518ce8dc8d6845bb90d17524478e00ea1bb76",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-contains-b0828657e8b90ee5-run_bst-0-0",
+        "family": "search",
+        "contract": "contains",
+        "job_id": "1a4e1788d23805bb949e799f8466c178d501e5362d47cc60b9821b113e9638f0",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert-66652a184736e953-run_bst-0-0",
+        "family": "insert",
+        "contract": "insert",
+        "job_id": "c0eec6a01d455e5fb6b90321cedf27121a164e41a31b33bb29cecd353a064ad1",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-predecessor-5e9ec6ff20df01d5-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "predecessor",
+        "job_id": "76722b2a9be22dd5fff578e87739be97d6f57b34293227828fce4250ab97d705",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-level-5ffb711ed4568964-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "level",
+        "job_id": "92d0df1c0cc29ca3c4a366600196b5a0f32e8d09e587946a35b834783fd1f239",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-successor-bc2197b449a658d1-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "8c899578ca64596475cd07d74ee125ccf288d93180ebd0dac1d0f52be69e014c",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert_many-7aae5fe3aa83f6d2-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "a5c8b306e5e986de3f75b512a87f2a62fa39e0da23d34bbfd71a90bf53e8427a",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-depth-92da42b1776f6c0f-run_bst-0-0",
+        "family": "search_depth",
+        "contract": "depth",
+        "job_id": "7e872ee85e48ee66f64088de0205216146243852d01e6f07573ac536c26453d5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-minimum-f3f838514eaa3b13-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "1d81707467b12f7ee9ba959444dbb52fddb0d08a449cc753350ba9441c517376",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-4ce372e15ef906ea-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e1db62eb0ac1cd3b542b7055d11e4d8124e7dd79c41f8e572f16d3a0d11c983b",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-maximum-d7a585e92650f257-run_bst-0-0",
+        "family": "extreme",
+        "contract": "maximum",
+        "job_id": "8bb117a96842b93f78c72122c7ae3aa1b11c1c3e69ffaecb7797db0453345d0c",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-successor-235cf0f76028c819-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "successor",
+        "job_id": "65ceeca3c6c7154de30d3162d38ecb9b232866a65b812d7f18f8fde198cd44c7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-insert-0aad0477e7d5b69a-run_bst-0-0",
+        "family": "insert",
+        "contract": "insert",
+        "job_id": "6a78a0c815e579634e7cb9c18d30e2c9976728d5220371ade71c6e5a7af78fc7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-ceiling-700b241640942879-run_bst-0-0",
+        "family": "neighbor",
+        "contract": "ceiling",
+        "job_id": "900ce77485aececf6293e2af2c6869cee65efb23e17083e778cd4bb5996ba048",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_known-minimum-2a8436ddfff7812a-run_bst-0-0",
+        "family": "extreme",
+        "contract": "minimum",
+        "job_id": "2792ae38e17f5e44fe4f1d1376de5e173829132a66c70fd720729a83e0972d64",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-range_sum-b134757f2617da59-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "b9a10bb16168c0c721d54ea62c53ed89523024b810a60056256ab983cda940a8",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_known-path-d32e0f434cffeecd-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "f131b3759bb19e7ebcb961327dc94ec2b38d7f384e89726885d6818d151e021f",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-526c8f23375f2ba4-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "86005e2b183e692beac4d6cdead3f29fcfa7a2b35bbe9a1d8485849e3169242e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-77aeb7065eca2ad2-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bd995fbd8f77b3ca7119ad722e9b40e6a252d9618e57680bc7c9fc059f3bd9a7",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-d0e3878ebc043bd6-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "bc74d31b6912f10da7b1a5d9638f46499f318759d3d8ece21de2bb81e13403aa",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-2812e8835eff6284-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0d3759cc6294bc7ee17f74395a4a05be1cf347233a118569545e6a8f857b62d4",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-5bcc8bb8d8f813e8-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "a201188c1aba5764a48a6a0cd7c08bc1b517dc53eb7199de9078d6cf2d701837",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-a27a8cdf9bb890c1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "0eb407355e68a9dce2e1ec3cd05aa7133bb52d86212619944e75ab80fa90c477",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-758b9383fd47e799-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "38715477368a938a09c19c8d252c6c1a979b7c8178490bea79f6e0c1ec37b0f5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-7dbe3bbcb64a3607-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "3be279e0933ab8db1cb57f81af41932cb3ef8be2610e74f9d4f966a8030dd29e",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-d7c3ad0e24d3c0b0-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "0255598e29037e20ae6fff4890c1f3c7a9f0c71ba1dd0d74cf54e02d42252409",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-8f5d43bd0792c08f-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "904345e4ed1e99a4bf5431002caabcf02d068a7986942b2e0da4da4eeb4a55fc",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-insert_many-f02344187a1a3a65-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "f7636fcbd5ca634a08c36d74c80dbe0af79c4d74a550cbaf7d0f42a8aa7f7c97",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-d16dd12f8829db54-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "765fdc6fbef421df0de38d3197fd6cef1b5988742194de22c5ce89c6235d5d8f",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-36e6ce0eb5910651-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "f616f2d790b1df955c3b40fcc357030df2d162ca7c919807d8e44470c988c0fe",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-78e49e7ed8dbbbcf-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "5ddf35176cc0ed3f1297a2c3cafd0d08762c9f12cd088748d5c4bd1d609790e2",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-aa866d1e29a03fa3-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "197287f57b746a32f30f1e62e53e826e68948b50132c9b60f35aff91533606f5",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-bd419c00f996411e-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "695bd2d6b2585e4443f3ab01cdb8ae3c0363456f3286c9b13935edc4d78e8cae",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-151e5bdd2909d28d-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "4c3b92a992e0f85aaf283e455c1f72dddab4c274c9659e2903e6f5829c1fed74",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-path-032946da5a7c41d6-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path",
+        "job_id": "a5054f5ffaaa2401f5f2bf6b0d2c68f463bfc16efea2f3626ae8117323070c54",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-path_without_target-409de467edbec16b-run_bst-0-0",
+        "family": "search_path",
+        "contract": "path_without_target",
+        "job_id": "a70b6e98da35cc349fef8cbef47bc4346aeb4c0c8d4d76170752763e4c5a01bb",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-1caabccaf49d14c1-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "2e096f22d4f98be8f47f6db32f2c3acba42e8651e51172ec62195bcf198939ca",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-3b1f32cbd032d986-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "10122c52dd763ac3a6aa81b86acf8ff4d00e019fda9b1f6606231506b7d84c34",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-8b13afd64dcca6be-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e2f58137f281de8a04472e09eaa8f6e757c5aba3fea6ba7b7b963b12c93422d4",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-726d36c785882f34-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "05d1c18eeb03c07faafc6010bf005a430ac9e0567075ba6df16937dd89f3eb4d",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-33f4983c069335d2-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "9472a0a148ea26d769e1681dccea44efdcdbf0bf7ee7e454f79f7ebd8e66fa99",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-insert_many-db17649472175fd7-run_bst-0-0",
+        "family": "insert_many",
+        "contract": "insert_many",
+        "job_id": "e43c2c40d6689801b1628c57e84ef67f4bcb874de849929ae962d651109c4050",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-56db4dff6499f8a6-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "f3a66a2c257630a0eb4513f623da82f8bb3eaca573fd4ae95dad534bd400be68",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-744f9fc15a5c54e3-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "a92ecadac232a02f5b8ade68ea734a41bb0c69da7b76cf45d6a3ada0e2f836fb",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_count-dc34db9215f8132b-run_bst-0-0",
+        "family": "range_count",
+        "contract": "range_count",
+        "job_id": "9455fa17a99085c70f4c375c89440d015df2ae7c10768fcbfe94268921169005",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-5c025a8f0ad6eede-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "e61c2006f08fc7ccb2ca99ca5dc1ef13309ff3c0d20ac3bb41aea8974a9949a2",
+        "correct": true
+      },
+      {
+        "id": "balanced-test_combinations-range_values-218a9d465dea9935-run_bst-0-0",
+        "family": "range_values",
+        "contract": "range_values",
+        "job_id": "aee770d570fa3a9a9dd9b2d00db20744fe0bba42d2796f214ba580e723e27012",
+        "correct": false
+      },
+      {
+        "id": "balanced-test_combinations-range_sum-ece4e3de65373c40-run_bst-0-0",
+        "family": "range_sum",
+        "contract": "range_sum",
+        "job_id": "eaec24c8c8dc897c70fe985b65b191b51e43eac30352a908d3a7bcabf98a0a54",
+        "correct": true
+      }
+    ]
+  },
+  "holdout_rl": {
+    "strict": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 6,
+          "tasks": 16
+        }
+      },
+      "outcomes": [
+        {
+          "id": "holdout-range_count-d00b8d63c36ccbcd",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_count-a1185a7f24ed8bc7",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-6b5fa1b7d34a318e",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-4493c561d639b588",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "04879d86bd54825fbd5351f15f6501407fd173c5d14c1d19e3f7da960ced1bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-0fa2b907ba060207",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-927ea809698e28c3",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-7c67b58df0f49502",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-0027af77d7343a05",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-9e47ed789782e264",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-220517eb0cdc045d",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-45773acf18bde0e7",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d1b31575ba78c631",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "1f6dfe90a33da680c8374835d2e4b9703611af76b7f1bc946b2b3e9ceeb866ce",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-1e82932303204ef4",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "40683991a5da75565de43b70a8a8f9f8d6bd34800877cc9e4cdf0688db5caa89",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-21ee404af33688ec",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "c1275b9c015df7c8527b9497d44f89cfcddeb28ba748e98c650c51f6203f39ef",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-5b18827378a721e9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5a71444d98a83507c5385cfb92789804e50d20f1de187bddf938154f5aae7e3c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-f1cdcff82e280446",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bc3dc875d043a6351705bddbcb103682fe0beb672c8d977d4954976366932649",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b4ed05472698f44",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "6380ae6038147bccc8f9a390bc98908ece4bd41b31eed3a91cb54cb29d3c5f9d",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-3847e25966489617",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "72e14041b589415941395ace20557b9ae1d218ac7666a1584c63d7c0891dd312",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-6e06fa1eeef21fc9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "aae0c2d284092a813d4c25ae86122d8ee8deae1e00f27b8162fcc425e07258f6",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b00d1531c5ff551",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "abdd0c9a0c89c3ad7355ee114e78bfed86e3424516384ec68f16bdc9762d98e0",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-6f6365c7b58ee48d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "230387661225040f400f5fc59961b7357b95df32ca5975724af50cda234c4dcf",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-9171fd6d17f2a487",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "04248dc46d5b443e76df79417466ae2ad267a4f7b7ee6a176533ac0d9e05531e",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-a38754b73fb1b7de",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bf0c7acc1351fefc353dce9da43b581dca4cd162e0a74aa368fda041e4215ee9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-ffa0e2c0a91776ae",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "0ac76359f225efe9a28d9af99095fbd1069c370f4083aa9de696be82ab1bc3be",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-e1dff15d18faa38a",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "856f6016797cb03d4c29c3ad9cc1edd2ce7b78ab4afaf725f9173ecb4473b540",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-7d16b960be4c6e67",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "2bc25e1886c8d73b0a1e6d8b08fe348d796f7957bd2e1ebd79a5ad75f131b6dd",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d577c61975e2577d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "67a4b1d1e13ff1a3f689721ebef3cab5b1374b4a7191d94f343907851cdf4c63",
+          "correct": false
+        }
+      ]
+    },
+    "normalized": {
+      "tasks": 27,
+      "correct": 10,
+      "pass_rate": 0.37037037037037035,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 6,
+          "tasks": 16
+        }
+      },
+      "outcomes": [
+        {
+          "id": "holdout-range_count-d00b8d63c36ccbcd",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_count-a1185a7f24ed8bc7",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-6b5fa1b7d34a318e",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-4493c561d639b588",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "04879d86bd54825fbd5351f15f6501407fd173c5d14c1d19e3f7da960ced1bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-0fa2b907ba060207",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-927ea809698e28c3",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-7c67b58df0f49502",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-0027af77d7343a05",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-9e47ed789782e264",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-220517eb0cdc045d",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-45773acf18bde0e7",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d1b31575ba78c631",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "98a19a3292290df41fed1ca24803b40561d643db3d128c0ecc61d9824026139a",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-1e82932303204ef4",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "884a979258a0f3314127ca042761620acdc8c3aad6242569a667a606160b4a04",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-21ee404af33688ec",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e905827c69c338dbd82fae079e843b15016d56a3c44ab83b849645c6d04a6f4e",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-5b18827378a721e9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "4e18a3a0940799506c0135dd1bb62b09adc39dec0608962438c1fbcc45e24bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-f1cdcff82e280446",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "fc49c13452efd17ddbe2240e7f373d75fd35ac916262d36191c9a567461db3f4",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b4ed05472698f44",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "751b9641fb5f264c504999fde8bfaa382473623f070765e4baaa7083f5d3be5c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-3847e25966489617",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "892e4f17dc4987c4168843a7880deb290586ccc6cb97e1df1ee7f4cb685f5e9c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-6e06fa1eeef21fc9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "23be3c1c34eb47136cd5e098938b113675b15ec3e49a31d67917d2c3213ff45e",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b00d1531c5ff551",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "324748c758d0962af85441295d46035e93db502c8c68e764354a22d394b29ae3",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-6f6365c7b58ee48d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "63a050b8abb99c8691adae748c9c4d0f1a0f4f46b55b4c8864024d65d6340d96",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-9171fd6d17f2a487",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "b7bf8bcf7d1da7319e97debfdda941691f162f856ab51eef518aab5e31b48ed5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-a38754b73fb1b7de",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e431fd171e2e1c214a32771c8793a62f88032cdcf4d5b10d2bb3d6aa994e162a",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-ffa0e2c0a91776ae",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5f9ae5c21334f5e22bcdcd2b8a9bd71572a2de5ef3d5f418450511508e7283e0",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-e1dff15d18faa38a",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "30a69593182a916f3f5fcc199197ddb13f3ea0ea61701c691f751b8a80c279f5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-7d16b960be4c6e67",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "41dd73fcab8d69adb92364c7942f8d57417ea1fdaa7408ab4ef7a9499f468dfd",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d577c61975e2577d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "402185143de9ce4b6d9e041c09b6c306d55d6408c95d64a026e1ffc1955a673b",
+          "correct": false
+        }
+      ]
+    }
+  },
+  "validation_selected_round80": {
+    "taught-strict": {
+      "tasks": 87,
+      "correct": 76,
+      "pass_rate": 0.8735632183908046,
+      "by_contract": {
+        "floor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 0,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 19,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 9,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "outcomes": [
+        {
+          "id": "balanced-test_known-floor-45ab679fce69bc72-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "9a544e4b651b441c4bab9686b7d76e74373e854d024bfedf0edd1b6d01200885",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-af98a758f6e5720e-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "a4aaa331a0bd80e549279813f3fbecfacbbfca2f6481ce9f1594a19e4d2c89dd",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-b4ddbb9af578c83d-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "f284832ecaedab01d52332f6a5d528a1694d60c0e60529b0ead430330e167b48",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-successor-386842f046e3af41-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "e162b5650072d3ad3d4a2df71e7f7e81998e9554b7e646d7f64ec2b82d294668",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path_without_target-acad3fce9a8d18a5-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "5862719cb5a62e225a51831d41ec9a2e4657f3cb597f06251b759bd74a59d87e",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-maximum-eeb718295edff9e0-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "4e56a4e7d18a909b3a5d01bb557a053f457aee30a3d7b40bd9a1a9bc8a9d45e5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-maximum-3fa31b58d6cf7f8c-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "f948df5c58ae439f88f9640b052a96d6dd53cd6b9a573d2d8db7aefb4b1997f7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-240bca767efb49bd-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "7a7d904c366d1d8b4ae53e1fd17f107b4903cafbdec61c45c537e4eb8194f4e0",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-absent-8183ec0abd555553-run_bst-0-0",
+          "family": "search",
+          "contract": "absent",
+          "job_id": "601425b06f9f6e545e623275374e698b459104b4b0eda4c8da5f7bf953f2ea77",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-00b19d5e4e1af8c4-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "69808758927d5171879fc97847dbbd98b1fa0560b947cd4e1a23c86a9f32d366",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-8bc103f880eb871f-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "97afc24c19d7c11b37738adc8980d6f34afe9ed8ff9370574687b99f7ce48079",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path_without_target-74a485898e481d93-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "76814f3bba45d9458775acb17138ddb847e3b5aa758148feb47bb338dda8c73e",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-path_without_target-4885a23a7d2ea1f7-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "d84c91ca6fd211d061cd665ea052a73bdbd9f863c572fcbcf6f913bc341e909b",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-range_sum-65d21362e00c0607-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "77594bd4fa48ed1b9b26710b52735eaf472b683dafa23ab2278bbd72da3d8444",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-9ff04e0dea2d2759-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "26c416f79f4616a0487ef423b891455b7c0ddaf8a0859b1ef5045d49f6ff443b",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-b46d6b0523a094ab-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "d153be9e378a6d4ebe06c8ab2066901109a42979b1b47eb94601f253607f74f5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-85d4373aabef1057-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "aca77580f8ee4354532c4466a46e50f51c88206469e018f9b159aab95ee481b9",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-bee7fb4b8ea92fc9-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "b9cd3d0a005b6e0d74ed236bb1a4a15bf22cfdd71ac2f6663a0ac9dc63bc17ac",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-5b1dc497bc3791a7-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "c391a2c61d0b75e77dd5c7a0b3796e166ff4018a5e77039ccc78abb45efeed80",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-57d87d74479daf6d-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "b6815b0190bb36883a63f1d42f49590918d388f01482b8b9c6ee585c1c1fa57d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-8dcc3f2b8b7777d2-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0cb6027463e8408fe151c04b5a4e6149dd9ed0b619bae6a0641a5a21437d3e94",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-floor-faa5a5ecc36f890e-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "9f5467a8f8e657372dfc0fabe344b38129f587cd29da18c69d5e2022b5f4086a",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-d69927b9d823f935-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "fb6b7f315c9cf4149c97523c90b38aaaa0a40f36e58b1ae2602353c23ed8b8b2",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-1fc36be269e023f3-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "a3d9461f26762912ef85a15c7afb0aa3b05901a6ab2fdc3289aba1916c660050",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-037d0a371aa09f47-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "79c267e985831e0676a15e2743d40f32258bdb70d59c4c38e1307b1f67bc87f8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-ce42a5f8765e70bc-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "6b6cdb57ea315dd782c6f4153868158dd0ce2a6b4c47c2cf80a6e593b0a3c2c9",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-a5797f432ba58d07-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "839e5e83c9009f4c2371cd007350e11820125f50de328b316f64515b5d0e6426",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-154e41c2488f66a7-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8671fb87668643292425801060e71ce5f0288996c730b337130f1ffdd9bd98a8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-33e3b13cb1872798-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "eac55fa61ba125b38b6c1cd6f08d3290689215ec53c9001186582731694ec6ec",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-floor-3107fade096c3016-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "938b9e8e6979ec9caef2cc6c55b31c5cdcdca268e902bbd417dbc97fcc08ddfc",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-7f900e127af91422-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "c6f2cc256abcfdd50e928c145d605544abc237894daffb304b3c2593ff324c7e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-7ac5cd8171b432c5-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "9340910cd8f792cc8f432ddc500f5467a3e65ad98de49a6067903d1f38f86818",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-a51c06ee6880d7b3-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "73721813a05f5049814d3bfb7f163d5916f0c1fbe9505fe66c4c01c41955c1c0",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-817de1814c7981b1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "a95ecad9f33a7ea27e4dc5702f673013af66f5befb72fbf98a9213e9c2a15580",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-67c70e7efaa11b25-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "72321c56226da483435be08309f5943731a4b23ae1d363ebc791254132f2e370",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-path-bbb25c9fb9302f80-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "357d889b5011507f5b98f5fc2f08c084d3f104c0751de96887d95c71845f17d8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-3a4e4b5ea218d0ce-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "ddde3c50aaa018553d92d636ddbfbe681a94b2a7492412b5fc60a6fba3f0f20f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path-64aa93b3f82dc29e-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "7e100030802bb8e82095a78ce9e3012bbd3940e5c145abd85bcae28fa4e235c6",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-range_count-54ee149d1ff5ba4c-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "da4e22288ade6743b485b8a53bfcd2e8d8fa5d98d0cb8c85478299b61793f83d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-98cfb5b90b53aca6-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "97997a6da97b8685246b3d4d179518ce8dc8d6845bb90d17524478e00ea1bb76",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-contains-b0828657e8b90ee5-run_bst-0-0",
+          "family": "search",
+          "contract": "contains",
+          "job_id": "1a4e1788d23805bb949e799f8466c178d501e5362d47cc60b9821b113e9638f0",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert-66652a184736e953-run_bst-0-0",
+          "family": "insert",
+          "contract": "insert",
+          "job_id": "c0eec6a01d455e5fb6b90321cedf27121a164e41a31b33bb29cecd353a064ad1",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-5e9ec6ff20df01d5-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "bf6aaec0209ca64f6dbfd04deddb23e4d7852954891611dfc6747c0f5e7de5c4",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-5ffb711ed4568964-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "92d0df1c0cc29ca3c4a366600196b5a0f32e8d09e587946a35b834783fd1f239",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-successor-bc2197b449a658d1-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "30bcb01b49e2c276b37bd62fcb18b12badd67f2dffb26bb013fdc4a5d81de197",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-7aae5fe3aa83f6d2-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "a5c8b306e5e986de3f75b512a87f2a62fa39e0da23d34bbfd71a90bf53e8427a",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-92da42b1776f6c0f-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "7e872ee85e48ee66f64088de0205216146243852d01e6f07573ac536c26453d5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-f3f838514eaa3b13-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "1d81707467b12f7ee9ba959444dbb52fddb0d08a449cc753350ba9441c517376",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-4ce372e15ef906ea-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e1db62eb0ac1cd3b542b7055d11e4d8124e7dd79c41f8e572f16d3a0d11c983b",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-maximum-d7a585e92650f257-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "8bb117a96842b93f78c72122c7ae3aa1b11c1c3e69ffaecb7797db0453345d0c",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-successor-235cf0f76028c819-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "65ceeca3c6c7154de30d3162d38ecb9b232866a65b812d7f18f8fde198cd44c7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert-0aad0477e7d5b69a-run_bst-0-0",
+          "family": "insert",
+          "contract": "insert",
+          "job_id": "6a78a0c815e579634e7cb9c18d30e2c9976728d5220371ade71c6e5a7af78fc7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-700b241640942879-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "b23babdb30eef196345506e3aaaf6a02fe42849b83dfbad043b5edee8733401e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-2a8436ddfff7812a-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "2792ae38e17f5e44fe4f1d1376de5e173829132a66c70fd720729a83e0972d64",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-b134757f2617da59-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "b9a10bb16168c0c721d54ea62c53ed89523024b810a60056256ab983cda940a8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path-d32e0f434cffeecd-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "f131b3759bb19e7ebcb961327dc94ec2b38d7f384e89726885d6818d151e021f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-526c8f23375f2ba4-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "86005e2b183e692beac4d6cdead3f29fcfa7a2b35bbe9a1d8485849e3169242e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-77aeb7065eca2ad2-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bd995fbd8f77b3ca7119ad722e9b40e6a252d9618e57680bc7c9fc059f3bd9a7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-d0e3878ebc043bd6-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bc74d31b6912f10da7b1a5d9638f46499f318759d3d8ece21de2bb81e13403aa",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-2812e8835eff6284-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0d3759cc6294bc7ee17f74395a4a05be1cf347233a118569545e6a8f857b62d4",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-5bcc8bb8d8f813e8-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "a201188c1aba5764a48a6a0cd7c08bc1b517dc53eb7199de9078d6cf2d701837",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-a27a8cdf9bb890c1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "0eb407355e68a9dce2e1ec3cd05aa7133bb52d86212619944e75ab80fa90c477",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-758b9383fd47e799-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "38715477368a938a09c19c8d252c6c1a979b7c8178490bea79f6e0c1ec37b0f5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-7dbe3bbcb64a3607-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "3be279e0933ab8db1cb57f81af41932cb3ef8be2610e74f9d4f966a8030dd29e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-d7c3ad0e24d3c0b0-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0255598e29037e20ae6fff4890c1f3c7a9f0c71ba1dd0d74cf54e02d42252409",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-8f5d43bd0792c08f-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "904345e4ed1e99a4bf5431002caabcf02d068a7986942b2e0da4da4eeb4a55fc",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-insert_many-f02344187a1a3a65-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "f7636fcbd5ca634a08c36d74c80dbe0af79c4d74a550cbaf7d0f42a8aa7f7c97",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-d16dd12f8829db54-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "765fdc6fbef421df0de38d3197fd6cef1b5988742194de22c5ce89c6235d5d8f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-36e6ce0eb5910651-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f616f2d790b1df955c3b40fcc357030df2d162ca7c919807d8e44470c988c0fe",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-78e49e7ed8dbbbcf-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "8483424878fd113836cd6ce85ac5f99d92326cdcb40454416406c299cf650d52",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-aa866d1e29a03fa3-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "197287f57b746a32f30f1e62e53e826e68948b50132c9b60f35aff91533606f5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-bd419c00f996411e-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "695bd2d6b2585e4443f3ab01cdb8ae3c0363456f3286c9b13935edc4d78e8cae",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-151e5bdd2909d28d-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "4c3b92a992e0f85aaf283e455c1f72dddab4c274c9659e2903e6f5829c1fed74",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-path-032946da5a7c41d6-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "a5054f5ffaaa2401f5f2bf6b0d2c68f463bfc16efea2f3626ae8117323070c54",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-path_without_target-409de467edbec16b-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "d59e35aad899e296f81cfe1b5a3eb00593244e17c6f8467adb47c8502326e4e4",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-1caabccaf49d14c1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "2e096f22d4f98be8f47f6db32f2c3acba42e8651e51172ec62195bcf198939ca",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-3b1f32cbd032d986-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "10122c52dd763ac3a6aa81b86acf8ff4d00e019fda9b1f6606231506b7d84c34",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-8b13afd64dcca6be-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e2f58137f281de8a04472e09eaa8f6e757c5aba3fea6ba7b7b963b12c93422d4",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-726d36c785882f34-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "05d1c18eeb03c07faafc6010bf005a430ac9e0567075ba6df16937dd89f3eb4d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-33f4983c069335d2-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "9472a0a148ea26d769e1681dccea44efdcdbf0bf7ee7e454f79f7ebd8e66fa99",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-insert_many-db17649472175fd7-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "e43c2c40d6689801b1628c57e84ef67f4bcb874de849929ae962d651109c4050",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-56db4dff6499f8a6-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "f3a66a2c257630a0eb4513f623da82f8bb3eaca573fd4ae95dad534bd400be68",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-744f9fc15a5c54e3-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "a92ecadac232a02f5b8ade68ea734a41bb0c69da7b76cf45d6a3ada0e2f836fb",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-dc34db9215f8132b-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "9455fa17a99085c70f4c375c89440d015df2ae7c10768fcbfe94268921169005",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-5c025a8f0ad6eede-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e61c2006f08fc7ccb2ca99ca5dc1ef13309ff3c0d20ac3bb41aea8974a9949a2",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-218a9d465dea9935-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "aee770d570fa3a9a9dd9b2d00db20744fe0bba42d2796f214ba580e723e27012",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-ece4e3de65373c40-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "eaec24c8c8dc897c70fe985b65b191b51e43eac30352a908d3a7bcabf98a0a54",
+          "correct": true
+        }
+      ]
+    },
+    "taught-normalized": {
+      "tasks": 87,
+      "correct": 76,
+      "pass_rate": 0.8735632183908046,
+      "by_contract": {
+        "floor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "insert_many": {
+          "correct": 6,
+          "tasks": 6
+        },
+        "predecessor": {
+          "correct": 1,
+          "tasks": 3
+        },
+        "successor": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path_without_target": {
+          "correct": 0,
+          "tasks": 4
+        },
+        "maximum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "level": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "absent": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "range_values": {
+          "correct": 14,
+          "tasks": 15
+        },
+        "ceiling": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_sum": {
+          "correct": 19,
+          "tasks": 20
+        },
+        "minimum": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "range_count": {
+          "correct": 9,
+          "tasks": 10
+        },
+        "depth": {
+          "correct": 3,
+          "tasks": 3
+        },
+        "path": {
+          "correct": 2,
+          "tasks": 4
+        },
+        "contains": {
+          "correct": 1,
+          "tasks": 1
+        },
+        "insert": {
+          "correct": 2,
+          "tasks": 2
+        }
+      },
+      "outcomes": [
+        {
+          "id": "balanced-test_known-floor-45ab679fce69bc72-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "9a544e4b651b441c4bab9686b7d76e74373e854d024bfedf0edd1b6d01200885",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-af98a758f6e5720e-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "34a596517ee4cf96c9fa02b78489af7f44fa6be966ae57b6f06522dece86f3c8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-b4ddbb9af578c83d-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "f284832ecaedab01d52332f6a5d528a1694d60c0e60529b0ead430330e167b48",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-successor-386842f046e3af41-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "1222c1525b6194858a1bfa58fe294e3eb2176bdaeb1c1d7c9df4881b52eff180",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path_without_target-acad3fce9a8d18a5-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "5862719cb5a62e225a51831d41ec9a2e4657f3cb597f06251b759bd74a59d87e",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-maximum-eeb718295edff9e0-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "4e56a4e7d18a909b3a5d01bb557a053f457aee30a3d7b40bd9a1a9bc8a9d45e5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-maximum-3fa31b58d6cf7f8c-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "f948df5c58ae439f88f9640b052a96d6dd53cd6b9a573d2d8db7aefb4b1997f7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-240bca767efb49bd-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "db1f62bd544430966c8bf938df15be5240625504cc06d5eac0b254d90748354f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-absent-8183ec0abd555553-run_bst-0-0",
+          "family": "search",
+          "contract": "absent",
+          "job_id": "601425b06f9f6e545e623275374e698b459104b4b0eda4c8da5f7bf953f2ea77",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-00b19d5e4e1af8c4-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "69808758927d5171879fc97847dbbd98b1fa0560b947cd4e1a23c86a9f32d366",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-8bc103f880eb871f-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "97afc24c19d7c11b37738adc8980d6f34afe9ed8ff9370574687b99f7ce48079",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path_without_target-74a485898e481d93-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "76814f3bba45d9458775acb17138ddb847e3b5aa758148feb47bb338dda8c73e",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-path_without_target-4885a23a7d2ea1f7-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "d84c91ca6fd211d061cd665ea052a73bdbd9f863c572fcbcf6f913bc341e909b",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-range_sum-65d21362e00c0607-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "96358c0d12207e706080fc8413da887949a0689c53e001b74011317bfb5b6149",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-9ff04e0dea2d2759-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "1d46fb35d4980aa42e02e1ab1380820d6121f1af210f3ce9a4ded82b5ed1a43d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-b46d6b0523a094ab-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "d153be9e378a6d4ebe06c8ab2066901109a42979b1b47eb94601f253607f74f5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-85d4373aabef1057-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "936711fcb14174292b71b364143a0a50f74afb3fbbb85a046c2d50d3423097ba",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-bee7fb4b8ea92fc9-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "f4d9cc50b81723e82bd99cf55552ac1b956be7b02906447001c953b53275f276",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-5b1dc497bc3791a7-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "c391a2c61d0b75e77dd5c7a0b3796e166ff4018a5e77039ccc78abb45efeed80",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-57d87d74479daf6d-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "b6815b0190bb36883a63f1d42f49590918d388f01482b8b9c6ee585c1c1fa57d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-8dcc3f2b8b7777d2-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0cb6027463e8408fe151c04b5a4e6149dd9ed0b619bae6a0641a5a21437d3e94",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-floor-faa5a5ecc36f890e-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "3c4ad8bdc480b7a58b337af8c7481cca76d68271e05d2f0f957ba1feab23c2bc",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-d69927b9d823f935-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "afe62282039d2ee6dc7864115003ffe9e520833f3f9c7827a155b843f9ff2db8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-1fc36be269e023f3-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "a3d9461f26762912ef85a15c7afb0aa3b05901a6ab2fdc3289aba1916c660050",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-037d0a371aa09f47-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "2cdfee6f20b0de54d5fd2221b7e8948809bcc0cc6de5b7150855698276559e47",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-ce42a5f8765e70bc-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "e8ee81f3a8868ae7bf8751784c5de374ca6fcd80e6ebd835d98e146316a60b14",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_count-a5797f432ba58d07-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "839e5e83c9009f4c2371cd007350e11820125f50de328b316f64515b5d0e6426",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-154e41c2488f66a7-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8671fb87668643292425801060e71ce5f0288996c730b337130f1ffdd9bd98a8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-33e3b13cb1872798-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "eac55fa61ba125b38b6c1cd6f08d3290689215ec53c9001186582731694ec6ec",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-floor-3107fade096c3016-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "floor",
+          "job_id": "938b9e8e6979ec9caef2cc6c55b31c5cdcdca268e902bbd417dbc97fcc08ddfc",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-7f900e127af91422-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "c6f2cc256abcfdd50e928c145d605544abc237894daffb304b3c2593ff324c7e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-7ac5cd8171b432c5-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "3fbb9d2a82cffca0331ffdce9f535759c7641037f1b813ae8a164d514c48a1b5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_values-a51c06ee6880d7b3-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "73721813a05f5049814d3bfb7f163d5916f0c1fbe9505fe66c4c01c41955c1c0",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-817de1814c7981b1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "1329c39f3f3877912e08dad371f94e54a057f251f0f1e355a6778dccb3e79024",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-67c70e7efaa11b25-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "72321c56226da483435be08309f5943731a4b23ae1d363ebc791254132f2e370",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-path-bbb25c9fb9302f80-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "357d889b5011507f5b98f5fc2f08c084d3f104c0751de96887d95c71845f17d8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-3a4e4b5ea218d0ce-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "dd8b249f05357a6adf3a1f4b9228f9b22af564e6f553949055ba155f5160afcc",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path-64aa93b3f82dc29e-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "7e100030802bb8e82095a78ce9e3012bbd3940e5c145abd85bcae28fa4e235c6",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_known-range_count-54ee149d1ff5ba4c-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "da4e22288ade6743b485b8a53bfcd2e8d8fa5d98d0cb8c85478299b61793f83d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-98cfb5b90b53aca6-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "156488624d15daadc97174147c91677d962c34a9171c04f3265ab7da388d61b5",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-contains-b0828657e8b90ee5-run_bst-0-0",
+          "family": "search",
+          "contract": "contains",
+          "job_id": "1a4e1788d23805bb949e799f8466c178d501e5362d47cc60b9821b113e9638f0",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert-66652a184736e953-run_bst-0-0",
+          "family": "insert",
+          "contract": "insert",
+          "job_id": "cde55a1a834d76514f420373320fb7402edf33ac5a1af677311fb04eb40e1475",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-predecessor-5e9ec6ff20df01d5-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "predecessor",
+          "job_id": "a2cdaccd308bd5331d563fc97f5b2b4e5a8ad74e8264529d994acc9291e4d07c",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-level-5ffb711ed4568964-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "level",
+          "job_id": "8b46a46309760cdd5fc5de6ac14445cd6236759944df60704d74540059eb649c",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-successor-bc2197b449a658d1-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "30bcb01b49e2c276b37bd62fcb18b12badd67f2dffb26bb013fdc4a5d81de197",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert_many-7aae5fe3aa83f6d2-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "bc7276d9348c8aab8b67fb141c599b586af6f3ddc73ae1a54903495913cc8dd2",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-depth-92da42b1776f6c0f-run_bst-0-0",
+          "family": "search_depth",
+          "contract": "depth",
+          "job_id": "9e56ff43ae90a3e6603036064437fe019d472e3ddf69f7a6b75507fae707a0eb",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-f3f838514eaa3b13-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "1d81707467b12f7ee9ba959444dbb52fddb0d08a449cc753350ba9441c517376",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-4ce372e15ef906ea-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e0fcbf7a0dc34796533ff7508a3afe13ed7bea7f6925343a8553c2ab1bc100ab",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-maximum-d7a585e92650f257-run_bst-0-0",
+          "family": "extreme",
+          "contract": "maximum",
+          "job_id": "8bb117a96842b93f78c72122c7ae3aa1b11c1c3e69ffaecb7797db0453345d0c",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-successor-235cf0f76028c819-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "successor",
+          "job_id": "65ceeca3c6c7154de30d3162d38ecb9b232866a65b812d7f18f8fde198cd44c7",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-insert-0aad0477e7d5b69a-run_bst-0-0",
+          "family": "insert",
+          "contract": "insert",
+          "job_id": "ff16c5693c10bffbe197fd8f281c0dd9dfdfce2a7186eb1d67d5f7406a62b9db",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-ceiling-700b241640942879-run_bst-0-0",
+          "family": "neighbor",
+          "contract": "ceiling",
+          "job_id": "d61e0fa2b19456302057b3e198b8689d3bf1e742e276f303d8098052112f53c8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-minimum-2a8436ddfff7812a-run_bst-0-0",
+          "family": "extreme",
+          "contract": "minimum",
+          "job_id": "2792ae38e17f5e44fe4f1d1376de5e173829132a66c70fd720729a83e0972d64",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-range_sum-b134757f2617da59-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5ab1ba12ddb76bf0585d214d41012ebe7b1f3002e07ce013031b02a21f9d1a6e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_known-path-d32e0f434cffeecd-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "f131b3759bb19e7ebcb961327dc94ec2b38d7f384e89726885d6818d151e021f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-526c8f23375f2ba4-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "2f695cd6f44418464322bf6007b230faeeecac12a10823338116d90845598b7f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-77aeb7065eca2ad2-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bf4e256b82b775f9b195c1f59c663c32358987858ade89ce73d13e70d23db6c8",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-d0e3878ebc043bd6-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "d1766aa5f580630dc51e4424b977d403e64d737fe5825a4deb20cdf73ea9f6ae",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-2812e8835eff6284-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0d3759cc6294bc7ee17f74395a4a05be1cf347233a118569545e6a8f857b62d4",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-5bcc8bb8d8f813e8-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "a201188c1aba5764a48a6a0cd7c08bc1b517dc53eb7199de9078d6cf2d701837",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-a27a8cdf9bb890c1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "374d2b80ce9379b2110fa4b685b2c440127d0d8f587122eb6510356e9b62abaa",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-758b9383fd47e799-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "63b02ba16820ba1c12a0a6bbca6c59a04bfc751549a8b8c04bb57b3762ad7020",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-7dbe3bbcb64a3607-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "3be279e0933ab8db1cb57f81af41932cb3ef8be2610e74f9d4f966a8030dd29e",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-d7c3ad0e24d3c0b0-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "0255598e29037e20ae6fff4890c1f3c7a9f0c71ba1dd0d74cf54e02d42252409",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-8f5d43bd0792c08f-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e7d2749984c97a68e3012f8ed3d2901e1c321f3b45d6d6caa21355e90e8c0ef4",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-insert_many-f02344187a1a3a65-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "2113f4aa2e66d8f585e3707b7b142df55adb720fc2ecb7eaec2564edcfaf6330",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-d16dd12f8829db54-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "765fdc6fbef421df0de38d3197fd6cef1b5988742194de22c5ce89c6235d5d8f",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-36e6ce0eb5910651-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f616f2d790b1df955c3b40fcc357030df2d162ca7c919807d8e44470c988c0fe",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-78e49e7ed8dbbbcf-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "d187189be75697f747b29fb3cbd4a10051ea9cb84fbe0d344c77f12d779c9618",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-aa866d1e29a03fa3-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "b8c772ae0d6420104b5d27d71a8e204b4b335c8ab31c14e2ac53bffe9351300c",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-bd419c00f996411e-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "695bd2d6b2585e4443f3ab01cdb8ae3c0363456f3286c9b13935edc4d78e8cae",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-151e5bdd2909d28d-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "4c3b92a992e0f85aaf283e455c1f72dddab4c274c9659e2903e6f5829c1fed74",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-path-032946da5a7c41d6-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path",
+          "job_id": "a5054f5ffaaa2401f5f2bf6b0d2c68f463bfc16efea2f3626ae8117323070c54",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-path_without_target-409de467edbec16b-run_bst-0-0",
+          "family": "search_path",
+          "contract": "path_without_target",
+          "job_id": "d59e35aad899e296f81cfe1b5a3eb00593244e17c6f8467adb47c8502326e4e4",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-1caabccaf49d14c1-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "97eb47aa40a68a29bab21b1955f87525ca06eb72b5be24f9a206800a613d029b",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-3b1f32cbd032d986-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "720366364fbe85eb433d43c629031de752648f1ff3486720bdef325dd5428210",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-8b13afd64dcca6be-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "3e3a0e1764d34ca874473880d15b6666ca11ea647fb36972aad94beede93879b",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-726d36c785882f34-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "05d1c18eeb03c07faafc6010bf005a430ac9e0567075ba6df16937dd89f3eb4d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-33f4983c069335d2-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "9472a0a148ea26d769e1681dccea44efdcdbf0bf7ee7e454f79f7ebd8e66fa99",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-insert_many-db17649472175fd7-run_bst-0-0",
+          "family": "insert_many",
+          "contract": "insert_many",
+          "job_id": "71c4c54ecc9b8594548a3dbaba40852cbaf9143331f74b577e29198589714c25",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-56db4dff6499f8a6-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "f3a66a2c257630a0eb4513f623da82f8bb3eaca573fd4ae95dad534bd400be68",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-744f9fc15a5c54e3-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "a92ecadac232a02f5b8ade68ea734a41bb0c69da7b76cf45d6a3ada0e2f836fb",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_count-dc34db9215f8132b-run_bst-0-0",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "9455fa17a99085c70f4c375c89440d015df2ae7c10768fcbfe94268921169005",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-5c025a8f0ad6eede-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "0ff771a6e9aebd2acb04346f5d534b969fabb6ba013f6445fc4872399fea1a8d",
+          "correct": true
+        },
+        {
+          "id": "balanced-test_combinations-range_values-218a9d465dea9935-run_bst-0-0",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "aee770d570fa3a9a9dd9b2d00db20744fe0bba42d2796f214ba580e723e27012",
+          "correct": false
+        },
+        {
+          "id": "balanced-test_combinations-range_sum-ece4e3de65373c40-run_bst-0-0",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "972fdaaef0685dc6002b11eb1f792f16dda06f69b7679e4c1cfff845ed9777c0",
+          "correct": true
+        }
+      ]
+    },
+    "holdout-strict": {
+      "tasks": 27,
+      "correct": 11,
+      "pass_rate": 0.4074074074074074,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      },
+      "outcomes": [
+        {
+          "id": "holdout-range_count-d00b8d63c36ccbcd",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_count-a1185a7f24ed8bc7",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-6b5fa1b7d34a318e",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-4493c561d639b588",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "04879d86bd54825fbd5351f15f6501407fd173c5d14c1d19e3f7da960ced1bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-0fa2b907ba060207",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-927ea809698e28c3",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-7c67b58df0f49502",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-0027af77d7343a05",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-9e47ed789782e264",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-220517eb0cdc045d",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-45773acf18bde0e7",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d1b31575ba78c631",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "2bd354a0fa3943c4b54d1b753890a82d2a556640922eee5dabc08db3c24aba9d",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-1e82932303204ef4",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "40683991a5da75565de43b70a8a8f9f8d6bd34800877cc9e4cdf0688db5caa89",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-21ee404af33688ec",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "27da79ddb9561e44f4aa4372042b4f97587a901314e491446aefcbc81863e9b3",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-5b18827378a721e9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5a71444d98a83507c5385cfb92789804e50d20f1de187bddf938154f5aae7e3c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-f1cdcff82e280446",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bc3dc875d043a6351705bddbcb103682fe0beb672c8d977d4954976366932649",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b4ed05472698f44",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "6380ae6038147bccc8f9a390bc98908ece4bd41b31eed3a91cb54cb29d3c5f9d",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-3847e25966489617",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "72e14041b589415941395ace20557b9ae1d218ac7666a1584c63d7c0891dd312",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-6e06fa1eeef21fc9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "aae0c2d284092a813d4c25ae86122d8ee8deae1e00f27b8162fcc425e07258f6",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b00d1531c5ff551",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "abdd0c9a0c89c3ad7355ee114e78bfed86e3424516384ec68f16bdc9762d98e0",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-6f6365c7b58ee48d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "230387661225040f400f5fc59961b7357b95df32ca5975724af50cda234c4dcf",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-9171fd6d17f2a487",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "04248dc46d5b443e76df79417466ae2ad267a4f7b7ee6a176533ac0d9e05531e",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-a38754b73fb1b7de",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "bf0c7acc1351fefc353dce9da43b581dca4cd162e0a74aa368fda041e4215ee9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-ffa0e2c0a91776ae",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "0ac76359f225efe9a28d9af99095fbd1069c370f4083aa9de696be82ab1bc3be",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-e1dff15d18faa38a",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "856f6016797cb03d4c29c3ad9cc1edd2ce7b78ab4afaf725f9173ecb4473b540",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-7d16b960be4c6e67",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "2bc25e1886c8d73b0a1e6d8b08fe348d796f7957bd2e1ebd79a5ad75f131b6dd",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d577c61975e2577d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "67a4b1d1e13ff1a3f689721ebef3cab5b1374b4a7191d94f343907851cdf4c63",
+          "correct": false
+        }
+      ]
+    },
+    "holdout-normalized": {
+      "tasks": 27,
+      "correct": 11,
+      "pass_rate": 0.4074074074074074,
+      "by_contract": {
+        "range_count": {
+          "correct": 0,
+          "tasks": 2
+        },
+        "range_values": {
+          "correct": 4,
+          "tasks": 9
+        },
+        "range_sum": {
+          "correct": 7,
+          "tasks": 16
+        }
+      },
+      "outcomes": [
+        {
+          "id": "holdout-range_count-d00b8d63c36ccbcd",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "5a26e65f3d8aa0c4b9345a187ca22443e03c6cbefa2b047cbb1ffa280c42a3e9",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_count-a1185a7f24ed8bc7",
+          "family": "range_count",
+          "contract": "range_count",
+          "job_id": "fc0aa4aed092ff5cd6f91f809a8199cc0e40fafd4ec68b2044f2da68c788b17d",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-6b5fa1b7d34a318e",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "8c743a27de5c8aaeec895fc1ca603fbfbb7544360113ac2fb56e44b2d06cdada",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-4493c561d639b588",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "04879d86bd54825fbd5351f15f6501407fd173c5d14c1d19e3f7da960ced1bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-0fa2b907ba060207",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1314c06024e38468cbe25575e292bb39ae075dec57ff6f8b1be0cba70da545aa",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-927ea809698e28c3",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "f86fb38f40141e66f59c10c21c565249e20904c5c903ef448765d1f9f3df95c2",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_values-7c67b58df0f49502",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "890bfc53924afc25e1fc22efe9f23185de51a3527c0dcc027311799cbb47c72b",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-0027af77d7343a05",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7bc2ae05f78aa0641050ac6b7c5600b00ef6a8f741c8c92f3eae14b02c4601c5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-9e47ed789782e264",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "ead47526ac18ee590658a9500cedf8d607c6101aef71c02a9a2efb1a3575dad2",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-220517eb0cdc045d",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "1f48710b240d92ffc343f46c62c34da04240fb2282f03d15c2b7d24f7983df73",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_values-45773acf18bde0e7",
+          "family": "range_values",
+          "contract": "range_values",
+          "job_id": "7827546cae8f99b395dc2188baa166dcc0a701dbad66249bf306f1cf3f076384",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d1b31575ba78c631",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5f658fbe01fa01b3adfd3d095e204e3353a3d50502f2653af4aa008003a12293",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-1e82932303204ef4",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "884a979258a0f3314127ca042761620acdc8c3aad6242569a667a606160b4a04",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-21ee404af33688ec",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "7dc254d6aade6a3b8b53acb624ccfa20c0b7e4ab2636c65c17db7de35bd779df",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-5b18827378a721e9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "4e18a3a0940799506c0135dd1bb62b09adc39dec0608962438c1fbcc45e24bdd",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-f1cdcff82e280446",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "fc49c13452efd17ddbe2240e7f373d75fd35ac916262d36191c9a567461db3f4",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b4ed05472698f44",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "751b9641fb5f264c504999fde8bfaa382473623f070765e4baaa7083f5d3be5c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-3847e25966489617",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "892e4f17dc4987c4168843a7880deb290586ccc6cb97e1df1ee7f4cb685f5e9c",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-6e06fa1eeef21fc9",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "23be3c1c34eb47136cd5e098938b113675b15ec3e49a31d67917d2c3213ff45e",
+          "correct": true
+        },
+        {
+          "id": "holdout-range_sum-5b00d1531c5ff551",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "324748c758d0962af85441295d46035e93db502c8c68e764354a22d394b29ae3",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-6f6365c7b58ee48d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "63a050b8abb99c8691adae748c9c4d0f1a0f4f46b55b4c8864024d65d6340d96",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-9171fd6d17f2a487",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "b7bf8bcf7d1da7319e97debfdda941691f162f856ab51eef518aab5e31b48ed5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-a38754b73fb1b7de",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "e431fd171e2e1c214a32771c8793a62f88032cdcf4d5b10d2bb3d6aa994e162a",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-ffa0e2c0a91776ae",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "5f9ae5c21334f5e22bcdcd2b8a9bd71572a2de5ef3d5f418450511508e7283e0",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-e1dff15d18faa38a",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "30a69593182a916f3f5fcc199197ddb13f3ea0ea61701c691f751b8a80c279f5",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-7d16b960be4c6e67",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "41dd73fcab8d69adb92364c7942f8d57417ea1fdaa7408ab4ef7a9499f468dfd",
+          "correct": false
+        },
+        {
+          "id": "holdout-range_sum-d577c61975e2577d",
+          "family": "range_sum",
+          "contract": "range_sum",
+          "job_id": "402185143de9ce4b6d9e041c09b6c306d55d6408c95d64a026e1ffc1955a673b",
+          "correct": false
+        }
+      ]
+    }
+  }
+}
