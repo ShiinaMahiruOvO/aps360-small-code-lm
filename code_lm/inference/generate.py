@@ -1,114 +1,131 @@
-"""Generate with an exported custom model on a Linux CUDA machine, no Modal.
-
-The tokenizer files are the ORIGINAL vocab.json/merges.txt, not a Llama tokenizer.
-"""
+"""Generate BST solutions with our own Transformer checkpoint (no code execution)."""
 
 import argparse
+import hashlib
 import json
-import math
 from pathlib import Path
+import tempfile
 
-from code_lm.tokenizer import Tokenizer
+import torch
 
-
-def check_runtime():
-    """Fail early with setup instructions for this project's CUDA backend."""
-    import sys
-    from importlib.metadata import PackageNotFoundError, version
-    if sys.platform != 'linux':
-        raise SystemExit('This vLLM backend requires Linux and an NVIDIA CUDA GPU. '
-                         'For CPU inference use: python generate.py --backend torch --device cpu')
-    try:
-        installed = version('vllm')
-    except PackageNotFoundError:
-        raise SystemExit('vLLM is not installed. Follow the local vLLM setup in README.md.') from None
-    if installed.split('+')[0] != '0.18.0':
-        raise SystemExit(f'This adapter targets vLLM 0.18.0; found {installed}. Use the pinned README environment.')
-    import torch
-    if not torch.cuda.is_available():
-        raise SystemExit('No CUDA GPU is available. Check the NVIDIA driver and CUDA-enabled PyTorch installation.')
-    if torch.cuda.get_device_capability()[0] < 8:
-        raise SystemExit('This BF16 configuration requires an NVIDIA Ampere-or-newer GPU.')
-
-
-def engine_options(model: Path, context_length: int, *, eager: bool = False) -> dict:
-    """The single-GPU configuration measured on our 97M model with vLLM 0.18.
-
-    The pool is deliberately small. Larger models/contexts need a new memory
-    budget, rather than silently taking most of the GPU away from training.
-    """
-    return dict(model=str(model), skip_tokenizer_init=True, dtype='bfloat16', load_format='hf',
-                tensor_parallel_size=1, enforce_eager=eager,
-                compilation_config={'mode': 0, 'cudagraph_mode': 'NONE' if eager else 'FULL_DECODE_ONLY',
-                                    'cudagraph_capture_sizes': [] if eager else [1, 2, 4, 8]},
-                max_model_len=context_length, max_num_seqs=8,
-                max_num_batched_tokens=max(4096, context_length),
-                kv_cache_memory_bytes=512 * 1024**2, seed=0,
-                enable_prefix_caching=False, enable_chunked_prefill=False)
-
-
-def sampling_options(eos_id: int, max_new_tokens: int = 128, temperature: float = 0.0,
-                     top_p: float = 1.0, samples: int = 1, seed: int = 0) -> dict:
-    if max_new_tokens <= 0 or not 1 <= samples <= 8:
-        raise ValueError('Require positive output length and 1–8 samples per prompt')
-    if not math.isfinite(temperature) or temperature < 0 or not 0 < top_p <= 1:
-        raise ValueError('Require finite temperature >= 0 and 0 < top_p <= 1')
-    if temperature == 0 and samples != 1:
-        raise ValueError('Greedy generation produces one sample; use temperature > 0 for multiple samples')
-    # skip_tokenizer_init disables automatic EOS inference in this vLLM version.
-    return dict(n=samples, temperature=temperature, top_p=top_p, seed=seed,
-                max_tokens=max_new_tokens, detokenize=False, stop_token_ids=[eos_id])
+from code_lm.inference.torch_generate import generate_batch
+from code_lm.training.sft import load_model
+from code_lm.data.prepare import load_tokenizer, read_rows
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--model', type=Path, required=True)
-    parser.add_argument('--tokenizer-dir', type=Path, required=True)
-    inputs = parser.add_mutually_exclusive_group(required=True)
-    inputs.add_argument('--prompt')
-    inputs.add_argument('--prompts-file', type=Path, help='JSON array of prompt strings; no automatic chat template')
-    parser.add_argument('--max-new-tokens', type=int, default=128)
-    parser.add_argument('--temperature', type=float, default=0.0)
-    parser.add_argument('--samples', type=int, default=1)
-    parser.add_argument('--top-p', type=float, default=1.0)
-    parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument('--eager', action='store_true', help='Disable CUDA Graphs for debugging')
+    parser.add_argument("--checkpoint", type=Path, default=Path("checkpoints/bst.pt"))
+    parser.add_argument("--tokenizer-dir", type=Path, default=Path("data/tokenizer"))
+    parser.add_argument("--data", type=Path, default=Path("data/bst"), help="Evaluation JSONL or a dataset directory (all test splits)")
+    parser.add_argument("--output", type=Path, default=Path("runs/generations.jsonl"))
+    parser.add_argument("--spec", type=Path, help="JSON object with spec and optional entry_point; bypass natural-language parsing")
+    parser.add_argument("--task-id", help="Generate one dataset task for a demo")
+    parser.add_argument("--limit", type=int)
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--max-new-tokens", type=int, default=256)
+    parser.add_argument("--samples", type=int, default=1, help="Samples per task (requires --temperature > 0 when above 1)")
+    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--device", default="cpu", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--backend", choices=["torch", "vllm"], default="torch")
+    parser.add_argument("--eager", action="store_true", help="Disable vLLM CUDA Graphs for initial setup or debugging")
     args = parser.parse_args()
-    check_runtime()
-    config = json.loads((args.model / 'config.json').read_text())
-    if config.get('architectures') != ['CodeLMForCausalLM']:
-        raise ValueError('Expected an export for our custom model')
-    tokenizer = Tokenizer.from_files(args.tokenizer_dir / 'vocab.json',
-                                    args.tokenizer_dir / 'merges.txt', ['<|endoftext|>'])
-    if set(tokenizer.vocab) != set(range(config['vocab_size'])):
-        raise ValueError('Tokenizer vocabulary size/IDs differ from the model')
-    if tokenizer.token_to_id[b'<|endoftext|>'] != config['eos_token_id']:
-        raise ValueError('EOS ID differs from model configuration')
-    sampling_kwargs = sampling_options(config['eos_token_id'], args.max_new_tokens,
-                                       args.temperature, args.top_p, args.samples, args.seed)
-    prompts = json.loads(args.prompts_file.read_text()) if args.prompts_file else [args.prompt]
-    if not isinstance(prompts, list) or not prompts or not all(isinstance(p, str) for p in prompts):
-        raise ValueError('Expected a nonempty JSON array of prompt strings')
-    prompt_ids = [tokenizer.encode(prompt) for prompt in prompts]
-    if any(not ids or len(ids) + args.max_new_tokens > config['max_position_embeddings'] for ids in prompt_ids):
-        raise ValueError('Every prompt must be nonempty and fit context together with its output budget')
+    if args.eager and args.backend != "vllm":
+        parser.error("--eager requires --backend vllm")
+    if args.backend == "vllm":
+        from code_lm.inference.vllm_options import check_runtime
+        check_runtime()
+    if not args.checkpoint.is_file():
+        parser.error(f"Checkpoint not found: {args.checkpoint}. Supply --checkpoint or place weights at checkpoints/bst.pt.")
+    if args.batch_size < 1 or args.max_new_tokens < 1 or (args.limit is not None and args.limit < 1):
+        parser.error("Batch size, output budget and limit must be positive")
+    if not 1 <= args.samples <= 8 or args.temperature < 0 or (args.samples > 1) != (args.temperature > 0):
+        parser.error("Use one greedy sample, or 2-8 samples with --temperature > 0")
+    if args.output.exists():
+        raise FileExistsError(f"Choose a new output path: {args.output}")
+    if args.spec:
+        if args.task_id:
+            parser.error("--spec cannot be combined with --task-id")
+        from code_lm.data.bst_dataset import render, validate
+        supplied = json.loads(args.spec.read_text())
+        validate(supplied["spec"])
+        rendered = render(supplied["spec"], supplied.get("entry_point", "solve"))
+        rows = [{"id": "spec-" + hashlib.sha256(rendered.encode()).hexdigest()[:16], "prompt": rendered}]
+    else:
+        rows = list(read_rows(args.data))
+    if args.task_id:
+        rows = [r for r in rows if r["id"] == args.task_id]
+    rows = rows[:args.limit]
+    if not rows or len({r["id"] for r in rows}) != len(rows):
+        raise ValueError("Expected nonempty tasks with unique IDs")
+    tokenizer = load_tokenizer(args.tokenizer_dir)
+    if args.backend == "torch":
+        model, config, _ = load_model(args.checkpoint, torch.device(args.device))
+        model.eval()
+    else:
+        saved = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+        metadata = saved.get("config") or {}
+        config = saved.get("model_args") or metadata.get("model_args") or metadata
+        del saved
+    if set(tokenizer.vocab) != set(range(config["vocab_size"])):
+        raise ValueError("Tokenizer vocabulary does not match checkpoint")
+    eos_id = tokenizer.token_to_id[b"<|endoftext|>"]
+    prompts = [tokenizer.encode(row["prompt"]) for row in rows]
+    if any(not p or len(p) + args.max_new_tokens > config["context_length"] for p in prompts):
+        raise ValueError("Prompt plus output budget exceeds context; lower --max-new-tokens")
+    with args.checkpoint.open("rb") as stream:
+        checkpoint_hash = hashlib.file_digest(stream, "sha256").hexdigest()
+    vllm_outputs = None
+    if args.backend == "vllm":
+        from code_lm.inference import register
+        from code_lm.inference.export import export_checkpoint
+        from code_lm.inference.vllm_options import engine_options, sampling_options
+        from vllm import LLM, SamplingParams
 
-    # These imports only happen when generation is actually requested.
-    from vllm import LLM, SamplingParams
-    from code_lm.inference import register
+        register()
+        with tempfile.TemporaryDirectory(prefix="bst-vllm-") as directory:
+            exported = Path(directory) / "model"
+            export_checkpoint(args.checkpoint, exported, eos_id)
+            llm = LLM(**engine_options(exported, config["context_length"], eager=args.eager))
+            requests = llm.generate([{"prompt_token_ids": p} for p in prompts],
+                                    SamplingParams(**sampling_options(eos_id, args.max_new_tokens, args.temperature,
+                                                                     samples=args.samples, seed=args.seed)),
+                                    use_tqdm=False)
+            vllm_outputs = []
+            for request in requests:
+                for completion in request.outputs:
+                    ids = list(completion.token_ids)
+                    if ids and ids[-1] == eos_id:
+                        ids.pop()
+                    vllm_outputs.append({"token_ids": ids, "finish_reason": completion.finish_reason})
+    # One entry per (task, sample); vLLM returns each request's samples contiguously.
+    tasks = [(row, prompt, j) for row, prompt in zip(rows, prompts) for j in range(args.samples)]
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("x") as stream:
+        for start in range(0, len(tasks), args.batch_size):
+            batch = tasks[start:start + args.batch_size]
+            outputs = (vllm_outputs[start:start + args.batch_size] if vllm_outputs is not None else
+                       generate_batch(model, [p for _, p, _ in batch],
+                                     max_new_tokens=args.max_new_tokens, eos_id=eos_id,
+                                     context_length=config["context_length"],
+                                     temperature=args.temperature, seed=args.seed + start))
+            for (row, _, j), generated in zip(batch, outputs, strict=True):
+                result = {"id": row["id"] if args.samples == 1 else f"{row['id']}-sample{j}",
+                          "source_id": row["id"], "sample_index": j, "temperature": args.temperature,
+                          "completion": tokenizer.decode(generated["token_ids"]),
+                          "finish_reason": generated["finish_reason"],
+                          "backend": args.backend,
+                          "architecture": config.get("architecture", "standard"),
+                          "loop_count": config.get("loop_count", 1),
+                          "checkpoint_sha256": checkpoint_hash,
+                          "prompt_sha256": hashlib.sha256(row["prompt"].encode()).hexdigest()}
+                stream.write(json.dumps(result, ensure_ascii=False) + "\n")
+                if len(tasks) == 1:
+                    print(row["prompt"] + result["completion"])
+            stream.flush()
+            print(f"Generated {min(start + args.batch_size, len(tasks))}/{len(tasks)}", flush=True)
 
-    register()
-    llm = LLM(**engine_options(args.model, config['max_position_embeddings'], eager=args.eager))
-    sampling = SamplingParams(**sampling_kwargs)
-    outputs = llm.generate([{'prompt_token_ids': ids} for ids in prompt_ids], sampling, use_tqdm=False)
-    for prompt_index, request in enumerate(outputs):
-        for sample_index, completion in enumerate(request.outputs):
-            print(json.dumps({'prompt_index': prompt_index, 'sample_index': sample_index,
-                              'text': tokenizer.decode(completion.token_ids),
-                              'token_ids': list(completion.token_ids),
-                              'finish_reason': completion.finish_reason,
-                              'stop_reason': completion.stop_reason}, ensure_ascii=False))
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -73,7 +73,9 @@ class TrainerState:
         return True
 
     def step(self,rows,path,reference_path,out,*,micro_batch=8,precision='fp32',
-             prune_checkpoint=False,commit=lambda:None):
+             prune_checkpoint=False,commit=lambda:None,save_optimizer=True):
+        """save_optimizer=False skips the recovery sidecar; the resident optimizer continues in memory,
+        but a cold restart can then resume only from a checkpoint that has one."""
         start=time.monotonic()
         path,reference_path,out=(Path(p).resolve() for p in (path,reference_path,out))
         if not 1<=len(rows)<=128:raise ValueError('Update exceeds sequence budget')
@@ -100,12 +102,13 @@ class TrainerState:
             if self.device.type=='cuda':torch.cuda.synchronize()
             trained=time.monotonic()
             out.parent.mkdir(parents=True,exist_ok=True)
-            sidecar=out.with_suffix('.optimizer.pt')
-            atomic_save(cpu_state(self.optimizer.state_dict()),sidecar)
+            sidecar=out.with_suffix('.optimizer.pt');recovery={}
+            if save_optimizer:
+                atomic_save(cpu_state(self.optimizer.state_dict()),sidecar)
+                recovery={'grpo_optimizer_file':sidecar.name,'grpo_optimizer_sha256':digest(sidecar)}
             # Sampler reads only model weights; recovery also restores Adam moments.
             atomic_save({'model':cpu_state(self.model.state_dict()),'model_args':self.args,
-                'stage':'grpo','reference_checkpoint':str(reference_path),
-                'grpo_optimizer_file':sidecar.name,'grpo_optimizer_sha256':digest(sidecar)},out)
+                'stage':'grpo','reference_checkpoint':str(reference_path),**recovery},out)
             result['optimizer_total_steps']=sorted({int(v['step']) for v in self.optimizer.state.values() if 'step' in v})
             result['learning_rates']={g.get('role','all'):g['lr'] for g in self.optimizer.param_groups}
             result.update(engine_id=self.engine_id,cold_load=cold,precision=precision,micro_batch=micro_batch,

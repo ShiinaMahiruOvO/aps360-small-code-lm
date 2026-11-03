@@ -23,7 +23,8 @@ def advantages(rows):
     return result
 
 
-def log_probs(model,rows):
+def log_probs(model,rows,entropy=False):
+    """Answer-token log probabilities per row; with entropy=True also each position's entropy."""
     device=next(model.parameters()).device
     seqs=[r['prompt_token_ids']+r['answer_token_ids'] for r in rows]
     if any(not r['prompt_token_ids'] or not r['answer_token_ids'] for r in rows):raise ValueError('Empty sequence')
@@ -35,15 +36,9 @@ def log_probs(model,rows):
     batch_index,token_index=torch.tensor(positions,device=device).unbind(1)
     logits=model(tokens[:,:-1],output_positions=(batch_index,token_index)).float()
     selected=-F.cross_entropy(logits,tokens[batch_index,token_index+1],reduction='none')
-    return list(selected.split(lengths))
-
-
-def clipped_loss(current,old,reference,advantage,epsilon=.2,beta=.02):
-    delta=current-old;ratio=delta.exp()
-    surrogate=torch.minimum(ratio*advantage,ratio.clamp(1-epsilon,1+epsilon)*advantage)
-    diff=reference-current
-    kl=diff.exp()-diff-1
-    return (-surrogate+beta*kl).mean(), ((ratio-1).abs()>epsilon).float().mean().detach(), kl.mean().detach()
+    if not entropy:return list(selected.split(lengths))
+    logp=logits.log_softmax(-1)
+    return list(selected.split(lengths)),list((-(logp.exp()*logp).sum(-1)).split(lengths))
 
 
 def update(model,reference,optimizer,rows,epochs=2,micro_batch=8,precision='fp32',epsilon=.2,beta=.02):
@@ -60,23 +55,25 @@ def update(model,reference,optimizer,rows,epochs=2,micro_batch=8,precision='fp32
     if not eligible:return {'updated':False,'eligible_sequences':0,'optimizer_steps':0}
     model.eval();reference.eval()
     for p in reference.parameters():p.requires_grad_(False)
-    old=[];ref=[]
+    old=[];ref=[];entropy=[]
     with torch.no_grad():
         for start in range(0,len(eligible),micro_batch):
             batch=eligible[start:start+micro_batch]
-            missing=[row for row in batch if 'behavior_log_probs' not in row]
             with autocast():
-                measured=iter(log_probs(model,missing) if missing else [])
-            for row in batch:
+                measured,entropies=log_probs(model,batch,entropy=True)
+            entropy.extend(entropies)
+            for row,measured_row in zip(batch,measured):
                 if 'behavior_log_probs' in row:
                     values=row['behavior_log_probs']
                     if len(values)!=len(row['answer_token_ids']) or not all(math.isfinite(v) for v in values):
                         raise ValueError('Invalid sampler log probabilities')
                     behavior=torch.tensor(row['behavior_log_probs'],device=device,dtype=torch.float32)
                     old.append(behavior)
-                else:old.append(next(measured).detach().clone())
+                else:old.append(measured_row.clone())
             with autocast():
                 ref.extend([x.detach().clone() for x in log_probs(reference,batch)])
+    # Mean answer-token entropy of the sampling policy, weighted like the loss (logged only).
+    mean_entropy=sum(float(e.mean()) for e in entropy)/len(eligible)
     logs=[]
     for epoch in range(epochs):
         optimizer.zero_grad(set_to_none=True);metrics=torch.zeros(3,device=device)
@@ -96,4 +93,4 @@ def update(model,reference,optimizer,rows,epochs=2,micro_batch=8,precision='fp32
         norm=torch.nn.utils.clip_grad_norm_(model.parameters(),1.,error_if_nonfinite=True)
         optimizer.step();values=metrics.tolist()
         logs.append({'epoch':epoch,'loss':values[0],'clip_fraction':values[1],'sampled_kl':values[2],'grad_norm':float(norm)})
-    return {'updated':True,'eligible_sequences':len(eligible),'optimizer_steps':epochs,'epochs':logs}
+    return {'updated':True,'eligible_sequences':len(eligible),'optimizer_steps':epochs,'epochs':logs,'entropy':mean_entropy}

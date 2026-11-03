@@ -14,7 +14,7 @@ import numpy as np
 import torch
 
 from code_lm.training.checkpoint import load_checkpoint, save_checkpoint
-from code_lm.data.pretrain import ShuffledTokenBlocks, get_batch
+from code_lm.data.pretrain_dataset import ShuffledTokenBlocks, get_batch
 from code_lm.training.schedule import cosine_learning_rate_schedule
 from code_lm.training.common import autocast_context, evaluate
 from torch.nn import functional as F

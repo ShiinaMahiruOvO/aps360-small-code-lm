@@ -15,7 +15,7 @@ from torch.nn import functional as F
 
 from code_lm.training.checkpoint import load_checkpoint, save_checkpoint
 from code_lm.model import TransformerLM, model_args_from_config, inference_weights
-from code_lm.data.sft import IGNORE_INDEX, SFTDataset, collate_examples
+from code_lm.data.sft_dataset import IGNORE_INDEX, SFTDataset, collate_examples
 from code_lm.training.schedule import cosine_learning_rate_schedule
 from code_lm.tokenizer import Tokenizer
 from code_lm.training.common import autocast_context
@@ -187,7 +187,12 @@ def train(config: SFTConfig) -> dict:
         raise ValueError("Use fp32 on this device; this trainer enables BF16 on supported CUDA GPUs")
     amp_dtype = torch.bfloat16 if bf16 else None
 
-    model, model_args, saved = load_model(config.resume_from or config.checkpoint, device)
+    if config.resume_from is None and config.checkpoint.suffix == '.json':
+        # An architecture (e.g. configs/pretrain/baseline.json) starts from seeded random initialization.
+        model_args = model_args_from_config(json.loads(config.checkpoint.read_text()))
+        model, saved = TransformerLM(**model_args).to(device), {}
+    else:
+        model, model_args, saved = load_model(config.resume_from or config.checkpoint, device)
     model, model_args = configure_loop(model, model_args, config)
     tokenizer = Tokenizer.from_files(
         config.tokenizer_dir / "vocab.json", config.tokenizer_dir / "merges.txt", ["<|endoftext|>"],

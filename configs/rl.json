@@ -4,11 +4,15 @@
   "samples_per_prompt": 8,
   "max_tokens": 256,
   "update_epochs": 2,
-  "learning_rate": 1e-06,
+  "learning_rate": 1e-05,
   "clip_epsilon": 0.2,
   "kl_coefficient": 0.02,
   "validation_every": 20,
   "seed": 360922,
   "micro_batch": 8,
-  "precision": "fp32"
+  "precision": "fp32",
+  "sampling_strategy": "paired",
+  "difficulty_samples": 8,
+  "validation_samples": 8,
+  "average_top": 3
 }

@@ -7,7 +7,7 @@ import numpy as np
 from torch import nn
 from torch.nn import functional as F
 
-from code_lm.data.pretrain import get_batch
+from code_lm.data.pretrain_dataset import get_batch
 
 
 def autocast_context(device: torch.device, amp_dtype: torch.dtype | None):

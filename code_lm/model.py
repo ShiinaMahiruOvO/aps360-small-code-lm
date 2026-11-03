@@ -258,7 +258,6 @@ class TransformerLM(nn.Module):
     num_layers counts unique parameterized blocks. In loop mode the middle
     partition is applied loop_count times, with full backpropagation through
     every application. RoPE still encodes token positions, not loop indices.
-    Optional MTP adds one independent training head for the second future token.
     """
 
     def __init__(

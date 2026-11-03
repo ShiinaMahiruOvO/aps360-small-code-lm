@@ -1,0 +1,299 @@
+{
+  "protocol": "pass@1 and pass@8 in percent; 8 samples per task at temperature 1; graded by executing every test in an isolated sandbox",
+  "models": {
+    "base_scratch": {
+      "description": "Base, no pretraining, SFT 30 epochs",
+      "test_seen": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_seen_renamed": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_rl_pair": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_holdout": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "loop_scratch": {
+      "description": "Loop, no pretraining, SFT 30 epochs",
+      "test_seen": {
+        "pass@1": 8.6,
+        "pass@8": 44.8
+      },
+      "test_seen_shuffled": {
+        "pass@1": 7.8,
+        "pass@8": 44.8
+      },
+      "test_seen_renamed": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_rl_pair": {
+        "pass@1": 8.8,
+        "pass@8": 50.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 2.5,
+        "pass@8": 20.0
+      },
+      "test_holdout": {
+        "pass@1": 4.6,
+        "pass@8": 33.3
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "base_sft": {
+      "description": "Base + SFT",
+      "test_seen": {
+        "pass@1": 76.5,
+        "pass@8": 97.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 68.3,
+        "pass@8": 95.5
+      },
+      "test_seen_renamed": {
+        "pass@1": 52.8,
+        "pass@8": 88.1
+      },
+      "test_rl_pair": {
+        "pass@1": 66.2,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 67.5,
+        "pass@8": 90.0
+      },
+      "test_holdout": {
+        "pass@1": 31.9,
+        "pass@8": 85.2
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "base_rl": {
+      "description": "Base + SFT + RL",
+      "test_seen": {
+        "pass@1": 88.6,
+        "pass@8": 94.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 76.5,
+        "pass@8": 86.6
+      },
+      "test_seen_renamed": {
+        "pass@1": 59.0,
+        "pass@8": 88.1
+      },
+      "test_rl_pair": {
+        "pass@1": 96.2,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 85.0,
+        "pass@8": 90.0
+      },
+      "test_holdout": {
+        "pass@1": 73.6,
+        "pass@8": 85.2
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "loop_sft": {
+      "description": "Loop + SFT",
+      "test_seen": {
+        "pass@1": 91.0,
+        "pass@8": 100.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 72.8,
+        "pass@8": 91.0
+      },
+      "test_seen_renamed": {
+        "pass@1": 63.1,
+        "pass@8": 94.0
+      },
+      "test_rl_pair": {
+        "pass@1": 92.5,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 87.5,
+        "pass@8": 90.0
+      },
+      "test_holdout": {
+        "pass@1": 63.0,
+        "pass@8": 92.6
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "loop_rl": {
+      "description": "Loop + SFT + RL",
+      "test_seen": {
+        "pass@1": 94.6,
+        "pass@8": 100.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 70.7,
+        "pass@8": 86.6
+      },
+      "test_seen_renamed": {
+        "pass@1": 64.2,
+        "pass@8": 92.5
+      },
+      "test_rl_pair": {
+        "pass@1": 97.5,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 95.0,
+        "pass@8": 100.0
+      },
+      "test_holdout": {
+        "pass@1": 85.2,
+        "pass@8": 100.0
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "loop_lora_sft": {
+      "description": "Loop + LoRA + SFT",
+      "test_seen": {
+        "pass@1": 92.2,
+        "pass@8": 100.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 73.7,
+        "pass@8": 92.5
+      },
+      "test_seen_renamed": {
+        "pass@1": 63.6,
+        "pass@8": 94.0
+      },
+      "test_rl_pair": {
+        "pass@1": 91.2,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 87.5,
+        "pass@8": 90.0
+      },
+      "test_holdout": {
+        "pass@1": 66.2,
+        "pass@8": 92.6
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "loop_lora_rl": {
+      "description": "Loop + LoRA + SFT + RL",
+      "test_seen": {
+        "pass@1": 94.4,
+        "pass@8": 100.0
+      },
+      "test_seen_shuffled": {
+        "pass@1": 73.7,
+        "pass@8": 88.1
+      },
+      "test_seen_renamed": {
+        "pass@1": 69.6,
+        "pass@8": 94.0
+      },
+      "test_rl_pair": {
+        "pass@1": 95.0,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 96.2,
+        "pass@8": 100.0
+      },
+      "test_holdout": {
+        "pass@1": 95.8,
+        "pass@8": 100.0
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    },
+    "qwen_zero_shot": {
+      "description": "Qwen2.5-Coder-0.5B-Instruct, zero-shot",
+      "test_seen": {
+        "pass@1": 4.5,
+        "pass@8": 20.9
+      },
+      "test_rl_pair": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_holdout": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      },
+      "test_transfer": {
+        "pass@1": 23.4,
+        "pass@8": 62.5
+      }
+    },
+    "qwen_sft": {
+      "description": "Qwen2.5-Coder-0.5B-Instruct + SFT",
+      "test_seen": {
+        "pass@1": 94.6,
+        "pass@8": 100.0
+      },
+      "test_rl_pair": {
+        "pass@1": 96.2,
+        "pass@8": 100.0
+      },
+      "test_unseen_pair": {
+        "pass@1": 96.2,
+        "pass@8": 100.0
+      },
+      "test_holdout": {
+        "pass@1": 94.4,
+        "pass@8": 100.0
+      },
+      "test_transfer": {
+        "pass@1": 0.0,
+        "pass@8": 0.0
+      }
+    }
+  }
+}

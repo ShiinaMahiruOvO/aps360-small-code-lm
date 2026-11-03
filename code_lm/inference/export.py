@@ -1,11 +1,9 @@
 """Package our checkpoint for the CUSTOM adapter, without changing its weights.
 
-Usage: python -m code_lm.inference.export --checkpoint ... --output ... --eos-id 256
 The Llama *configuration schema* describes dimensions; architectures selects our
 own model implementation. These are NOT weights for LlamaForCausalLM.
 """
 
-import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -96,12 +94,3 @@ def export_checkpoint(checkpoint: Path, output: Path, eos_id: int):
                 "tokenizer": "External tokenizer; pass prompt_token_ids, no automatic BOS or chat template."}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--eos-id", type=int, required=True)
-    args = parser.parse_args()
-    print(json.dumps(export_checkpoint(args.checkpoint, args.output, args.eos_id), indent=2))

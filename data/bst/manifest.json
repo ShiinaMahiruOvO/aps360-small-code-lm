@@ -1,0 +1,244 @@
+{
+  "version": "bst",
+  "seed": 360930,
+  "copies_per_spec": 8,
+  "unseen_fraction": 0.3333333333333333,
+  "counts": {
+    "train": 536,
+    "validation": 77,
+    "rl": 77,
+    "test_seen": 67,
+    "test_unseen_pair": 10,
+    "test_rl_pair": 10,
+    "test_seen_shuffled": 67,
+    "test_seen_renamed": 67,
+    "test_holdout": 27,
+    "test_transfer": 8
+  },
+  "specs": {
+    "train": 67,
+    "validation": 77,
+    "rl": 77,
+    "test_seen": 67,
+    "test_unseen_pair": 10,
+    "test_rl_pair": 10,
+    "test_seen_shuffled": 67,
+    "test_seen_renamed": 67,
+    "test_holdout": 27,
+    "test_transfer": 8
+  },
+  "by_family": {
+    "test_seen": {
+      "search_depth": 6,
+      "extreme": 6,
+      "range_values": 9,
+      "neighbor": 12,
+      "insert": 2,
+      "range_count": 6,
+      "search": 2,
+      "range_sum": 12,
+      "search_path": 8,
+      "insert_many": 4
+    },
+    "test_unseen_pair": {
+      "range_sum": 4,
+      "range_values": 3,
+      "range_count": 2,
+      "insert_many": 1
+    },
+    "test_rl_pair": {
+      "range_sum": 4,
+      "range_values": 3,
+      "range_count": 2,
+      "insert_many": 1
+    },
+    "test_seen_shuffled": {
+      "search_depth": 6,
+      "extreme": 6,
+      "range_values": 9,
+      "neighbor": 12,
+      "insert": 2,
+      "range_count": 6,
+      "search": 2,
+      "range_sum": 12,
+      "search_path": 8,
+      "insert_many": 4
+    },
+    "test_seen_renamed": {
+      "search_depth": 6,
+      "extreme": 6,
+      "range_values": 9,
+      "neighbor": 12,
+      "insert": 2,
+      "range_count": 6,
+      "search": 2,
+      "range_sum": 12,
+      "search_path": 8,
+      "insert_many": 4
+    },
+    "test_holdout": {
+      "range_values": 9,
+      "range_sum": 16,
+      "range_count": 2
+    },
+    "test_transfer": {
+      "kth_smallest": 1,
+      "closest": 1,
+      "range_max": 1,
+      "second_largest": 1,
+      "count_nodes": 1,
+      "leaf_count": 1,
+      "height": 1,
+      "lowest_common_ancestor": 1
+    }
+  },
+  "unseen_pair_specs": [
+    {
+      "family": "insert_many",
+      "order": "sorted",
+      "report_added": true
+    },
+    {
+      "family": "range_count",
+      "lower_closed": true,
+      "parity": "odd",
+      "upper_closed": false
+    },
+    {
+      "family": "range_count",
+      "lower_closed": true,
+      "parity": "even",
+      "upper_closed": false
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": false,
+      "parity": "even",
+      "transform": "identity",
+      "upper_closed": true
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": true,
+      "parity": "any",
+      "transform": "absolute",
+      "upper_closed": false
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": true,
+      "parity": "odd",
+      "transform": "square",
+      "upper_closed": true
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": true,
+      "parity": "even",
+      "transform": "absolute",
+      "upper_closed": true
+    },
+    {
+      "descending": true,
+      "family": "range_values",
+      "lower_closed": true,
+      "parity": "any",
+      "upper_closed": false
+    },
+    {
+      "descending": true,
+      "family": "range_values",
+      "lower_closed": true,
+      "parity": "odd",
+      "upper_closed": true
+    },
+    {
+      "descending": false,
+      "family": "range_values",
+      "lower_closed": false,
+      "parity": "any",
+      "upper_closed": false
+    }
+  ],
+  "rl_pair_specs": [
+    {
+      "family": "insert_many",
+      "order": "reverse",
+      "report_added": true
+    },
+    {
+      "family": "range_count",
+      "lower_closed": false,
+      "parity": "odd",
+      "upper_closed": true
+    },
+    {
+      "family": "range_count",
+      "lower_closed": false,
+      "parity": "even",
+      "upper_closed": true
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": true,
+      "parity": "even",
+      "transform": "square",
+      "upper_closed": true
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": false,
+      "parity": "any",
+      "transform": "identity",
+      "upper_closed": false
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": false,
+      "parity": "odd",
+      "transform": "identity",
+      "upper_closed": true
+    },
+    {
+      "family": "range_sum",
+      "lower_closed": false,
+      "parity": "any",
+      "transform": "absolute",
+      "upper_closed": true
+    },
+    {
+      "descending": false,
+      "family": "range_values",
+      "lower_closed": false,
+      "parity": "odd",
+      "upper_closed": true
+    },
+    {
+      "descending": false,
+      "family": "range_values",
+      "lower_closed": true,
+      "parity": "odd",
+      "upper_closed": false
+    },
+    {
+      "descending": true,
+      "family": "range_values",
+      "lower_closed": true,
+      "parity": "even",
+      "upper_closed": true
+    }
+  ],
+  "artifact_sha256": {
+    "rl.jsonl": "6d2e03ebd0a6de34716b2b20db2956e01dda0025bd49903073157b5ad114998a",
+    "suites.json": "75859503c55e18c16462dde101f0ac94ed1245fe4f9e7a8f80ca6c4dd0559fdd",
+    "test_holdout.jsonl": "b338c9a6cfdb3d7402f4bf5dae6de6c4f3058dd0a56b2cf573364af777bddac3",
+    "test_rl_pair.jsonl": "cec8fa05fff8ae9a478b12c29be4b0ba5c71fd89fa750b21b4c814dd8a7a5596",
+    "test_seen.jsonl": "17d15a51c200c447f43615416632c5400eedf738b86ecd49d62979a9e9cc1b52",
+    "test_seen_renamed.jsonl": "355f1a909866499cf4ca9c40ebe3b632669e7fb9cf196ea1d9d659809a0de758",
+    "test_seen_shuffled.jsonl": "ba855611bf37d4c2c899d9045adb07567bb2ec8edabd7f0e40ecb5f2c0cba0ea",
+    "test_transfer.jsonl": "198b7be821d5a96e6f11f09fa9a50b985acb005cecf666442d27072fdc11e62c",
+    "test_unseen_pair.jsonl": "a1c0f3106902e313fb889cb4a2f2c2346753ac6f052a63226b10f9cece3fcb5d",
+    "train.jsonl": "cb6973a3f1785a53293054ac83b68abd066ebb1e1ea70f6033db124d2b65fb90",
+    "validation.jsonl": "94f6812dc86451967c740b86a87053c9e0a5c41dae573e127a4030079af8877c"
+  }
+}

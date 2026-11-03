@@ -1,4 +1,4 @@
-"""Prepare the frozen BST examples or tokenize a local Python corpus."""
+"""Verify or regenerate the BST dataset, or prepare the Python pretraining corpus."""
 
 import argparse
 import ast
@@ -15,11 +15,16 @@ from code_lm.tokenizer import Tokenizer
 EOS = "<|endoftext|>"
 
 
+def test_files(path):
+    """Evaluation splits of a dataset directory, in sorted order."""
+    return sorted(path.glob("test_*.jsonl"))
+
+
 def read_rows(path):
     path = Path(path)
     if path.is_dir():
-        for name in ("test_known.jsonl", "test_combinations.jsonl"):
-            yield from read_rows(path / name)
+        for item in test_files(path):
+            yield from read_rows(item)
         return
     with Path(path).open(encoding="utf-8") as stream:
         for line in stream:
@@ -28,17 +33,17 @@ def read_rows(path):
 
 
 def data_digest(path):
-    """Hash a JSONL file or the two ordered evaluation splits in a directory."""
+    """Hash a JSONL file or the ordered evaluation splits in a directory."""
     path = Path(path)
-    paths = [path / name for name in ("test_known.jsonl", "test_combinations.jsonl")] if path.is_dir() else [path]
+    paths = test_files(path) if path.is_dir() else [path]
     value = hashlib.sha256()
     for item in paths:
         value.update(item.read_bytes())
     return value.hexdigest()
 
 
-def verify_covered(source):
-    """Validate frozen data, suite hashes and full SFT specification coverage."""
+def verify_dataset(source):
+    """Validate file and suite hashes, and which specifications each split may contain."""
     manifest = json.loads((source / "manifest.json").read_text())
     for name, digest in manifest["artifact_sha256"].items():
         if hashlib.sha256((source / name).read_bytes()).hexdigest() != digest:
@@ -58,18 +63,17 @@ def verify_covered(source):
                 raise ValueError(f"Missing entry point: {row['id']}")
         splits[split] = rows
     taught = {r['spec_id'] for r in splits['train']}
-    evaluated = {r['spec_id'] for r in splits['test_known'] + splits['test_combinations']}
-    if taught != evaluated:
-        raise ValueError("SFT must cover every evaluation specification")
+    specs = lambda *names: {r['spec_id'] for name in names for r in splits[name]}
+    # test_seen*: exactly the taught specs. test_rl_pair: RL-only specs. Other tests: never trained on.
+    trained, rl_only = specs('train', 'validation', 'rl'), specs('rl') - taught
+    tests = [s for s in splits if s.startswith('test_')]
+    if (any(specs(s) != taught for s in tests if s.startswith('test_seen'))
+            or not taught <= specs('validation') == specs('rl')
+            or specs('test_rl_pair') != rl_only
+            or any(specs(s) & trained for s in tests if not s.startswith('test_seen') and s != 'test_rl_pair')):
+        raise ValueError("Splits do not match the taught / RL-only / unseen specification design")
     print(json.dumps({'counts': manifest['counts'], 'taught_specs': len(taught), 'hashes_verified': True}))
     return manifest
-
-
-def write_rows(path, rows):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as stream:
-        for row in rows:
-            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
 def load_tokenizer(path):
@@ -140,17 +144,14 @@ def main():
     token_fit.add_argument("--train-text", type=Path, required=True)
     token_fit.add_argument("--output", type=Path, default=Path("data/generated/tokenizer"))
     token_fit.add_argument("--vocab-size", type=int, default=8192)
-    bst = sub.add_parser("bst", help="Verify the final frozen dataset, or regenerate it in a new directory")
-    bst.add_argument("--dataset", type=Path, default=Path("data/bst_covered"))
+    bst = sub.add_parser("bst", help="Verify the BST dataset, or regenerate it in a new directory")
+    bst.add_argument("--dataset", type=Path, default=Path("data/bst"))
     bst.add_argument("--regenerate", action="store_true")
-    bst.add_argument("--seed", type=int, default=360921)
     bst.add_argument("--output", type=Path)
     tokens = sub.add_parser("tokens")
     tokens.add_argument("--source", type=Path, required=True)
     tokens.add_argument("--tokenizer-dir", type=Path, default=Path("data/tokenizer"))
     tokens.add_argument("--output", type=Path, default=Path("data/processed/python"))
-    smoke = sub.add_parser("smoke")
-    smoke.add_argument("--output", type=Path, default=Path("data/processed/smoke"))
     args = parser.parse_args()
     if args.action == "tokenizer":
         from code_lm.bpe import train_bpe
@@ -172,19 +173,14 @@ def main():
             if args.output is None:
                 parser.error("--regenerate requires --output pointing to a new directory")
             from code_lm.data.bst_dataset import build
-            build(args.output, args.seed)
-            verify_covered(args.output)
+            build(args.output)
+            verify_dataset(args.output)
         elif args.output is not None:
             parser.error("Use --regenerate with --output, or --dataset to verify existing data")
         else:
-            verify_covered(args.dataset)
-    elif args.action == "tokens":
-        prepare_tokens(args.source, args.tokenizer_dir, args.output)
+            verify_dataset(args.dataset)
     else:
-        args.output.mkdir(parents=True, exist_ok=True)
-        rng = np.random.default_rng(42)
-        for split in ("train", "val"):
-            rng.integers(0, 32, size=4096, dtype=np.uint16).tofile(args.output / f"{split}.bin")
+        prepare_tokens(args.source, args.tokenizer_dir, args.output)
 
 
 if __name__ == "__main__":

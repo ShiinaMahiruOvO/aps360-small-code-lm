@@ -1,9 +1,11 @@
-"""BST reference templates and independent list/set/tuple correctness oracles.
-
-Recovered from the original project generators; no candidate code executes here.
+"""The 17 BST operation contracts, two reference implementations per specification, independent
+list/set/tuple oracles for expected outputs, and test generation. No candidate code executes here.
 """
 import ast
 import random
+
+# The 17 operation contracts: each base specification the dataset varies.
+CONTRACTS = {'absent': {'family': 'search', 'present': False}, 'ceiling': {'direction': 'above', 'family': 'neighbor', 'inclusive': True, 'missing': None}, 'contains': {'family': 'search', 'present': True}, 'depth': {'base': 0, 'family': 'search_depth', 'missing': -1}, 'floor': {'direction': 'below', 'family': 'neighbor', 'inclusive': True, 'missing': None}, 'insert': {'family': 'insert', 'report_added': False}, 'insert_many': {'family': 'insert_many', 'order': 'given', 'report_added': False}, 'level': {'base': 1, 'family': 'search_depth', 'missing': -1}, 'maximum': {'empty': None, 'family': 'extreme', 'maximum': True}, 'minimum': {'empty': None, 'family': 'extreme', 'maximum': False}, 'path': {'family': 'search_path', 'include_target': True, 'missing_path': True, 'reverse': False}, 'path_without_target': {'family': 'search_path', 'include_target': False, 'missing_path': True, 'reverse': False}, 'predecessor': {'direction': 'below', 'family': 'neighbor', 'inclusive': False, 'missing': None}, 'range_count': {'family': 'range_count', 'lower_closed': True, 'parity': 'any', 'upper_closed': True}, 'range_sum': {'family': 'range_sum', 'lower_closed': True, 'parity': 'any', 'transform': 'identity', 'upper_closed': True}, 'range_values': {'descending': False, 'family': 'range_values', 'lower_closed': True, 'parity': 'any', 'upper_closed': True}, 'successor': {'direction': 'above', 'family': 'neighbor', 'inclusive': False, 'missing': None}}
 
 NODE_CODE = '''class TreeNode:
     def __init__(self, val, left=None, right=None):

@@ -21,17 +21,24 @@
     },
     "origin": "Reused Python-Edu BPE; hashes match historical pretraining manifest. Original tokenizer fit sample list is not recovered."
   },
-  "covered_bst": {
-    "origin": "Project-owned programmatic BST specifications and reference implementations",
-    "local_directory": "data/bst_covered",
-    "source_run": "covered-v2-20260920T030904Z",
-    "train_examples": 552,
-    "validation_examples": 87,
-    "test_known": 56,
-    "test_combinations": 31,
-    "contracts": 17,
-    "language": "English instructions and structured English specification fields; Python solutions and tests",
-    "scope": "All evaluation specifications are taught during SFT; development evaluation.",
-    "entry_point": "prepare.py bst --regenerate --output <new-directory>"
+  "bst": {
+    "origin": "Project-owned programmatic BST specifications, reference implementations and tests",
+    "local_directory": "data/bst",
+    "entry_point": "python -m code_lm.data.bst_dataset --output <new-directory> (verify: prepare.py bst)",
+    "seed": 360930,
+    "counts": {
+      "train": 536,
+      "validation": 77,
+      "rl": 77,
+      "test_seen": 67,
+      "test_unseen_pair": 10,
+      "test_rl_pair": 10,
+      "test_seen_shuffled": 67,
+      "test_seen_renamed": 67,
+      "test_holdout": 27,
+      "test_transfer": 8
+    },
+    "design": "Each of 17 operations has single-condition variants (all taught) and 31 two-condition combinations split into SFT (11), RL only (10) and never trained (10). test_seen* reuse the taught tasks and tests with an unseen function name, shuffled fields or renamed parameters; test_holdout holds every range specification with 3-4 changed conditions; test_transfer holds eight operations absent from training.",
+    "language": "Python-style specification fields; Python solutions and pytest suites"
   }
 }

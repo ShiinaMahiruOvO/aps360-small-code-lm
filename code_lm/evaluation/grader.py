@@ -4,20 +4,21 @@ import argparse
 from collections import defaultdict
 import hashlib
 import json
+import math
 from pathlib import Path
+import random
 import re
 
+from code_lm.data.bst_tasks import NODE_CODE
 from code_lm.evaluation.sandbox import fingerprint
 from code_lm.data.prepare import read_rows, data_digest
 
-ROOT = Path(__file__).resolve().parents[2]
 
 
 def build_jobs(rows, suites, generations=None):
     found = {r["id"]: r for r in generations} if generations is not None else None
     if found is not None and (len(found) != len(generations) or set(found) != {r["id"] for r in rows}):
         raise ValueError("Generations must match selected tasks exactly once")
-    node_code = (ROOT / "code_lm/data/tree.py").read_text()
     jobs, candidates = {}, []
     for row in rows:
         suite = suites[row["suite_id"]]
@@ -34,12 +35,13 @@ def build_jobs(rows, suites, generations=None):
             codes["model"] = fenced.group(1) if fenced else code
         role = "model" if found is not None else "reference"
         for name, code in codes.items():
-            job = {"role": name, "answer": node_code + "\n" + code, **suite}
+            job = {"role": name, "answer": NODE_CODE + "\n" + code, **suite}
             job["id"] = fingerprint(job)
             job["job_sha256"] = fingerprint(job)
             jobs[job["id"]] = job
             if name == role:
-                candidates.append({"id": row["id"], "family": row["family"],
+                candidates.append({"id": row["id"], "source_id": row.get("source_id", row["id"]),
+                                   "split": row.get("split"), "family": row["family"],
                                    "contract": row["basic_contract"], "job_id": job["id"]})
     return list(jobs.values()), candidates
 
@@ -79,10 +81,37 @@ def summarize(jobs, candidates, results):
             "outcomes": outcomes}
 
 
+def pass_at_k(n, c, k):
+    """Unbiased pass@k from n samples with c correct (Chen et al., 2021)."""
+    return 1.0 if n - c < k else 1 - math.prod((n - c - i) / (n - i) for i in range(k))
+
+
+def report(outcomes, ks=(1, 8), resamples=2000, seed=0):
+    """Per-split pass@k, per-family pass@1 and a task-level bootstrap 95% CI for pass@1."""
+    tasks = defaultdict(list)
+    for o in outcomes:
+        tasks[(o["split"], o["source_id"], o["contract"])].append(o["correct"])
+    result = {}
+    for split in sorted({s for s, _, _ in tasks}):
+        rows = [(c, v) for (s, _, c), v in tasks.items() if s == split]
+        p1 = [sum(v) / len(v) for _, v in rows]
+        rng = random.Random(seed)
+        boot = sorted(sum(rng.choices(p1, k=len(p1))) / len(p1) for _ in range(resamples))
+        families = defaultdict(list)
+        for (contract, v), p in zip(rows, p1):
+            families[contract].append(p)
+        result[split] = {"tasks": len(rows), "samples_per_task": len(rows[0][1]),
+                         **{f"pass@{k}": sum(pass_at_k(len(v), sum(v), k) for _, v in rows) / len(rows)
+                            for k in ks if k <= min(len(v) for _, v in rows)},
+                         "pass@1_ci95": [boot[int(.025 * resamples)], boot[int(.975 * resamples) - 1]],
+                         "by_contract": {c: sum(v) / len(v) for c, v in sorted(families.items())}}
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, default=Path("data/bst_covered"))
-    parser.add_argument("--suites", type=Path, default=Path("data/bst_covered/suites.json"))
+    parser.add_argument("--data", type=Path, default=Path("data/bst"))
+    parser.add_argument("--suites", type=Path, help="Defaults to suites.json inside --data")
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--generations", type=Path)
     mode.add_argument("--references", action="store_true", help="Verify suites using references and null controls")
@@ -100,7 +129,11 @@ def main():
     if not rows or len({r["id"] for r in rows}) != len(rows):
         raise ValueError("Expected nonempty tasks with unique IDs")
     generations = list(read_rows(args.generations)) if args.generations else None
-    jobs, candidates = build_jobs(rows, json.loads(args.suites.read_text()), generations)
+    if generations and "source_id" in generations[0]:
+        source = {r["id"]: r for r in rows}  # one grading row per sample
+        rows = [{**source[g["source_id"]], "id": g["id"], "source_id": g["source_id"]} for g in generations]
+    suites = args.suites or (args.data if args.data.is_dir() else args.data.parent) / "suites.json"
+    jobs, candidates = build_jobs(rows, json.loads(suites.read_text()), generations)
     if args.export_jobs:
         args.export_jobs.parent.mkdir(parents=True, exist_ok=True)
         with args.export_jobs.open('x') as stream:
@@ -111,12 +144,13 @@ def main():
     results = json.loads(text) if text.lstrip().startswith('[') else [json.loads(line) for line in text.splitlines()]
     summary = summarize(jobs, candidates, results)
     summary["mode"] = "reference_verification" if args.references else "model_evaluation"
+    summary["report"] = report(summary["outcomes"])
     summary["data_sha256"] = data_digest(args.data)
     if args.generations:
         summary["generations_sha256"] = hashlib.sha256(args.generations.read_bytes()).hexdigest()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
-    print(json.dumps({k: v for k, v in summary.items() if k != "outcomes"}, indent=2))
+    print(json.dumps(summary["report"], indent=2))
 
 
 if __name__ == "__main__":
